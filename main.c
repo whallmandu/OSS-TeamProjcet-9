@@ -8,6 +8,7 @@ int main() {
   else if(n == 2025046027) printf("Your name is Kim WooJin");
   else if (n == 2025046022) printf("Your name is Hong TaeGyeong");
   else if (n == 2025046032) printf("Your name is Kim jungHun");
+  else if (n == 2025088131 ) printf("Yuur Name is Shin DongUk');
   else printf("can't search student ID"):
 
   return 0;
