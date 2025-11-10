@@ -27,7 +27,7 @@ int day1Event(players *player) { //first day
     printf("Day %d\n", player->Day); //Day data
     printf("First day.\n"); //text data(story)
     printf("==============================\n");
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]", player->HP, player->Hunger, player->Thirst, player->Fatigue); //player data
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue); //player data
     int n;
     while(1) {
         printf("[1: Check resources] [2: Go seashore] [0: Quit]\n"); //selections
@@ -70,7 +70,7 @@ int dummy1(players *player) { //dummy 1
     printf("Day %d\n", player->Day);
     printf("dummy1\n");
     printf("==============================\n");
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     int n;
     while(1) {
         printf("[1: Check resources] [2: water] [3: stone] [0: Quit]\n");
@@ -105,7 +105,7 @@ int dummy2(players *player) { //dummy 2
     printf("Day %d\n", player->Day);
     printf("dummy2\n");
     printf("==============================\n");
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     int n;
     while(1) {
         if(item[1].count > 0) {
@@ -153,7 +153,7 @@ int dummy3(players *player) { //dummy 3
     printf("Day %d\n", player->Day);
     printf("dummy3\n");
     printf("==============================\n");
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     int n;
     while(1) {
         printf("[1: Check resources] [2: extra] [0: Quit]\n");
@@ -192,7 +192,7 @@ int dummy3(players *player) { //dummy 3
 }
 
 //namal and special event arr
-void (*eventList[])(players *) = {
+int (*eventList[])(players *) = {
     dummy1,
     dummy2,
     dummy3
@@ -202,12 +202,12 @@ void (*eventList[])(players *) = {
 int isRare[] = {0, 0, 1};
 
 //visit O/X arr
-int usedEvent[] = {0, 0, 1};
+int usedEvent[] = {0, 0, 0};
 
 //event manage
-void handleEvent(players *player) {
+int handleEvent(players *player) {
     int randomIDX;
-
+    int k = 0;
     while (1) {
         randomIDX = rand() % eventCount; //random data
 
@@ -217,13 +217,12 @@ void handleEvent(players *player) {
         }
 
         // selection event
-        (*eventList[randomIDX])(player);
-
+        k = (*eventList[randomIDX])(player);
         // isRare -> check
         if (isRare[randomIDX]) {
             usedEvent[randomIDX] = 1;
         }
-
         break;
     }
+    return k;
 }

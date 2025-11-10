@@ -1,5 +1,5 @@
-#ifndef EVENT.H
-#define EVENT.H
+#ifndef EVENT_H
+#define EVENT_H
 
 #include "player.h"
 #define eventCount 3
@@ -25,6 +25,6 @@ int dummy3(players *player);
 Additional Functions
 --------------------
 */
-void handleEvent(players *player);
+int handleEvent(players *player);
 
 #endif
