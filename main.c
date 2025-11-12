@@ -26,18 +26,6 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 //extra settingl
 int home; int resque; int raft;
 
-<<<<<<< HEAD
-int main(void){
-
-
-
-
-
-
-
-
-
-=======
 int main() {
   //if(save data) player, data, eventN in save
   //else
@@ -118,7 +106,6 @@ int main() {
   }
 
     
->>>>>>> 17b2d3e51cea299ad71c85cf47317de2b4c7b03f
 
 
   return 0;
