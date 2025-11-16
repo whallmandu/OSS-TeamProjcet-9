@@ -43,12 +43,20 @@ int main() {
   while(player.Day <= 30) {
     if(player.Day == 1) {
       if(day1Event(&player) == 4) break;
-    } //else if(player.Day == 10) {
+    } 
+    //else if(player.Day == 10) {
     //   //Day 10 event
     // } else if(player.Day == 20) {
-    //   //Day 20 event
-    // } else if(player.Day == 30) {
-    //   //final event
+    //   //Day 20 event}
+    else if(player.Day == 30) {
+      //final event
+      printf("==============================\n");
+      printf("You have survived for 30 days!\n");
+      printf("Rescue team found you and brought you home.\n");
+      printf("Congratulations, survivor!\n");
+      printf("==============================\n");
+      break;
+    }
     // } else if(player.HP <= 5) {
     //   //lowHP event
     // } else if(player.Hunger >= 50) {
@@ -95,6 +103,8 @@ int main() {
     
     //screen clear
     printf("\n\n\n\n\n");
+
+
 
     //death
     if(player.HP <= 0) {
