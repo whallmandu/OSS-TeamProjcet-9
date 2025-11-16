@@ -168,12 +168,16 @@ int dummy4(players *player) {
 
     int r = rand() % 2;
     if (r == 0) {
+        printf("==============================\n");
         printf("You found edible mushrooms!\n");
         printf("[food +2]\n");
+        printf("==============================\n");
         item[1].count += 2;
     } else {
+        printf("==============================\n");
         printf("Oh no! Poisonous mushrooms!\n");
         printf("[HP -5]\n");
+        printf("==============================\n");
         player->HP -= 5;
     }
 
@@ -199,12 +203,16 @@ int dummy5(players *player) {
 
     int r = rand() % 2;
     if (r == 0) {
+        printf("==============================\n");
         printf("You obtained tree bark.\n");
         printf("[wood +2]\n");
+        printf("==============================\n");
         item[3].count += 2;
     } else {
+        printf("==============================\n");
         printf("It was harder than expected...\n");
         printf("[Fatigue +10]\n");
+        printf("==============================\n");
         player->Fatigue += 10;
     }
 
@@ -230,8 +238,10 @@ int dummy6(players *player) {
         else printf("wrong input!\n");
     }
 
+    printf("==============================\n");
     printf("You took a good rest.\n");
     printf("[Fatigue -20]\n");
+    printf("==============================\n");
 
     player->Fatigue -= 20;
     if (player->Fatigue < 0) player->Fatigue = 0;
@@ -254,6 +264,7 @@ int dummy3(players *player) { //dummy 3
      printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
     printf("dummy3\n");
+    int n;
     while(1) {
         printf("[1: Check resources] [2: extra] [0: Quit]\n");
         
