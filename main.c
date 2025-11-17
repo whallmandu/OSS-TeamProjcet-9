@@ -18,7 +18,7 @@ Item item[] = {
   {9, "lighter", 0},
   {10, "knife", 0},
   {11, "fishingrod", 0},
-  {12, "rope", 0}
+  {12, "gun", 0}
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
@@ -27,13 +27,25 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 int home; int resque; int raft;
 
 int main() {
+  FILE *setup = fopen("setup.txt", "r");
+
+  if(setup == NULL) {
+    printf("No setup.txt");
+    return 0;
+  }
+  int hungerIncrease, thirstIncrease, fatigueIncrease;
+  int hungerLevel, thirstLevel, fatigueLevel;  
+  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease, &fatigueIncrease);
+  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel, &fatigueLevel);
+
+
   //if(save data) player, data, eventN in save
   //else
 
   //first setting
   players player;
   player.Day = 1;
-  player.HP = 30;
+  player.HP = 50;
   player.Fatigue = 0;
   player.Hunger = 0;
   player.Thirst = 0;
@@ -76,37 +88,45 @@ int main() {
     //Hunger
     if(player.Hunger >= 0) {
       if(item[1].count > 0) { 
-        item[1].count--;
-        player.Hunger -= 5;
-        if(player.Hunger < 0) player.Hunger = 0;
+          item[1].count--;
+          player.Hunger -= hungerIncrease; 
+          if(player.Hunger < 0) player.Hunger = 0;
       } else { //No food
-        if(player.Hunger >= 30) player.HP -= 5;
-        player.Hunger += 5;
+          if(player.Hunger >= hungerLevel) player.HP -= 5;
+          player.Hunger += hungerIncrease; 
       }
     }
 
     //Thirst
     if(player.Thirst >= 0) {
-      if(item[2].count > 0) { 
-        item[2].count--;
-        player.Thirst -= 10;
-        if(player.Thirst < 0) player.Thirst = 0;
-      } else { //No water
-        if(player.Thirst >= 30) player.HP -= 5;
-        player.Thirst += 10;
-      }
+        if(item[2].count > 0) { 
+            item[2].count--;
+            player.Thirst -= thirstIncrease; 
+            if(player.Thirst < 0) player.Thirst = 0;
+        } else { //No water
+            if(player.Thirst >= thirstLevel) player.HP -= 5;
+            player.Thirst += thirstIncrease; 
+        }
     }
 
     //Fatigue
-    if(player.Fatigue >= 50) player.HP -= 5;
-    player.Fatigue += 5;
+    if(player.Fatigue >= fatigueLevel) player.HP -= 5;
+    player.Fatigue += fatigueIncrease;
+
+
+      
     
     //screen clear
-    printf("\n\n\n\n\n");
+    printf("Press Enter to Continue...");
+    int input;
+    while ((input = getchar()) != '\n' && input != EOF); // buffer clear
+    while ((input = getchar()) != '\n' && input != EOF);
+    printf("\x1b[2J\x1b[H");
+    
 
 
 
-    //death
+    //Death - Endig 1
     if(player.HP <= 0) {
       printf("==============================\n");
       printf("You are dead.\n");
@@ -115,7 +135,7 @@ int main() {
     }
   }
 
-    
+
 
 
   return 0;

@@ -39,7 +39,7 @@ int day1Event(players *player) { //first day
         if(n==1) checkR();
         else if(n==2) break;
         else if(n==0) return 4; //this is 'Quit' return data. only 4.
-        else printf("wlong input\n");
+        else printf("wrong input\n");
     }
 
     if(n==2) { //Go seashore
@@ -84,7 +84,7 @@ int dummy1(players *player) { //dummy 1
         else if(n==2) break;
         else if(n==3) break;
         else if(n==0) return 4;
-        else printf("wlong input!\n");
+        else printf("wrong input!\n");
     }
 
     if(n==2) { //water
@@ -120,14 +120,14 @@ int dummy2(players *player) { //dummy 2
             else if(n==2) break;
             else if(n==3) break;
             else if(n==0) return 4;
-            else printf("wlong input!\n");
+            else printf("wrong input!\n");
         } else {
             printf("[1: Check resources] [2: water] [0: Quit]\n");
             scanf("%d", &n);
             if(n==1) checkR();
             else if(n==2) break;
             else if(n==0) return 4;
-            else printf("wlong input!\n");
+            else printf("wrong input!\n");
         }
     }
 
@@ -142,7 +142,7 @@ int dummy2(players *player) { //dummy 2
         printf("stone--\n");
         printf("[stone -1]\n");
         printf("==============================\n");
-        item[4].count += 3;
+        item[4].count -= 1;
     }
 
     return 0;
@@ -272,12 +272,12 @@ int dummy3(players *player) { //dummy 3
         if(n==1) checkR();
         else if(n==2) break;
         else if(n==0) return 4;
-        else printf("wlong input!\n");
+        else printf("wrong input!\n");
     }
 
     if(n==2) { //extra
         printf("==============================\n");
-        printf("whar are you extra!\n");
+        printf("what are you extra!\n");
         printf("==============================\n");
         int m;
         while(1) {
@@ -287,7 +287,7 @@ int dummy3(players *player) { //dummy 3
             if(m==1) checkR();
             else if(m==2) break;
             else if(m==0) return 4;
-            else printf("wlong input!\n");
+            else printf("wrong input!\n");
         }
         if(m==2) {
             printf("==============================\n");
