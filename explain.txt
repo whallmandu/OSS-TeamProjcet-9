@@ -1,0 +1,56 @@
+Welcome to a challenging 30-day survival experience on a deserted island. The fundamental flow of the game is based on day-by-day progression and critical decision-making.
+
+-RULES-
+30-Day Cycle: The game spans exactly 30 days. You must survive until the end to see your result.
+Daily Choices: Each day, you will be presented with one or more immediate situations requiring action. Typically, you will have two distinct choices for each situation.
+Multi-Ending System: Your accumulated choices and resulting character stats will determine which of the Multiple Endings you unlock, ranging from successful rescue to a tragic outcome.
+Special Events: The game features Special Events (특수 상황)—unique, high-impact scenarios that occur randomly or under specific conditions, forcing difficult trade-offs.
+
+-CODE EXAMPLES AND INTERFACE EXPLANATION-
+The game's progression is driven by the logic behind your daily choices. 
+Below is a simplified, representative code snippet that models a daily decision, followed by an explanation of the player interface for that moment.
+
+FIXED EVENT :
+int day1Event(players *player) { //first day
+    printf("==============================\n");
+    printf("Day %d\n", player->Day); //Day data
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue); //player data
+    printf("==============================\n\n");
+    
+    printf("First day.\n"); //text data(story)
+
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Go seashore] [0: Quit]\n"); //selections
+        
+        //data input
+        scanf("%d", &n);
+        if(n==1) checkR();
+        else if(n==2) break;
+        else if(n==0) return 4; //this is 'Quit' return data. only 4.
+        else printf("wrong input\n");
+    }
+
+    if(n==2) { //Go seashore
+        int r = rand()%2; //random
+        if(r==1) { //wood
+            printf("==============================\n");
+            printf("You find wood!\n");
+            printf("[wood +3]\n");
+            printf("==============================\n");
+            item[3].count += 3; //item update
+        } else { //food
+            printf("==============================\n");
+            printf("You find food\n");
+            printf("[food +1]\n");
+            printf("==============================\n");
+            item[1].count++; //item update
+        }
+    }
+
+    return 0;
+}
+
+SITUATION : The First Day of the Game.
+CHOICES : 1: Check resources], [2: Go seashore], [0: Quit].
+Result : Choosing 'Go seashore' grants a 50% chance to find Wood +3, or a 50% chance to find Food +1.
