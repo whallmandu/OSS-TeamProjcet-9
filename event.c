@@ -64,7 +64,7 @@ int day1Event(players *player) { //first day
 
 /*
 ============================================
-NOMAL EVENT
+NORMAL EVENT
 ============================================
 */
 int dummy1(players *player) { //dummy 1
