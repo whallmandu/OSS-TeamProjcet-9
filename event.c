@@ -113,7 +113,7 @@ int suddenDownpour(players *player) {
         else { //failure
             printf("==============================\n");
             printf("You decide to push forward despite the rain in hopes of finding food.");
-            printf("However, you find nothing, and your body begins th shiver from the cold.\n")
+            printf("However, you find nothing, and your body begins th shiver from the cold.\n");
             printf("[HP -4]\n");
             printf("==============================\n");
             player->HP -= 4;
@@ -160,7 +160,7 @@ int fallenFruit(players *player) {
         else { //failure
             printf("==============================\n");
             printf("You pick up the fruit and eat it.");
-            printf("The taste is strange, and soon your stomach begins to hurt.\n")
+            printf("The taste is strange, and soon your stomach begins to hurt.\n");
             printf("[HP -7]\n");
             printf("==============================\n");
             player->HP -= 7;
@@ -235,7 +235,7 @@ int findGroundWater(players *player) {
     if (n == 2) { //Drink it as is
         printf("==============================\n");
         printf("You decide to drink the water.\n");
-        printf("Fortunately, there is no issue, and you collect a large amount of water.\n")
+        printf("Fortunately, there is no issue, and you collect a large amount of water.\n");
         printf("[water +5]\n");
         printf("==============================\n");
         item[2].count += 5;
@@ -243,7 +243,7 @@ int findGroundWater(players *player) {
     if (n == 3) { //Boil it
         printf("==============================\n");
         printf("You boil the water to drink it safely.\n");
-        printf("It takes time, so you only manage to gather a small amount.\n")
+        printf("It takes time, so you only manage to gather a small amount.\n");
         printf("[water +2]\n");
         printf("==============================\n");
         item[2].count += 2;
@@ -432,7 +432,7 @@ int discoverLifeboat(players *player) {
     if (n == 3) { //Search around
         printf("==============================\n");
         printf("You found bottled water and stored food nearby.\n");
-        printf("[food +3] [water +3]");
+        printf("[food +3] [water +3]\n");
         printf("==============================\n");
         item[1].count += 3;
         item[2].count += 3;

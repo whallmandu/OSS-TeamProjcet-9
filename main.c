@@ -21,7 +21,7 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 
 
 //extra settingl
-int Shelter = 0; int SPS = 0; int Raft;
+int Shelter = 0; int SOS = 0; int Raft;
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -132,7 +132,12 @@ int main() {
     }
   }
 
-
+  //screen clear
+  printf("Game Over...");
+  int input;
+  while ((input = getchar()) != '\n' && input != EOF); // buffer clear
+  while ((input = getchar()) != '\n' && input != EOF);
+  printf("\x1b[2J\x1b[H");
 
 
   return 0;
