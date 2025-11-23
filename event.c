@@ -67,17 +67,19 @@ int day1Event(players *player) { //first day
 NORMAL EVENT
 ============================================
 */
-int dummy1(players *player) { //dummy 1
+int fallenFruit(players *player) { //fallenFruit
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
    
-    printf("dummy1\n");
+    printf("You find a fruit lying on the ground in the forest.\n");
+    printf("It looks edible, but you cannot be certain.\n");
+    printf("What will you do?\n");
     
     int n;
     while(1) {
-        printf("[1: Check resources] [2: water] [3: stone] [0: Quit]\n");
+        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
         
         scanf("%d", &n);
         if(n==1) checkR();
@@ -87,18 +89,28 @@ int dummy1(players *player) { //dummy 1
         else printf("wrong input!\n");
     }
 
-    if(n==2) { //water
+    if(n==2) { //Eat
+        int a = rand() % 2;
+        if(a == 0) { //success
+            printf("==============================\n");
+            printf("You eat the fruit.\n");
+            printf("It is delicious, so you gather more of them.\n");
+            printf("[food +2]\n");
+            printf("==============================\n");
+            item[1].count += 2;
+        }
+        else { //failure
+            printf("==============================\n");
+            printf("You pick up the fruit and eat it.");
+            printf("The taste is strange, and soon your stomach begins to hurt.\n")
+            printf("[HP -3]\n");
+            printf("==============================\n");
+            player->HP -= 3;
+        }
+    } else if(n==3) { //Ignore
         printf("==============================\n");
-        printf("water!\n");
-        printf("[water +3]\n");
+        printf("You decide that you shouldn't eat a fruit you know nothing about and move on.\n");
         printf("==============================\n");
-        item[2].count += 3;
-    } else if(n==3) { //stone
-        printf("==============================\n");
-        printf("stone!\n");
-        printf("[stone +3]\n");
-        printf("==============================\n");
-        item[4].count += 3;
     }
 
     return 0;
