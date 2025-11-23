@@ -231,31 +231,50 @@ int falmLeaves(players *player) {
 }
 
 
-int dummy6(players *player) {
+int fishingFish(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
 
-     printf("Rest Spot Found\n");
+    printf("While walking along the shore, you spot a few fish swimming in the shallow water.\n");
+    printf("If you could catch them, they would be useful as food.\n");
+    printf("What will you do?\n");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Take a rest] [0: Quit]\n");
+        printf("[1: Check resources] [2: Try catching them with your hands] [3: Just watch and move on] [0: Quit]\n");
         scanf("%d", &n);
         if (n == 1) checkR();
         else if (n == 2) break;
+        else if (n == 3) break;
         else if (n == 0) return 4;
         else printf("wrong input!\n");
     }
 
-    printf("==============================\n");
-    printf("You took a good rest.\n");
-    printf("[Fatigue -20]\n");
-    printf("==============================\n");
-
-    player->Fatigue -= 20;
-    if (player->Fatigue < 0) player->Fatigue = 0;
+    if(n == 2) { //Catching
+        int a = rand()%3;
+        if(a == 1) { //success
+            printf("==============================\n");
+            printf("You quickly reached out and caught one of the fish.\n");
+            printf("[food +2]\n");
+            printf("==============================\n");
+            item[1].count += 2;
+        } else { //failure
+            printf("==============================\n");
+            printf("The fish moved faster than you expected.\n");
+            printf("While trying to catch one, you slipped and fell.\n");
+            printf("[HP -3]\n");
+            printf("==============================\n");
+            player->HP -= 3;
+        }
+    }
+    else if(n == 3) { //Move on
+        printf("==============================\n");
+        printf("You decide to save your energy and simply relax while looking our at the ocean horizon.\n");
+        printf("[HP +3]\n");
+        player->HP += 3;
+    }
 
     return 0;
 }
