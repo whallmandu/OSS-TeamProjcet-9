@@ -67,7 +67,7 @@ int day1Event(players *player) { //first day
 NORMAL EVENT
 ============================================
 */
-int fallenFruit(players *player) { //fallenFruit
+int fallenFruit(players *player) { //krh
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
@@ -116,45 +116,37 @@ int fallenFruit(players *player) { //fallenFruit
     return 0;
 }
 
-int dummy2(players *player) { //dummy 2
+int bigTree(players *player) { //krh
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
-   
     printf("==============================\n\n");
-    printf("dummy2\n");
+    
+    printf("You find a large fallen tree on your path.\n");
+    printf("If you handle it well, it may be usable as meterial.\n");
+    printf("What will you do?\n");
+    
     int n;
     while(1) {
-        if(item[1].count > 0) {
-            printf("[1: Check resources] [2: water] [3: stone--] [0: Quit]\n");
-            scanf("%d", &n);
-            if(n==1) checkR();
-            else if(n==2) break;
-            else if(n==3) break;
-            else if(n==0) return 4;
-            else printf("wrong input!\n");
-        } else {
-            printf("[1: Check resources] [2: water] [0: Quit]\n");
-            scanf("%d", &n);
-            if(n==1) checkR();
-            else if(n==2) break;
-            else if(n==0) return 4;
-            else printf("wrong input!\n");
-        }
+        printf("[1: Check resources] [2: Gather meterials] [3: Ignore it] [0: Quit]\n");
+        scanf("%d", &n);
+        if(n==1) checkR();
+        else if(n==2) break;
+        else if(n==3) break;
+        else if(n==0) return 4;
+        else printf("wrong input!\n");
     }
 
-    if(n==2) { //water
+    if(n==2) { //gather meterials
         printf("==============================\n");
-        printf("water!\n");
-        printf("[water +3]\n");
+        printf("You break down the tree and obtain a large amount of wood.\n");
+        printf("[wood +5]\n");
         printf("==============================\n");
-        item[2].count += 3;
-    } else if(n==3) { //stone--
+        item[5].count += 5;
+    } else if(n==3) { //Ignore
         printf("==============================\n");
-        printf("stone--\n");
-        printf("[stone -1]\n");
+        printf("You decide not to dismantle the tree and move on.\n");
         printf("==============================\n");
-        item[4].count -= 1;
     }
 
     return 0;
