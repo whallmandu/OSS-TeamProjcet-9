@@ -10,11 +10,11 @@ Item item[] = {
   {1, "food", 0},
   {2, "water", 0},
   {3, "rope", 0},
-  {4, "palmLeaves", 0},
+  {4, "leaves", 0},
   {5, "wood", 0},
   {6, "cloth", 0},
   {7, "stone", 0},
-  {8, "rowFood", 0},
+  {8, "raw food", 0},
   {9, "knife", 0}
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
