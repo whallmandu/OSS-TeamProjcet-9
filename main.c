@@ -21,7 +21,7 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 
 
 //extra settingl
-int home; int resque; int raft;
+int Home = 0; int SPS = 0; int Raft;
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
