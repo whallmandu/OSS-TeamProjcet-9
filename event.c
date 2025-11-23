@@ -435,6 +435,99 @@ int shipwreck(players *player) {
 }
 
 
+int somethingInSand(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("==============================\n\n");
+    
+    printf("While exploring the beach, you notice something half-buried in the sand.\n");
+    printf("As you approach, you realize it's an old chest.\n");
+    printf("It might contain something useful.\n");
+    printf("What will you do?\n");
+    
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Open it carefully] [3: Break it open] [0: Quit]\n");
+        scanf("%d", &n);
+        if(n==1) checkR();
+        else if(n==2) break;
+        else if(n==3) break;
+        else if(n==0) return 4;
+        else printf("wrong input!\n");
+    }
+
+    if(n==2) { //Carefully
+        printf("==============================\n");
+        printf("You open the chest slowly and find various tools and supplies.\n");
+        printf("[rope +2] [cloth +2] [wood +2]\n");
+        printf("==============================\n");
+        item[5].count += 2;
+        item[3].count += 2;
+        item[6].count += 2;
+    } 
+    if(n==3) { //Break
+        printf("==============================\n");
+        printf("You smash the cest open, but in the process, some of the items inside get damaged.\n");
+        printf("[rope +1] [cloth +1] [wood +1]\n");
+        printf("==============================\n");
+        item[3].count += 1;
+        item[5].count += 1;
+        item[6].count += 1;
+    }
+
+    return 0;
+}
+
+
+int wildBoar(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("==============================\n\n");
+    
+    printf("While walking through the forest, you suddenly hear a loud rustling noise.\n");
+    printf("A wild boar charges at you.\n");
+    printf("You must react immediately.\n");
+    
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Run away] [3: Climb a tree] [0: Quit]\n");
+        scanf("%d", &n);
+        if(n==1) checkR();
+        else if(n==2) break;
+        else if(n==3) break;
+        else if(n==0) return 4;
+        else printf("wrong input!\n");
+    }
+
+    if(n==2) { //Run
+        int a = rand() % 7;
+        if(a >= 5) { //success
+            printf("==============================\n");
+            printf("You run at full speed and manage to escape the boar.\n");
+            printf("==============================\n");
+        }
+        else { //failure
+            printf("==============================\n");
+            printf("You try to run, but the boar catches up and hits you.\n");
+            printf("[HP -15]\n");
+            printf("==============================\n");
+            player->HP -= 15;
+        }
+    } 
+    if(n==3) { //Climb
+        printf("==============================\n");
+        printf("You climb a tree as quickly as possible.\n");
+        printf("The boar cannot reach you and eventually leaves.\n");
+        printf("==============================\n");
+    }
+
+    return 0;
+}
+
+
+
 //namal and special event arr
 int (*eventList[])(players *) = {
     dummy1,
