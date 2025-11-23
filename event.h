@@ -2,7 +2,7 @@
 #define EVENT_H
 
 #include "player.h"
-#define eventCount 6
+#define eventCount 12
 
 /*
 -----------
@@ -16,12 +16,18 @@ int day1Event(players *player);
 Normal and Special Event
 -----------------------
 */
-int dummy1(players *player);
-int dummy2(players *player);
-int dummy3(players *player);
-int dummy4(players *player);   // extra normal situation
-int dummy5(players *player);   // extra normal situation
-int dummy6(players *player); // fatigue recovery
+int suddenDownpour(players *player);  
+int fallenFruit(players *player);  
+int bigTree(players *player);         
+int findGroundWater(players *player);  
+int falmLeaves(players *player);     
+int fishingFish(players *player);    
+int collapsedCabin(players *player);   
+int discoverLifeboat(players *player); 
+int shipwreck(players *player);       
+int somethingInSand(players *player);  
+int wildBoar(players *player);       
+int approachingStorm(players *player);
 
 /*
 --------------------

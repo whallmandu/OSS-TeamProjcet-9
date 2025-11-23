@@ -634,19 +634,34 @@ int approachingStorm(players *player) {
 
 //namal and special event arr
 int (*eventList[])(players *) = {
-    dummy1,
-    dummy2,
-    dummy3,
-    dummy4,
-    dummy5,
-    dummy6
+    // [Normal Events]
+    suddenDownpour,     // 0
+    fallenFruit,        // 1
+    bigTree,            // 2
+    findGroundWater,    // 3
+    falmLeaves,         // 4
+    fishingFish,        // 5
+    
+    // [Special Events]
+    collapsedCabin,     // 6
+    discoverLifeboat,   // 7
+    shipwreck,          // 8
+    somethingInSand,    // 9
+    wildBoar,           // 10
+    approachingStorm    // 11
 };
 
 //special arr
-int isRare[] = {0, 0, 1, 0, 0, 0};
+int isRare[] = {
+    0, 0, 0, 0, 0, 0,   // Normal Events (0~5)
+    1, 1, 1, 1, 1, 1    // Special Events (6~11)
+};
 
 //visit O/X arr
-int usedEvent[] = {0, 0, 0, 0, 0, 0};
+int usedEvent[] = {
+    0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0
+};
 
 //event manage
 int handleEvent(players *player) {
