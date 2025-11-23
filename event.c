@@ -152,72 +152,79 @@ int bigTree(players *player) { //krh
     return 0;
 }
 
-int dummy4(players *player) {
+int findGroundWater(players *player) { //krh
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
     
-    printf("Forest Event - Mushrooms\n");
+    printf("You find a puddle of water on the ground in the forest.\n");
+    printf("It's hard to tell if it's safe to drink.\n");
+    printf("What will you do?\n");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Inspect mushrooms] [0: Quit]\n");
+        printf("[1: Check resources] [2: Drink it as is] [3: Boil it first] [0: Quit]\n");
         scanf("%d", &n);
         if (n == 1) checkR();
         else if (n == 2) break;
+        else if (n == 3) break;
         else if (n == 0) return 4;
         else printf("wrong input!\n");
     }
 
-    int r = rand() % 2;
-    if (r == 0) {
+    if (n == 2) { //Drink it as is
         printf("==============================\n");
-        printf("You found edible mushrooms!\n");
-        printf("[food +2]\n");
+        printf("You decide to drink the water.\n");
+        printf("Fortunately, there is no issue, and you collect a large amount of water.\n")
+        printf("[water +4]\n");
         printf("==============================\n");
-        item[1].count += 2;
-    } else {
+        item[2].count += 4;
+    } 
+    if (n == 3) { //Boil it
         printf("==============================\n");
-        printf("Oh no! Poisonous mushrooms!\n");
-        printf("[HP -5]\n");
+        printf("You boil the water to drink it safely.\n");
+        printf("It takes time, so you only manage to gather a small amount.\n")
+        printf("[water +2]\n");
         printf("==============================\n");
-        player->HP -= 5;
+        item[2].count += 2;
     }
 
     return 0;
 }
 
-int dummy5(players *player) {
+int falmLeaves(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
     
-    printf("Forest Event - Bark Stripping\n");
+    printf("You are walking through the forest when you find a pile of pal leaves.\n");
+    printf("They might be useful for building a shelter.\n")
+    printf("What will you do?\n");
+   
     int n;
     while (1) {
-    printf("[1: Check resources] [2: Try collecting bark] [0: Quit]\n");
+    printf("[1: Check resources] [2: Collect them] [3: Walk past] [0: Quit]\n");
         scanf("%d", &n);
         if (n == 1) checkR();
         else if (n == 2) break;
+        else if (n == 3) break;
         else if (n == 0) return 4;
         else printf("wrong input!\n");
     }
 
-    int r = rand() % 2;
-    if (r == 0) {
+    if (n == 2) { //Collect them
         printf("==============================\n");
-        printf("You obtained tree bark.\n");
-        printf("[wood +2]\n");
+        printf("You picked up the palm leaves.\n");
+        printf("[leaves +2]\n");
         printf("==============================\n");
-        item[3].count += 2;
-    } else {
+        item[4].count += 2;
+    } 
+    if (n == 3) { //Walk past
         printf("==============================\n");
-        printf("It was harder than expected...\n");
-        printf("[Fatigue +10]\n");
+        printf("Thinking you don't really need them, you simply walk past.\n");
         printf("==============================\n");
-        player->Fatigue += 10;
     }
 
     return 0;
