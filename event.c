@@ -258,7 +258,7 @@ int falmLeaves(players *player) {
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
     printf("==============================\n\n");
     
-    printf("You are walking through the forest when you find a pile of pal leaves.\n");
+    printf("You are walking through the forest when you find a pile of palm leaves.\n");
     printf("They might be useful for building a shelter.\n");
     printf("What will you do?\n");
    

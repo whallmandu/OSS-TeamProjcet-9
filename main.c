@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "event.h"
 
 
@@ -118,7 +119,7 @@ int main() {
     int input;
     while ((input = getchar()) != '\n' && input != EOF); // buffer clear
     while ((input = getchar()) != '\n' && input != EOF);
-    printf("\x1b[2J\x1b[H");
+    system("cls");
     
 
 
@@ -135,9 +136,8 @@ int main() {
   //screen clear
   printf("Game Over...");
   int input;
-  while ((input = getchar()) != '\n' && input != EOF); // buffer clear
-  while ((input = getchar()) != '\n' && input != EOF);
-  printf("\x1b[2J\x1b[H");
+  while ((input = getchar()) != '\n' && input != EOF); 
+  
 
 
   return 0;
