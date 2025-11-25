@@ -6,7 +6,7 @@
 
 //item setting
 Item item[] = {
-  {0, "develop", 0}, //this is debuging item. plz it is first.
+  {0, "develop", 0}, //debug
   {1, "food", 0},
   {2, "water", 0},
   {3, "wood", 0},
@@ -18,13 +18,15 @@ Item item[] = {
   {9, "lighter", 0},
   {10, "knife", 0},
   {11, "fishingrod", 0},
-  {12, "gun", 0}
+  {12, "gun", 0},
+  {13, "palm", 0} // palm leaves (added for palm -> rope event)
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
-
-//extra settingl
-int home; int resque; int raft;
+//extra setting
+int home;
+int resque = 0; // rescue flag (0: not rescued, 1: rescued)
+int raft;
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -39,9 +41,6 @@ int main() {
   fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel, &fatigueLevel);
 
 
-  //if(save data) player, data, eventN in save
-  //else
-
   //first setting
   players player;
   player.Day = 1;
@@ -51,15 +50,10 @@ int main() {
   player.Thirst = 0;
   srand(time(NULL));
 
-
   while(player.Day <= 30) {
     if(player.Day == 1) {
       if(day1Event(&player) == 4) break;
     } 
-    //else if(player.Day == 10) {
-    //   //Day 10 event
-    // } else if(player.Day == 20) {
-    //   //Day 20 event}
     else if(player.Day == 30) {
       //final event
       printf("==============================\n");
@@ -69,21 +63,19 @@ int main() {
       printf("==============================\n");
       break;
     }
-    // } else if(player.HP <= 5) {
-    //   //lowHP event
-    // } else if(player.Hunger >= 50) {
-    //   //highHunger event
-    // } else if(player.Thirst >= 50) {
-    //   //highThirst event
-    // } else if(player.Fatigue >=70) {
-    //   //highFatigue event
-    // } 
-    else{ //the other
-      //random event
+    else {
       if(handleEvent(&player) == 4) break;
+      /* check rescue flag set by ship event */
+      if(resque) {
+        printf("==============================\n");
+        printf("A ship rescued you! You are saved!\n");
+        printf("Congratulations, survivor!\n");
+        printf("==============================\n");
+        break;
+      }
     }
 
-    //Next Day
+    //Next Day increments and resource consumption
     player.Day++;
     //Hunger
     if(player.Hunger >= 0) {
@@ -113,20 +105,14 @@ int main() {
     if(player.Fatigue >= fatigueLevel) player.HP -= 5;
     player.Fatigue += fatigueIncrease;
 
-
-      
-    
     //screen clear
     printf("Press Enter to Continue...");
     int input;
     while ((input = getchar()) != '\n' && input != EOF); // buffer clear
     while ((input = getchar()) != '\n' && input != EOF);
     printf("\x1b[2J\x1b[H");
-    
 
-
-
-    //Death - Endig 1
+    //Death - Ending 1
     if(player.HP <= 0) {
       printf("==============================\n");
       printf("You are dead.\n");
@@ -134,9 +120,6 @@ int main() {
       break;
     }
   }
-
-
-
 
   return 0;
 }
