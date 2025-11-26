@@ -165,6 +165,7 @@ int main() {
   printf("Press Enter...");
   int input;
   while ((input = getchar()) != '\n' && input != EOF); 
+  while ((input = getchar()) != '\n' && input != EOF); 
   
 
 
