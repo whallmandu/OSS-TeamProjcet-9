@@ -102,6 +102,11 @@ int main() {
         else break;
       }
       player.Hunger -= n * hungerReduction;
+      item[1].count -= n;
+      if(n == 0) {
+        player.Hunger += hungerIncrease;
+        if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
+      }
     }
     if(player.Hunger >= hungerLevel) player.HP -= 5;
     if(player.Hunger < 0) player.Hunger = 0;
@@ -123,6 +128,11 @@ int main() {
         else break;
       }
       player.Thirst -= n * thirstReduction;
+      item[2].count -= n;
+      if(n == 0) {
+        player.Thirst += thirstIncrease;
+        if(player.Thirst > MAX_Thirst) player.Thirst = MAX_Thirst; 
+      }
     }
     if(player.Thirst >= thirstLevel) player.HP -= 5;
     if(player.Thirst < 0) player.Thirst = 0;
@@ -152,7 +162,7 @@ int main() {
   }
 
   //screen clear
-  printf("Game Over...");
+  printf("Press Enter...");
   int input;
   while ((input = getchar()) != '\n' && input != EOF); 
   

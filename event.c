@@ -29,7 +29,7 @@ FIXED EVENT
 int day1Event(players *player) { //first day
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue); //player data
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
     printf("==============================\n\n");
     
     printf("First day.\n"); //text data(story)
@@ -74,7 +74,7 @@ NORMAL EVENT
 int suddenDownpour(players *player) { 
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
    
     printf("While searching for food, you are suddenly caught in a heavy downpour.\n");
@@ -128,7 +128,7 @@ int suddenDownpour(players *player) {
 int fallenFruit(players *player) { 
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
    
     printf("You find a fruit lying on the ground in the forest.\n");
@@ -178,7 +178,7 @@ int fallenFruit(players *player) {
 int bigTree(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("You find a large fallen tree on your path.\n");
@@ -214,7 +214,7 @@ int bigTree(players *player) {
 int findGroundWater(players *player) { 
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("You find a puddle of water on the ground in the forest.\n");
@@ -255,7 +255,7 @@ int findGroundWater(players *player) {
 int falmLeaves(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("You are walking through the forest when you find a pile of palm leaves.\n");
@@ -293,7 +293,7 @@ int falmLeaves(players *player) {
 int fishingFish(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("While walking along the shore, you spot a few fish swimming in the shallow water.\n");
@@ -350,7 +350,7 @@ SPECIAL EVENT
 int collapsedCabin(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-     printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a collapsed cabin deep in the forest.\n");
@@ -402,7 +402,7 @@ int collapsedCabin(players *player) {
 int discoverLifeboat(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("You discover the remains of a lifeboat washed ashore.\n");
@@ -445,7 +445,7 @@ int discoverLifeboat(players *player) {
 int shipwreck(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("While exploring the beach, you discover the wreckage of a ship that seems to have sunk long ago.\n");
@@ -494,7 +494,7 @@ int shipwreck(players *player) {
 int somethingInSand(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("While exploring the beach, you notice something half-buried in the sand.\n");
@@ -539,7 +539,7 @@ int somethingInSand(players *player) {
 int wildBoar(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("While walking through the forest, you suddenly hear a loud rustling noise.\n");
@@ -585,7 +585,7 @@ int wildBoar(players *player) {
 int approachingStorm(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n", player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
     
     printf("You notice dark clouds forming quickly above the sea.\n");
