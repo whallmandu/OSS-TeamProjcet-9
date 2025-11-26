@@ -15,14 +15,13 @@ Item item[] = {
   {5, "wood", 0},
   {6, "cloth", 0},
   {7, "stone", 0},
-  {8, "raw food", 0},
-  {9, "knife", 0}
+  {8, "knife", 0}
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
 
 //extra settingl
-int Shelter = 0; int SOS = 0; int Raft;
+int Shelter = 0; int SOS = 0; int Raft = 0;
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -31,11 +30,12 @@ int main() {
     printf("No setup.txt");
     return 0;
   }
-  int hungerIncrease, thirstIncrease, fatigueIncrease;
-  int hungerLevel, thirstLevel, fatigueLevel;  
-  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease, &fatigueIncrease);
-  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel, &fatigueLevel);
-
+  int hungerIncrease, thirstIncrease;
+  int hungerLevel, thirstLevel;  
+  fscanf(setup, "%d %d", &hungerIncrease, &thirstIncrease);
+  fscanf(setup, "%d %d", &hungerLevel, &thirstLevel);
+  int hungerReduction = hungerIncrease / 2;
+  int thirstReduction = thirstIncrease / 2;
 
   //if(save data) player, data, eventN in save
   //else
@@ -44,7 +44,6 @@ int main() {
   players player;
   player.Day = 1;
   player.HP = 50;
-  player.Fatigue = 0;
   player.Hunger = 0;
   player.Thirst = 0;
   srand(time(NULL));
@@ -83,17 +82,28 @@ int main() {
 
     //Next Day
     player.Day++;
+    //Setup HP
+    if(player.HP > MAX_HP) player.HP = MAX_HP;
     //Hunger
-    if(player.Hunger >= 0) {
-      if(item[1].count > 0) { 
-          item[1].count--;
-          player.Hunger -= hungerIncrease; 
-          if(player.Hunger < 0) player.Hunger = 0;
-      } else { //No food
-          if(player.Hunger >= hungerLevel) player.HP -= 5;
-          player.Hunger += hungerIncrease; 
+    if(item[1].count <= 0) {
+      player.Hunger += hungerIncrease;
+      if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
+    } else {
+      printf("==============================\n");
+      printf("How many portions of food would you like to eat?\n");
+      printf("Now Food * %d\n", item[1].count);
+      printf("==============================\n");
+      int n;
+      while(1) {
+        scanf("%d", &n);
+        if(n < 0 || n > item[1].count) printf("worong input!\n");
+        else break;
       }
+      player.Hunger -= n * hungerReduction;
     }
+    if(player.Hunger >= hungerLevel) player.HP -= 5;
+    if(player.Hunger < 0) player.Hunger = 0;
+    
 
     //Thirst
     if(player.Thirst >= 0) {
@@ -106,10 +116,6 @@ int main() {
             player.Thirst += thirstIncrease; 
         }
     }
-
-    //Fatigue
-    if(player.Fatigue >= fatigueLevel) player.HP -= 5;
-    player.Fatigue += fatigueIncrease;
 
 
       

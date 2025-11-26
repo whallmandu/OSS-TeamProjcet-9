@@ -1,10 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#define MAX_HP 50
+#define MAX_Hunger 50
+#define MAX_Thirst 50
 
 //player setting
 typedef struct playerdata {
-    int Day, HP, Hunger, Thirst, Fatigue;
-    int ability[10];
+    int Day, HP, Hunger, Thirst;
 } players;
 
 //item setting

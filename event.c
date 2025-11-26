@@ -43,7 +43,7 @@ int day1Event(players *player) { //first day
         if(n==1) checkR();
         else if(n==2) break;
         else if(n==0) return 4; //this is 'Quit' return data. only 4.
-        else printf("wrong input\n");
+        else printf("wrong input!\n");
     }
 
     if(n==2) { //Go seashore
