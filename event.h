@@ -20,7 +20,6 @@ int event_seaweed(players *player);
 int event_herbs(players *player);
 int event_pond_fish(players *player);
 int event_palm_leaves(players *player);
-int event_rest_spot(players *player); // 이전 dummy6과 유사한 휴식 이벤트
 
 /*
 ----------- Rare / Special Events -----------
