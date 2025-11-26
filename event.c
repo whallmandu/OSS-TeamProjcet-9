@@ -47,7 +47,7 @@ int day1Event(players *player) {
             printf("You find wood!\n");
             printf("[wood +3]\n");
             printf("==============================\n");
-            item[3].count += 3;
+            item[5].count += 3;
         } else {
             printf("==============================\n");
             printf("You find food\n");
@@ -199,7 +199,7 @@ int event_seaweed(players *player) {
         printf("You dry the seaweed and make rope.\n");
         printf("[rope +1]\n");
         printf("==============================\n");
-        item[8].count += 1; 
+        item[3].count += 1; 
     }
     else if (n == 3) {
         printf("==============================\n");
@@ -381,10 +381,9 @@ int event_palm_leaves(players *player) {
         }
     }
     else if (n == 3) { // palm leaves → rope
-        int palmIdx = 13;
-        if (palmIdx < itemCount && item[palmIdx].count >= 3) {
-            item[palmIdx].count -= 3;
-            item[8].count += 1; 
+        if (item[4].count >= 3) {
+            item[4].count -= 3;
+            item[3].count += 1; 
             printf("==============================\n");
             printf("You turned palm leaves into rope.\n");
             printf("[rope +1] [palm -3]\n");
@@ -454,7 +453,7 @@ int event_wave_collect(players *player) {
             printf("Success: You gathered a large amount of wood before the wave arrived.\n");
             printf("[wood +10]\n");
             printf("==============================\n");
-            item[3].count += 10;
+            item[5].count += 10;
         }
     } 
     else {  
