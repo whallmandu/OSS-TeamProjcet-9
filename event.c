@@ -3,7 +3,7 @@
 #include <time.h>
 #include "event.h"
 
-/* check resources (unchanged) */
+/* check resources */
 void checkR() {
     int flag = 0;
     for(int i=1; i<itemCount; i++) {
@@ -62,9 +62,7 @@ int day1Event(players *player) {
 
 /*
 ============================================
-NORMAL EVENTS (user-provided)
-Format: print header -> description -> choices -> outcomes
-Return 4 if user selected Quit from menu
+NORMAL EVENTS 
 ============================================
 */
 
@@ -83,10 +81,10 @@ int event_tree_hole(players *player) {
         printf("[1: Check resources] [2: Put your hand inside (risky)] [3: Walk past] [0: Quit]\n");
         if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
 
-        if (n == 1) checkR();      // 자원 확인
-        else if (n == 2) break;    // 리스크 행동으로 진입
-        else if (n == 3) break;    // 행동 없이 지나가기
-        else if (n == 0) return 4; // 종료로 신호 반환
+        if (n == 1) checkR();      
+        else if (n == 2) break;    
+        else if (n == 3) break;    
+        else if (n == 0) return 4; 
         else printf("wrong input!\n");
     }
 
@@ -184,7 +182,7 @@ int event_seaweed(players *player) {
         }
 
         if (n == 1) {
-            checkR();        // 🔥 자원 확인 기능 추가
+            checkR();        
         }
         else if (n == 2 || n == 3 || n == 0) {
             break;
@@ -201,7 +199,7 @@ int event_seaweed(players *player) {
         printf("You dry the seaweed and make rope.\n");
         printf("[rope +1]\n");
         printf("==============================\n");
-        item[8].count += 1; // rope index = 8
+        item[8].count += 1; 
     }
     else if (n == 3) {
         printf("==============================\n");
@@ -234,11 +232,11 @@ int event_herbs(players *player) {
             continue; 
         }
 
-        // 1번은 자원확인 후 다시 선택지 반복
+       
         if(n == 1) {
             checkR();
         }
-        // 실제 선택지
+      
         else if(n == 2 || n == 3 || n == 0) {
             break;
         }
@@ -249,10 +247,10 @@ int event_herbs(players *player) {
 
     if(n == 0) return 4;
 
-    // 기존 1번 → now 2번
+ 
     if(n == 2) {
         int r = rand() % 2;
-        if(r == 0) { // poisonous
+        if(r == 0) { 
             printf("==============================\n");
             printf("Failure: The herb was poisonous. You feel severe stomach pain.\n");
             printf("[Fatigue +25]\n");
@@ -266,7 +264,7 @@ int event_herbs(players *player) {
                 player->HP = 0;
             }
         } 
-        else { // success
+        else { 
             printf("==============================\n");
             printf("Success: The herb was medicinal and refreshing.\n");
             printf("[Fatigue -15] [food +1]\n");
@@ -276,7 +274,7 @@ int event_herbs(players *player) {
             item[1].count += 1;
         }
     }
-    // 기존 2번 → now 3번
+   
     else if(n == 3) {
         printf("==============================\n");
         printf("You decide to walk past the herbs.\n");
@@ -326,7 +324,7 @@ int event_pond_fish(players *player) {
         printf("==============================\n");
         item[1].count += 1;
     }
-    else { // n == 3
+    else { /
         printf("==============================\n");
         printf("You decide not to catch the fish and leave.\n");
         printf("==============================\n");
@@ -356,7 +354,7 @@ int event_palm_leaves(players *player) {
         }
 
         if (n == 1) {
-            checkR();   // 자원확인
+            checkR();   
         }
         else if (n == 2 || n == 3 || n == 0) {
             break;
@@ -386,7 +384,7 @@ int event_palm_leaves(players *player) {
         int palmIdx = 13;
         if (palmIdx < itemCount && item[palmIdx].count >= 3) {
             item[palmIdx].count -= 3;
-            item[8].count += 1; // rope +1
+            item[8].count += 1; 
             printf("==============================\n");
             printf("You turned palm leaves into rope.\n");
             printf("[rope +1] [palm -3]\n");
@@ -443,7 +441,7 @@ int event_wave_collect(players *player) {
 
     if(n == 0) return 4;
 
-    if(n == 2) {   // 원래의 1번 -> 2번
+    if(n == 2) {   
         int r = rand()%2;
         if(r==0) {
             printf("==============================\n");
@@ -459,7 +457,7 @@ int event_wave_collect(players *player) {
             item[3].count += 10;
         }
     } 
-    else {  // n == 3
+    else {  
         printf("==============================\n");
         printf("You hide in a safe location and avoid danger.\n");
         printf("==============================\n");
@@ -535,7 +533,7 @@ int event_ship_signal(players *player) {
         }
 
         if(n == 1) {
-            checkR(); // 자원 확인
+            checkR(); 
         }
         else if(n == 2 || n == 3 || n == 0) {
             break;
@@ -547,7 +545,7 @@ int event_ship_signal(players *player) {
 
     if(n == 0) return 4;
 
-    if(n == 2) { // Signal with a fire
+    if(n == 2) { 
         int wood = item[3].count;
         if(wood >= 3) {
             item[3].count -= 3;
@@ -569,7 +567,7 @@ int event_ship_signal(players *player) {
                 printf("==============================\n");
             }
         }
-    } else if(n == 3) { // Wave your arms
+    } else if(n == 3) { 
         printf("==============================\n");
         printf("You wave your arms, but the ship is too far and doesn't notice you.\n");
         printf("==============================\n");
@@ -599,7 +597,7 @@ int event_cabin(players *player) {
         }
 
         if(n == 1) {
-            checkR(); // 자원 확인
+            checkR(); 
         }
         else if(n == 2 || n == 3 || n == 0) {
             break;
@@ -616,8 +614,8 @@ int event_cabin(players *player) {
         printf("You find old tools and some preserved supplies inside the cabin.\n");
         printf("[cloth +1] [food +1]\n");
         printf("==============================\n");
-        item[6].count += 1; // cloth
-        item[1].count += 1; // food
+        item[6].count += 1; 
+        item[1].count += 1; 
     } else if(n == 3) {
         printf("==============================\n");
         printf("You observe for a while and find nothing useful.\n");
@@ -649,7 +647,7 @@ int event_cave(players *player) {
         }
 
         if(n == 1) {
-            checkR(); // 자원 확인
+            checkR(); 
         }
         else if(n == 2 || n == 3 || n == 0) {
             break;
