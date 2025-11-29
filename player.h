@@ -3,8 +3,7 @@
 
 //player setting
 typedef struct playerdata {
-    int Day, HP, Hunger, Thirst, Fatigue;
-    int ability[10];
+    int Day, HP, Hunger, Thirst;
 } players;
 
 //item setting

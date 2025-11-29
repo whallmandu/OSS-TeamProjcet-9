@@ -3,6 +3,12 @@
 #include <time.h>
 #include "event.h"
 
+extern int Shelter;
+extern int SOS;
+extern int Raft;
+
+
+
 /* check resources */
 void checkR() {
     int flag = 0;
@@ -24,8 +30,8 @@ FIXED EVENT (day1)
 int day1Event(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("First day.\n");
@@ -70,8 +76,8 @@ NORMAL EVENTS
 int event_tree_hole(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a large tree with a hole in its trunk, and something inside is glimmering.\n");
@@ -93,9 +99,9 @@ int event_tree_hole(players *player) {
         if (r == 0) {
             printf("==============================\n");
             printf("Failure: You disturbed a small bird’s nest; the bird pecked you and you fell.\n");
-            printf("[Fatigue +15]\n");
+            printf("[HP - 10]\n");
             printf("==============================\n");
-            player->Fatigue += 15;
+            player->HP -=10;
         } else {
             printf("==============================\n");
             printf("Success: Inside the hole you find a few eggs. You take them.\n");
@@ -117,8 +123,8 @@ int event_tree_hole(players *player) {
 int event_rock_shade(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a cool, shaded area under a large rock. It looks like a comfortable place to rest.\n");
@@ -148,10 +154,9 @@ int event_rock_shade(players *player) {
     if (n == 2) {
         printf("==============================\n");
         printf("You lie down under the cool shade and relax.\n");
-        printf("[Fatigue -15]\n");
+        printf("[HP +10]\n");
         printf("==============================\n");
-        player->Fatigue -= 15;
-        if (player->Fatigue < 0) player->Fatigue = 0;
+        player->HP += 10;
     }
     else { // n == 3
         printf("==============================\n");
@@ -166,8 +171,8 @@ int event_rock_shade(players *player) {
 int event_seaweed(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a large pile of seaweed washed up on the beach. If dried, it could be used as rope, and it might also be edible.\n");
@@ -217,8 +222,8 @@ int event_seaweed(players *player) {
 int event_herbs(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You discover a pile of fragrant herbs. They might be medicinal or poisonous. What will you do?\n");
@@ -253,25 +258,19 @@ int event_herbs(players *player) {
         if(r == 0) { 
             printf("==============================\n");
             printf("Failure: The herb was poisonous. You feel severe stomach pain.\n");
-            printf("[Fatigue +25]\n");
+            printf("[HP -15]\n");
             printf("==============================\n");
-            player->Fatigue += 25;
+            player->HP -= 15;
+        
 
-            if(player->Fatigue >= 100) {
-                printf("==============================\n");
-                printf("Condition worsened: You collapse from exhaustion.\n");
-                printf("==============================\n");
-                player->HP = 0;
-            }
         } 
         else { 
             printf("==============================\n");
             printf("Success: The herb was medicinal and refreshing.\n");
-            printf("[Fatigue -15] [food +1]\n");
+            printf("[HP +10] [food +1]\n");
             printf("==============================\n");
-            player->Fatigue -= 15;
-            if(player->Fatigue < 0) player->Fatigue = 0;
-            item[1].count += 1;
+            player->HP += 10;
+   
         }
     }
    
@@ -289,8 +288,8 @@ int event_herbs(players *player) {
 int event_pond_fish(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You discover a small pond with several trapped fish. They look easy to catch. What will you do?\n");
@@ -337,8 +336,8 @@ int event_pond_fish(players *player) {
 int event_palm_leaves(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You notice you have many palm leaves. You could spend the day turning some into rope, or go out to look for food.\n");
@@ -411,8 +410,8 @@ RARE / SPECIAL EVENTS
 int event_wave_collect(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You notice a massive wave approaching and large pieces of driftwood on the beach.\n");
@@ -470,8 +469,8 @@ int event_wave_collect(players *player) {
 int event_waterfall(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a cliff with a small waterfall and clear water below. Climbing down is dangerous.\n");
@@ -515,8 +514,8 @@ int event_ship_signal(players *player) {
     extern int resque; // declared in main.c; we'll set it to signal rescue
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You spot a ship far away on the horizon. This might be your chance to escape the island.\n");
@@ -552,14 +551,14 @@ int event_ship_signal(players *player) {
             printf("You quickly gather wood, set a fire, and the ship changes course toward you.\n");
             printf("You are rescued!\n");
             printf("==============================\n");
-            resque = 1;
+            SOS = 1;
         } else {
             int r = rand() % 3;
             if(r == 0) {
                 printf("==============================\n");
                 printf("Against the odds, your small fire attracts the ship. You are rescued!\n");
                 printf("==============================\n");
-                resque = 1;
+                SOS = 1;
             } else {
                 printf("==============================\n");
                 printf("Your fire wasn't enough; the ship doesn't see you.\n");
@@ -579,8 +578,8 @@ int event_ship_signal(players *player) {
 int event_cabin(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You discover an abandoned cabin deep in the forest. It looks old but may contain useful items.\n");
@@ -629,8 +628,8 @@ int event_cabin(players *player) {
 int event_cave(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] [Fatigue: %d]\n",
-           player->HP, player->Hunger, player->Thirst, player->Fatigue);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
     printf("You find a cave entrance hidden behind vines. It looks dark but may contain valuables.\n");

@@ -19,9 +19,8 @@ Item item[] = {
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
 //extra setting
-int home;
-int resque = 0; // rescue flag (0: not rescued, 1: rescued)
-int raft;
+int Shelter = 0; int SOS = 0; int Raft = 0;
+
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -30,17 +29,16 @@ int main() {
     printf("No setup.txt");
     return 0;
   }
-  int hungerIncrease, thirstIncrease, fatigueIncrease;
-  int hungerLevel, thirstLevel, fatigueLevel;  
-  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease, &fatigueIncrease);
-  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel, &fatigueLevel);
+  int hungerIncrease, thirstIncrease;
+  int hungerLevel, thirstLevel;  
+  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease);
+  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel);
 
 
   //first setting
   players player;
   player.Day = 1;
   player.HP = 50;
-  player.Fatigue = 0;
   player.Hunger = 0;
   player.Thirst = 0;
   srand(time(NULL));
@@ -61,7 +59,7 @@ int main() {
     else {
       if(handleEvent(&player) == 4) break;
       /* check rescue flag set by ship event */
-      if(resque) {
+      if(SOS) {
         printf("==============================\n");
         printf("A ship rescued you! You are saved!\n");
         printf("Congratulations, survivor!\n");
@@ -96,9 +94,8 @@ int main() {
         }
     }
 
-    //Fatigue
-    if(player.Fatigue >= fatigueLevel) player.HP -= 5;
-    player.Fatigue += fatigueIncrease;
+  
+ 
 
     //screen clear
     printf("Press Enter to Continue...");
