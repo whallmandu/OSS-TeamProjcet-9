@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "event.h"
 
 
@@ -33,12 +34,13 @@ int main() {
   int hungerLevel, thirstLevel;  
   fscanf(setup, "%d %d", &hungerIncrease, &thirstIncrease);
   fscanf(setup, "%d %d", &hungerLevel, &thirstLevel);
-
+  int hungerReduction = hungerIncrease / 2;
+  int thirstReduction = thirstIncrease / 2;
 
   //first setting
   players player;
   player.Day = 1;
-  player.HP = 50;
+  player.HP = 40;
   player.Hunger = 0;
   player.Thirst = 0;
   srand(time(NULL));
@@ -70,39 +72,73 @@ int main() {
 
     //Next Day increments and resource consumption
     player.Day++;
+    
+    //Setup HP
+    if(player.HP > MAX_HP) player.HP = MAX_HP;
+    
     //Hunger
-    if(player.Hunger >= 0) {
-      if(item[1].count > 0) { 
-          item[1].count--;
-          player.Hunger -= hungerIncrease; 
-          if(player.Hunger < 0) player.Hunger = 0;
-      } else { //No food
-          if(player.Hunger >= hungerLevel) player.HP -= 5;
-          player.Hunger += hungerIncrease; 
+    if(item[1].count <= 0) {
+      player.Hunger += hungerIncrease;
+      if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
+    } else {
+      printf("\n==============================\n");
+      printf("How many portions of food would you like to eat?\n");
+      printf("Now Food * %d\n", item[1].count);
+      printf("==============================\n");
+      int n;
+      while(1) {
+        scanf("%d", &n);
+        if(n < 0 || n > item[1].count) printf("worong input!\n");
+        else break;
+      }
+      player.Hunger -= n * hungerReduction;
+      item[1].count -= n;
+      if(n == 0) {
+        player.Hunger += hungerIncrease;
+        if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
       }
     }
+    if(player.Hunger >= hungerLevel) player.HP -= 5;
+    if(player.Hunger < 0) player.Hunger = 0;
+    
 
     //Thirst
-    if(player.Thirst >= 0) {
-        if(item[2].count > 0) { 
-            item[2].count--;
-            player.Thirst -= thirstIncrease; 
-            if(player.Thirst < 0) player.Thirst = 0;
-        } else { //No water
-            if(player.Thirst >= thirstLevel) player.HP -= 5;
-            player.Thirst += thirstIncrease; 
-        }
+    if(item[2].count <= 0) {
+      player.Thirst += thirstIncrease;
+      if(player.Thirst > MAX_Thirst) player.Thirst = MAX_Thirst; 
+    } else {
+      printf("\n==============================\n");
+      printf("How many portions of water would you like to eat?\n");
+      printf("Now Water * %d\n", item[2].count);
+      printf("==============================\n");
+      int n;
+      while(1) {
+        scanf("%d", &n);
+        if(n < 0 || n > item[2].count) printf("worong input!\n");
+        else break;
+      }
+      player.Thirst -= n * thirstReduction;
+      item[2].count -= n;
+      if(n == 0) {
+        player.Thirst += thirstIncrease;
+        if(player.Thirst > MAX_Thirst) player.Thirst = MAX_Thirst; 
+      }
     }
+    if(player.Thirst >= thirstLevel) player.HP -= 5;
+    if(player.Thirst < 0) player.Thirst = 0;
+    
 
-  
- 
-
+    // Home HP
+    if(Shelter != 5) player.HP += Shelter + 1;
+    else player.HP += 10; 
+    
     //screen clear
-    printf("Press Enter to Continue...");
+    printf("\nPress Enter to Continue...");
     int input;
     while ((input = getchar()) != '\n' && input != EOF); // buffer clear
     while ((input = getchar()) != '\n' && input != EOF);
-    printf("\x1b[2J\x1b[H");
+    system("cls");
+    
 
     //Death - Ending 1
     if(player.HP <= 0) {
@@ -112,6 +148,14 @@ int main() {
       break;
     }
   }
+
+  //screen clear
+  printf("Press Enter...");
+  int input;
+  while ((input = getchar()) != '\n' && input != EOF); 
+  while ((input = getchar()) != '\n' && input != EOF); 
+  
+
 
   return 0;
 }
