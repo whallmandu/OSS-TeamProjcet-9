@@ -7,7 +7,7 @@
 
 //item setting
 Item item[] = {
-  {0, "develop", 0}, //this is debuging item. plz it is first.
+  {0, "develop", 0}, //debug
   {1, "food", 0},
   {2, "water", 0},
   {3, "rope", 0},
@@ -19,9 +19,9 @@ Item item[] = {
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
-
-//extra settingl
+//extra setting
 int Shelter = 0; int SOS = 0; int Raft = 0;
+
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -37,9 +37,6 @@ int main() {
   int hungerReduction = hungerIncrease / 2;
   int thirstReduction = thirstIncrease / 2;
 
-  //if(save data) player, data, eventN in save
-  //else
-
   //first setting
   players player;
   player.Day = 1;
@@ -48,15 +45,10 @@ int main() {
   player.Thirst = 0;
   srand(time(NULL));
 
-
   while(player.Day <= 30) {
     if(player.Day == 1) {
       if(day1Event(&player) == 4) break;
     } 
-    //else if(player.Day == 10) {
-    //   //Day 10 event
-    // } else if(player.Day == 20) {
-    //   //Day 20 event}
     else if(player.Day == 30) {
       //final event
       printf("==============================\n");
@@ -66,21 +58,19 @@ int main() {
       printf("==============================\n");
       break;
     }
-    // } else if(player.HP <= 5) {
-    //   //lowHP event
-    // } else if(player.Hunger >= 50) {
-    //   //highHunger event
-    // } else if(player.Thirst >= 50) {
-    //   //highThirst event
-    // } else if(player.Fatigue >=70) {
-    //   //highFatigue event
-    // } 
-    else{ //the other
-      //random event
+    else {
       if(handleEvent(&player) == 4) break;
+      /* check rescue flag set by ship event */
+      if(SOS) {
+        printf("==============================\n");
+        printf("A ship rescued you! You are saved!\n");
+        printf("Congratulations, survivor!\n");
+        printf("==============================\n");
+        break;
+      }
     }
 
-    //Next Day
+    //Next Day increments and resource consumption
     player.Day++;
     
     //Setup HP
@@ -150,9 +140,7 @@ int main() {
     system("cls");
     
 
-
-
-    //Death - Endig 1
+    //Death - Ending 1
     if(player.HP <= 0) {
       printf("==============================\n");
       printf("You are dead.\n");
