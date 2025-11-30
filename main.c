@@ -31,8 +31,8 @@ int main() {
   }
   int hungerIncrease, thirstIncrease;
   int hungerLevel, thirstLevel;  
-  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease);
-  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel);
+  fscanf(setup, "%d %d", &hungerIncrease, &thirstIncrease);
+  fscanf(setup, "%d %d", &hungerLevel, &thirstLevel);
 
 
   //first setting

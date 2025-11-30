@@ -292,7 +292,9 @@ int event_pond_fish(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You discover a small pond with several trapped fish. They look easy to catch. What will you do?\n");
+    printf("You discover a small pond with several trapped fish. They look easy to catch.\n");
+    printf("What will you do?\n");
+
 
     int n;
     while (1) {
@@ -323,7 +325,7 @@ int event_pond_fish(players *player) {
         printf("==============================\n");
         item[1].count += 1;
     }
-    else { /
+    else { 
         printf("==============================\n");
         printf("You decide not to catch the fish and leave.\n");
         printf("==============================\n");
