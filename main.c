@@ -24,6 +24,8 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 int Shelter = 0; int SOS = 0; int Raft = 0;
 
 int main() {
+  system("mode con: cols=150 lines=35");
+  system("title Survival Island");
   FILE *setup = fopen("setup.txt", "r");
 
   if(setup == NULL) {

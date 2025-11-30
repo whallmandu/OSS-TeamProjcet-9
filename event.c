@@ -1,12 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 #include "event.h"
 
 //Shelter, Sos signal, Raft
 extern int Shelter;
 extern int SOS;
 extern int Raft;
+
+void gotoxy(int x, int y) {
+    COORD pos = { x, y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+
+// image print
+void drawImage(int x, int y, const char* filename) {
+    // Console Handle
+    HWND consoleWindow = GetConsoleWindow();
+    if (!consoleWindow) return; 
+
+    // Setting
+    HDC hdc = GetDC(consoleWindow);
+    HDC memDC = CreateCompatibleDC(hdc);
+
+    // Image load
+    HBITMAP hBitmap = (HBITMAP)LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+
+    if (hBitmap == NULL) {
+        printf("IMAGE ERROR!\n");
+        return;
+    }
+
+    
+
+    SelectObject(memDC, hBitmap);
+
+    // Image size
+    BITMAP bm;
+    GetObject(hBitmap, sizeof(bm), &bm);
+
+    // print
+    BitBlt(hdc, x, y, bm.bmWidth, bm.bmHeight, memDC, 0, 0, SRCCOPY);
+
+    // clear
+    DeleteObject(hBitmap);
+    DeleteDC(memDC);
+    ReleaseDC(consoleWindow, hdc);
+}
 
 //Check Resources Function
 void checkR() {
@@ -33,7 +75,7 @@ int day1Event(players *player) { //first day
     printf("==============================\n\n");
     
     printf("First day.\n"); //text data(story)
-
+    drawImage(450, 0, "test.bmp");
     int n;
     while(1) {
         printf("[1: Check resources] [2: Go seashore] [0: Quit]\n"); //selections
