@@ -1260,29 +1260,28 @@ int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
 /* event manager */
-int handleEvent(players *player) {
+int pickEventID() {
     int randomIDX;
-    int k = 0;
     while (1) {
-        randomIDX = rand() % eventCount;
+        randomIDX = rand() % eventCount; 
 
-        /* if rare and already used, reroll */
-        if (randomIDX < (sizeof(isRare)/sizeof(isRare[0])) &&
-            isRare[randomIDX] && usedEvent[randomIDX]) {
+        if (isRare[randomIDX] && usedEvent[randomIDX]) {
             continue;
         }
-
-        /* call event */
-        k = (*eventList[randomIDX])(player);
-
-        /* if rare and chosen, mark used */
-        if (randomIDX < (sizeof(isRare)/sizeof(isRare[0])) && isRare[randomIDX]) {
-            usedEvent[randomIDX] = 1;
-        }
-
-        break;
+        return randomIDX;
     }
-    return k;
+}
+
+int runEventByID(int eventID, players *player) {
+    if (eventID < 0 || eventID >= eventCount) return 0;
+
+    int result = (*eventList[eventID])(player);
+
+    if (isRare[eventID]) {
+        usedEvent[eventID] = 1;
+    }
+
+    return result;
 }
 
 

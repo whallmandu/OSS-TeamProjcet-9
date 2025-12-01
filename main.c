@@ -30,9 +30,10 @@ typedef struct{
     int savedSOS;             
     int savedRaft;            
     int savedUsedEvents[eventCount];
+    int savedEventID;
 } GameState;
 
-void gameSave(players *p) {
+void gameSave(players *p, int current) {
   FILE *fp = fopen("save.dat", "wb");
   if (fp == NULL) {
     printf("[Error] Failed to save game.\n");
@@ -50,6 +51,7 @@ void gameSave(players *p) {
   state.savedShelter = Shelter;
   state.savedSOS = SOS;
   state.savedRaft = Raft;
+  state.savedEventID = current;
 
   getUsedEvents(state.savedUsedEvents);
 
@@ -69,6 +71,8 @@ int gameLoad(players *p) {
   GameState state;
   fread(&state, sizeof(GameState), 1, fp);
   fclose(fp);
+
+  *p = state.savedPlayer;
 
   for(int i=0; i<itemCount; i++) {
     item[i] = state.savedItems[i];
@@ -92,12 +96,15 @@ int main() {
     printf("No setup.txt");
     return 0;
   }
+  
   int hungerIncrease, thirstIncrease;
   int hungerLevel, thirstLevel;  
   fscanf(setup, "%d %d", &hungerIncrease, &thirstIncrease);
   fscanf(setup, "%d %d", &hungerLevel, &thirstLevel);
   int hungerReduction = hungerIncrease / 2;
   int thirstReduction = thirstIncrease / 2;
+
+  int currentEventID = -1;
 
   //first setting
   players player;
@@ -113,13 +120,15 @@ int main() {
   scanf("%d", &choice);
   
   if (choice == 2) {
-      if (!loadGame(&player)) {
+      if (!gameLoad(&player)) {
            // 로드 실패 시 그냥 새 게임 진행 또는 종료
            printf("Starting New Game...\n");
       }
   }
 
   int quit = 0;
+  
+  //main loop
   while(player.Day <= 30) {
     if(player.Day == 1) {
       if(day1Event(&player) == 4) {
@@ -137,7 +146,8 @@ int main() {
       break;
     }
     else {
-      if(handleEvent(&player) == 4) {
+      if(currentEventID = -1) currentEventID = pickEventID();
+      if(runEventByID(currentEventID, &player) == 4) {
         quit = 1;
         break;
       }
@@ -206,6 +216,7 @@ int main() {
     else player.HP += 10; 
     
     //screen clear
+    currentEventID = -1;
     printf("\nPress Enter to Continue...");
     int input;
     while ((input = getchar()) != '\n' && input != EOF); // buffer clear
@@ -227,7 +238,9 @@ int main() {
   int S;
   printf("[1: Game save] [2: No save]\n");
   scanf("%d", &S);
-  if (S == 1) gameSave(player);
+  if (S == 1) {
+    gameSave(&player, currentEventID);
+  }
 
   //screen clear
   printf("Press Enter...");
