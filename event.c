@@ -1284,3 +1284,18 @@ int handleEvent(players *player) {
     }
     return k;
 }
+
+
+//Save
+void getUsedEvents(int *buffer) {
+    for (int i = 0; i < eventCount; i++) {
+        buffer[i] = usedEvent[i];
+    }
+}
+
+//Load
+void setUsedEvents(int *buffer) {
+    for (int i = 0; i < eventCount; i++) {
+        usedEvent[i] = buffer[i];
+    }
+}

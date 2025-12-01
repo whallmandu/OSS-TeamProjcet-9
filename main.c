@@ -22,6 +22,68 @@ const int itemCount = sizeof(item) / sizeof(item[0]);
 //extra setting
 int Shelter = 0; int SOS = 0; int Raft = 0;
 
+//save data
+typedef struct{
+  players savedPlayer;      
+    Item savedItems[9];     
+    int savedShelter;         
+    int savedSOS;             
+    int savedRaft;            
+    int savedUsedEvents[eventCount];
+} GameState;
+
+void gameSave(players *p) {
+  FILE *fp = fopen("save.dat", "wb");
+  if (fp == NULL) {
+    printf("[Error] Failed to save game.\n");
+    return;
+  }
+
+  GameState state;
+
+  state.savedPlayer = *p;
+
+  for(int i = 0; i < itemCount; i++) {
+    state.savedItems[i] = item[i];
+  }
+
+  state.savedShelter = Shelter;
+  state.savedSOS = SOS;
+  state.savedRaft = Raft;
+
+  getUsedEvents(state.savedUsedEvents);
+
+  fwrite(&state, sizeof(GameState), 1, fp);
+  fclose(fp);
+  printf("\n[Game Saved Successfully]\n");
+}
+
+//load game(success: 1, failue: 0)
+int gameLoad(players *p) {
+  FILE *fp = fopen("save.dat", "rb");
+  if (fp == NULL) {
+    printf("[Error] No save FILE.\n");
+    return 0;
+  }
+
+  GameState state;
+  fread(&state, sizeof(GameState), 1, fp);
+  fclose(fp);
+
+  for(int i=0; i<itemCount; i++) {
+    item[i] = state.savedItems[i];
+  }
+
+  Shelter = state.savedShelter;
+  SOS = state.savedSOS;
+  Raft = state.savedRaft;
+
+  setUsedEvents(state.savedUsedEvents);
+
+  printf("\n[Game Loaded Successfully]\n");
+  return 1;
+}
+
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -45,9 +107,25 @@ int main() {
   player.Thirst = 0;
   srand(time(NULL));
 
+  //load game
+  int choice;
+  printf("[1: New Game] [2: Load Game]\n");
+  scanf("%d", &choice);
+  
+  if (choice == 2) {
+      if (!loadGame(&player)) {
+           // 로드 실패 시 그냥 새 게임 진행 또는 종료
+           printf("Starting New Game...\n");
+      }
+  }
+
+  int quit = 0;
   while(player.Day <= 30) {
     if(player.Day == 1) {
-      if(day1Event(&player) == 4) break;
+      if(day1Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
     } 
     else if(player.Day == 30) {
       //final event
@@ -59,13 +137,8 @@ int main() {
       break;
     }
     else {
-      if(handleEvent(&player) == 4) break;
-      /* check rescue flag set by ship event */
-      if(SOS) {
-        printf("==============================\n");
-        printf("A ship rescued you! You are saved!\n");
-        printf("Congratulations, survivor!\n");
-        printf("==============================\n");
+      if(handleEvent(&player) == 4) {
+        quit = 1;
         break;
       }
     }
@@ -148,6 +221,13 @@ int main() {
       break;
     }
   }
+
+  //save
+  system("cls");
+  int S;
+  printf("[1: Game save] [2: No save]\n");
+  scanf("%d", &S);
+  if (S == 1) gameSave(player);
 
   //screen clear
   printf("Press Enter...");

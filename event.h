@@ -46,5 +46,7 @@ int approachingStorm(players *player);
 ----------- Manager -----------
 */
 int handleEvent(players *player);
+void getUsedEvents(int *buffer);
+void setUsedEvents(int *buffer);
 
 #endif
