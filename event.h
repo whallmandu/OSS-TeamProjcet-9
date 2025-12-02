@@ -26,6 +26,12 @@ int bigTree(players *player);
 int findGroundWater(players *player);  
 int falmLeaves(players *player);     
 int fishingFish(players *player);    
+int event_weirdPlant(players *player);
+int event_twig(players *player);
+int event_cloth(players *player);
+int event_fishingNet(players *player);
+int event_stone(players *player);
+int event_rockRope(players *player);
 
 /*
 ----------- Rare / Special Events -----------

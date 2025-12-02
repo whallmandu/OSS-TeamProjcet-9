@@ -660,6 +660,125 @@ int event_palm_leaves(players *player) {
     return 0;
 }
 
+/* 7) WeirdPlantEvent*/
+int event_weirdPlant(players *player) {
+    int choice;
+    printf("You discover a strange plant.\n");
+    printf("1) Eat it  2) Ignore it\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        int success = rand() % 2; // 0 = fail, 1 = success
+
+        if (success == 0) {
+            printf("You feel stomach pain...\n");
+            player->health -= 10;   // 패널티
+            return 0;
+        } else {
+            printf("Your body feels energized!\n");
+            player->health += 10;   // 보상
+            return 1;
+        }
+    } else {
+        printf("You ignore the mysterious plant.\n");
+        return 2;
+    }
+}
+
+/* 8) TwigEvent*/
+int event_twig(players *player) {
+    int choice;
+    printf("You find a pile of dry twigs.\n");
+    printf("1) Collect them  2) Walk past\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("You collected the twigs.\n");
+        player->wood += 1;
+        return 1;
+    } else {
+        printf("You decided to walk past.\n");
+        return 2;
+    }
+}
+
+/* 9) ClothEvent*/
+int event_cloth(players *player) {
+    int choice;
+    printf("You find a piece of cloth on the beach.\n");
+    printf("1) Pick it up  2) Walk past\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("You picked up the cloth.\n");
+        player->cloth += 1;
+        return 1;
+    } else {
+        printf("You ignore the cloth.\n");
+        return 2;
+    }
+}
+
+/* 10) FishingNetEvent*/
+int event_fishingNet(players *player) {
+    int choice;
+    printf("You find a torn fishing net.\n");
+    printf("1) Take it  2) Walk past\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("You recovered the rope.\n");
+        player->rope += 1;
+        return 1;
+    } else {
+        printf("You decide to walk past.\n");
+        return 2;
+    }
+}
+
+/* 11) StoneEvent*/
+int event_stone(players *player) {
+    int choice;
+    printf("You see several stones near the water.\n");
+    printf("1) Pick them up  2) Walk past\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("You collected the stones.\n");
+        player->stone += 1;
+        return 1;
+    } else {
+        printf("You walk past the stones.\n");
+        return 2;
+    }
+}
+
+/* 12) RockRopeEvent*/
+int event_rockRope(players *player) {
+    int choice;
+    printf("You find old rope stuck between rocks.\n");
+    printf("1) Try to pull it out  2) Ignore it\n> ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        int success = rand() % 2;
+
+        if (success == 0) {
+            printf("Your hand was cut by a sharp rock!\n");
+            player->health -= 10;
+            return 0;
+        } else {
+            printf("You successfully retrieved the rope.\n");
+            player->rope += 1;
+            return 1;
+        }
+
+    } else {
+        printf("You walk away from the danger.\n");
+        return 2;
+    }
+}
+
 
 
 
@@ -1298,3 +1417,5 @@ void setUsedEvents(int *buffer) {
         usedEvent[i] = buffer[i];
     }
 }
+
+
