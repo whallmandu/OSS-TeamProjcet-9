@@ -117,7 +117,7 @@ Throughout the game, the player collects:
 Food → restores Hunger
 Water → restores Thirst
 Wood → used for crafting
-Palm leaves → shelter or rope crafting
+Leaves → shelter or rope crafting
 Rope → triggers certain special events
 Resources are essential for navigating choices and unlocking events.
 
