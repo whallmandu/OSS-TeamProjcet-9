@@ -1,30 +1,93 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "event.h"
 
 
 //item setting
 Item item[] = {
-  {0, "develop", 0}, //this is debuging item. plz it is first.
+  {0, "develop", 0}, //debug
   {1, "food", 0},
   {2, "water", 0},
-  {3, "wood", 0},
-  {4, "stone", 0},
-  {5, "herb", 0},
+  {3, "rope", 0},
+  {4, "leaves", 0},
+  {5, "wood", 0},
   {6, "cloth", 0},
-  {7, "metal", 0},
-  {8, "rope", 0},
-  {9, "lighter", 0},
-  {10, "knife", 0},
-  {11, "fishingrod", 0},
-  {12, "gun", 0}
+  {7, "stone", 0},
+  {8, "knife", 0}
 };
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
+//extra setting
+int Shelter = 0; int SOS = 0; int Raft = 0;
 
-//extra settingl
-int home; int resque; int raft;
+//save data
+typedef struct{
+  players savedPlayer;      
+    Item savedItems[9];     
+    int savedShelter;         
+    int savedSOS;             
+    int savedRaft;            
+    int savedUsedEvents[eventCount];
+    int savedEventID;
+} GameState;
+
+void gameSave(players *p, int current) {
+  FILE *fp = fopen("save.dat", "wb");
+  if (fp == NULL) {
+    printf("[Error] Failed to save game.\n");
+    return;
+  }
+
+  GameState state;
+
+  state.savedPlayer = *p;
+
+  for(int i = 0; i < itemCount; i++) {
+    state.savedItems[i] = item[i];
+  }
+
+  state.savedShelter = Shelter;
+  state.savedSOS = SOS;
+  state.savedRaft = Raft;
+  state.savedEventID = current;
+
+  getUsedEvents(state.savedUsedEvents);
+
+  fwrite(&state, sizeof(GameState), 1, fp);
+  fclose(fp);
+  printf("\n[Game Saved Successfully]\n");
+}
+
+//load game(success: 1, failue: 0)
+int gameLoad(players *p) {
+  FILE *fp = fopen("save.dat", "rb");
+  if (fp == NULL) {
+    printf("[Error] No save FILE.\n");
+    return 0;
+  }
+
+  GameState state;
+  fread(&state, sizeof(GameState), 1, fp);
+  fclose(fp);
+
+  *p = state.savedPlayer;
+
+  for(int i=0; i<itemCount; i++) {
+    item[i] = state.savedItems[i];
+  }
+
+  Shelter = state.savedShelter;
+  SOS = state.savedSOS;
+  Raft = state.savedRaft;
+
+  setUsedEvents(state.savedUsedEvents);
+
+  printf("\n[Game Loaded Successfully]\n");
+  return 1;
+}
+
 
 int main() {
   FILE *setup = fopen("setup.txt", "r");
@@ -33,33 +96,46 @@ int main() {
     printf("No setup.txt");
     return 0;
   }
-  int hungerIncrease, thirstIncrease, fatigueIncrease;
-  int hungerLevel, thirstLevel, fatigueLevel;  
-  fscanf(setup, "%d %d %d", &hungerIncrease, &thirstIncrease, &fatigueIncrease);
-  fscanf(setup, "%d %d %d", &hungerLevel, &thirstLevel, &fatigueLevel);
+  
+  int hungerIncrease, thirstIncrease;
+  int hungerLevel, thirstLevel;  
+  fscanf(setup, "%d %d", &hungerIncrease, &thirstIncrease);
+  fscanf(setup, "%d %d", &hungerLevel, &thirstLevel);
+  int hungerReduction = hungerIncrease / 2;
+  int thirstReduction = thirstIncrease / 2;
 
-
-  //if(save data) player, data, eventN in save
-  //else
+  int currentEventID = -1;
 
   //first setting
   players player;
   player.Day = 1;
-  player.HP = 50;
-  player.Fatigue = 0;
+  player.HP = 40;
   player.Hunger = 0;
   player.Thirst = 0;
   srand(time(NULL));
 
+  //load game
+  int choice;
+  printf("[1: New Game] [2: Load Game]\n");
+  scanf("%d", &choice);
+  
+  if (choice == 2) {
+      if (!gameLoad(&player)) {
+           // 로드 실패 시 그냥 새 게임 진행 또는 종료
+           printf("Starting New Game...\n");
+      }
+  }
 
+  int quit = 0;
+  
+  //main loop
   while(player.Day <= 30) {
     if(player.Day == 1) {
-      if(day1Event(&player) == 4) break;
+      if(day1Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
     } 
-    //else if(player.Day == 10) {
-    //   //Day 10 event
-    // } else if(player.Day == 20) {
-    //   //Day 20 event}
     else if(player.Day == 30) {
       //final event
       printf("==============================\n");
@@ -69,64 +145,86 @@ int main() {
       printf("==============================\n");
       break;
     }
-    // } else if(player.HP <= 5) {
-    //   //lowHP event
-    // } else if(player.Hunger >= 50) {
-    //   //highHunger event
-    // } else if(player.Thirst >= 50) {
-    //   //highThirst event
-    // } else if(player.Fatigue >=70) {
-    //   //highFatigue event
-    // } 
-    else{ //the other
-      //random event
-      if(handleEvent(&player) == 4) break;
-    }
-
-    //Next Day
-    player.Day++;
-    //Hunger
-    if(player.Hunger >= 0) {
-      if(item[1].count > 0) { 
-          item[1].count--;
-          player.Hunger -= hungerIncrease; 
-          if(player.Hunger < 0) player.Hunger = 0;
-      } else { //No food
-          if(player.Hunger >= hungerLevel) player.HP -= 5;
-          player.Hunger += hungerIncrease; 
+    else {
+      if(currentEventID = -1) currentEventID = pickEventID();
+      if(runEventByID(currentEventID, &player) == 4) {
+        quit = 1;
+        break;
       }
     }
 
-    //Thirst
-    if(player.Thirst >= 0) {
-        if(item[2].count > 0) { 
-            item[2].count--;
-            player.Thirst -= thirstIncrease; 
-            if(player.Thirst < 0) player.Thirst = 0;
-        } else { //No water
-            if(player.Thirst >= thirstLevel) player.HP -= 5;
-            player.Thirst += thirstIncrease; 
-        }
+    //Next Day increments and resource consumption
+    player.Day++;
+    
+    //Setup HP
+    if(player.HP > MAX_HP) player.HP = MAX_HP;
+    
+    //Hunger
+    if(item[1].count <= 0) {
+      player.Hunger += hungerIncrease;
+      if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
+    } else {
+      printf("\n==============================\n");
+      printf("How many portions of food would you like to eat?\n");
+      printf("Now Food * %d\n", item[1].count);
+      printf("==============================\n");
+      int n;
+      while(1) {
+        scanf("%d", &n);
+        if(n < 0 || n > item[1].count) printf("worong input!\n");
+        else break;
+      }
+      player.Hunger -= n * hungerReduction;
+      item[1].count -= n;
+      if(n == 0) {
+        player.Hunger += hungerIncrease;
+        if(player.Hunger > MAX_Hunger) player.Hunger = MAX_Hunger; 
+      }
     }
+    if(player.Hunger >= hungerLevel) player.HP -= 5;
+    if(player.Hunger < 0) player.Hunger = 0;
+    
 
-    //Fatigue
-    if(player.Fatigue >= fatigueLevel) player.HP -= 5;
-    player.Fatigue += fatigueIncrease;
+    //Thirst
+    if(item[2].count <= 0) {
+      player.Thirst += thirstIncrease;
+      if(player.Thirst > MAX_Thirst) player.Thirst = MAX_Thirst; 
+    } else {
+      printf("\n==============================\n");
+      printf("How many portions of water would you like to eat?\n");
+      printf("Now Water * %d\n", item[2].count);
+      printf("==============================\n");
+      int n;
+      while(1) {
+        scanf("%d", &n);
+        if(n < 0 || n > item[2].count) printf("worong input!\n");
+        else break;
+      }
+      player.Thirst -= n * thirstReduction;
+      item[2].count -= n;
+      if(n == 0) {
+        player.Thirst += thirstIncrease;
+        if(player.Thirst > MAX_Thirst) player.Thirst = MAX_Thirst; 
+      }
+    }
+    if(player.Thirst >= thirstLevel) player.HP -= 5;
+    if(player.Thirst < 0) player.Thirst = 0;
+    
 
-
-      
+    // Home HP
+    if(Shelter != 5) player.HP += Shelter + 1;
+    else player.HP += 10; 
     
     //screen clear
-    printf("Press Enter to Continue...");
+    currentEventID = -1;
+    printf("\nPress Enter to Continue...");
     int input;
     while ((input = getchar()) != '\n' && input != EOF); // buffer clear
     while ((input = getchar()) != '\n' && input != EOF);
-    printf("\x1b[2J\x1b[H");
+    system("cls");
     
 
-
-
-    //Death - Endig 1
+    //Death - Ending 1
     if(player.HP <= 0) {
       printf("==============================\n");
       printf("You are dead.\n");
@@ -135,7 +233,21 @@ int main() {
     }
   }
 
+  //save
+  system("cls");
+  int S;
+  printf("[1: Game save] [2: No save]\n");
+  scanf("%d", &S);
+  if (S == 1) {
+    gameSave(&player, currentEventID);
+  }
 
+  //screen clear
+  printf("Press Enter...");
+  int input;
+  while ((input = getchar()) != '\n' && input != EOF); 
+  while ((input = getchar()) != '\n' && input != EOF); 
+  
 
 
   return 0;
