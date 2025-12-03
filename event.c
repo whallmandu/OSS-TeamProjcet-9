@@ -3,10 +3,9 @@
 #include <time.h>
 #include "event.h"
 
-//Shelter, Sos signal, Raft
+//Shelter, Sos signal
 extern int Shelter;
 extern int SOS;
-extern int Raft;
 
 
 
@@ -127,7 +126,7 @@ int event_rock_shade(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You find a cool, shaded area under a large rock. It looks like a comfortable place to rest.\n");
+    printf("You find a cool, shaded area under a large rock.\nIt looks like a comfortable place to rest.\n");
 
     int n;
     while (1) {
@@ -850,7 +849,6 @@ int shipwreck(players *player) {
             printf("[SOS signal LV +3]\n");
             printf("==============================\n");
             SOS += 3;
-            if(SOS > 5) SOS = 5;
         }
         else { //faiure
             printf("==============================\n");
@@ -1097,14 +1095,14 @@ int event_ship_signal(players *player) {
             printf("You quickly gather wood, set a fire, and the ship changes course toward you.\n");
             printf("You are rescued!\n");
             printf("==============================\n");
-            SOS = 1;
+            SOS += 1;
         } else {
             int r = rand() % 3;
             if(r == 0) {
                 printf("==============================\n");
                 printf("Against the odds, your small fire attracts the ship. You are rescued!\n");
                 printf("==============================\n");
-                SOS = 1;
+                SOS += 1;
             } else {
                 printf("==============================\n");
                 printf("Your fire wasn't enough; the ship doesn't see you.\n");

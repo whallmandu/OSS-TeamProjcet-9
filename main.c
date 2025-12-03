@@ -20,15 +20,14 @@ Item item[] = {
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
 //extra setting
-int Shelter = 0; int SOS = 0; int Raft = 0;
+int Shelter = 0; int SOS = 0;
 
 //save data
 typedef struct{
   players savedPlayer;      
     Item savedItems[9];     
     int savedShelter;         
-    int savedSOS;             
-    int savedRaft;            
+    int savedSOS;                       
     int savedUsedEvents[eventCount];
     int savedEventID;
 } GameState;
@@ -50,7 +49,6 @@ void gameSave(players *p, int current) {
 
   state.savedShelter = Shelter;
   state.savedSOS = SOS;
-  state.savedRaft = Raft;
   state.savedEventID = current;
 
   getUsedEvents(state.savedUsedEvents);
@@ -80,7 +78,6 @@ int gameLoad(players *p) {
 
   Shelter = state.savedShelter;
   SOS = state.savedSOS;
-  Raft = state.savedRaft;
 
   setUsedEvents(state.savedUsedEvents);
 
@@ -212,7 +209,9 @@ int main() {
     
 
     // Home HP
-    if(Shelter != 5) player.HP += Shelter + 1;
+    if(Shelter > 4) Shelter = 4;
+    if(SOS > 4) SOS = 4;
+    if(Shelter != 4) player.HP += Shelter + 1;
     else player.HP += 10; 
     
     //screen clear
