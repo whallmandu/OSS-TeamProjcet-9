@@ -27,40 +27,117 @@ void checkR() {
 FIXED EVENT (day1)
 ============================================
 */
+int day1_1(players *player) {
+    printf("\n");
+    printf("You walk into the forest of the island.\n");
+    printf("The forest is dense with and unknown plants, \nand there are signs of wild animals, making exploration difficult.\n")
+    printf("However, you discover a durian tree.\n");
+    printf("How will you collect the fruit?\n");
+
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Shake the tree] [3: Climb the tree] [4: Do not collect] [0: Quit]\n");
+        if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
+        if(n==1) checkR();
+        else if(n >= 2 && n <= 4) break;
+        else if(n==0) return 4; //this is 'Quit' return data. only 4.
+        else printf("wrong input!\n");
+    }
+
+
+    printf("==============================\n");
+    if(n == 2) {
+        int r = rand() % 2;
+        if(r == 1) { //success
+            printf("You shake the tree and obtain durians.\n");
+            printf("[food +3]\n");
+            item[1].count += 3;
+        }
+        else { //failed
+            printf("You are injured by the spikes of a durian falling from the tree.\n");
+            printf("[HP -15]\n");
+            player->HP -= 15;
+        }
+    }
+    else if(n == 3) {
+        int r = rand() % 10;
+        if(r == 1) { //success
+            printf("You are lucky and successfuily obtain durians without injury.\n");
+            printf("[food +3]\n");
+            item[1].count += 3;
+        }
+        else { //failed
+            printf("You fall while climbing the tree.\n");
+            printf("[HP -10]\n");
+            player->HP -= 10;
+        }
+    }
+    else if(n == 4) {
+        printf("You decide not to collect the durians to avoid the risk of injury.\n");
+    }
+    printf("==============================\n");
+
+    return 0;
+}
+
+int day1_2(players *player) {
+    printf("\n");
+    printf("You start exploring the area around the coastline.\n");
+    printf("After walking for a while, you come across a shabby wooden structure.\n")
+    printf("Will you explore the structure?\n");
+
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Explore] [3: Do not explore] [0: Quit]\n");
+        if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
+        if(n==1) checkR();
+        else if(n >= 2 && n <= 3) break;
+        else if(n==0) return 4; //this is 'Quit' return data. only 4.
+        else printf("wrong input!\n");
+    }
+
+
+    printf("==============================\n");
+    if(n == 2) {
+        printf("Upon exploring the structure, \nyou realize it was previously used as a military observation post.\n");
+        printf("You tidy it up and make it your temporary shelter.\n");
+        printf("[Shelter LV +1]\n");
+        Shelter++;
+    }
+    else if(n == 3) {
+        printf("You decide not to explore the unknown structure, just in case.\n");
+    }
+    printf("==============================\n");
+
+    return 0;
+}
+
 int day1Event(players *player) {
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
     printf("==============================\n\n");
 
-    printf("First day.\n");
+    printf("You have been stranded on a deserted island.\n");
+    printf("Fortunately, a snack you bought before departure and a bottle of water washed up on the beach.\n");
+    printf("However, at this rate, you will starve to death.\n");
+    printf("For now, in order to survive, which area will you explore?\n");
+    printf("[food +1] [water +1]\n");
+    item[1].count++;
+    item[2].count++;
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Go seashore] [0: Quit]\n");
+        printf("[1: Check resources] [2: Inland] [3: Coastline] [4: Far out to sea] [0: Quit]\n");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
-        else if(n==2) break;
+        else if(n >= 2 && n <= 4) break;
         else if(n==0) return 4; //this is 'Quit' return data. only 4.
         else printf("wrong input!\n");
     }
 
-    if(n==2) {
-        int r = rand()%2;
-        if(r==1) {
-            printf("==============================\n");
-            printf("You find wood!\n");
-            printf("[wood +3]\n");
-            printf("==============================\n");
-            item[5].count += 3;
-        } else {
-            printf("==============================\n");
-            printf("You find food\n");
-            printf("[food +1]\n");
-            printf("==============================\n");
-            item[1].count++;
-        }
-    }
+    if(n==2) return day1_1(player);
+    
 
     return 0;
 }
