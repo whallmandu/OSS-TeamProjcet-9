@@ -133,7 +133,13 @@ int main() {
       }
     }
     else if(player.Day == 10) {
-      if(day1Event(&player) == 4) {
+      if(day10Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
+    }
+    else if(player.Day == 20) {
+      if(day20Event(&player) == 4) {
         quit = 1;
         break;
       }

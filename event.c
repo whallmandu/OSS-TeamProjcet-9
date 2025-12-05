@@ -145,7 +145,92 @@ int day1Event(players *player) {
         printf("==============================\n");
     }
     
+    return 0;
+}
 
+int day10Event(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day); //Day data
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
+    printf("==============================\n\n");
+
+    printf("After drifting on a deserted island for ten days, you begin to seriously consider escaping, \nand you also feel the need to reinforce your shelter.\n");
+    printf("But you don't have enough time to fully commit to both.\n");
+    printf("Which one will you focus on?\n");
+
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Escaping] [3: Reinforcing the shelter] [0: Quit]\n");
+        if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
+        if(n==1) checkR();
+        else if(n >= 2 && n <= 3) break;
+        else if(n==0) return 4; //this is 'Quit' return data. only 4.
+        else printf("wrong input!\n");
+    }
+
+    if(n==2) {
+        printf("==============================\n");
+        printf("You decide to concentrate more on escaping.\n");
+        printf("Using the distress signal techniques you already knew, \nyou arrange large \"SOS\" and \"HELP\" signs on the shore using wooden sticks.\n");
+        printf("You also plan to create smoke during the day \nand keep a fire burning at night to signal for resque.\n")
+        printf("[SOS LV +1]")
+        printf("==============================\n");
+        SOS += 1;
+    }
+    else if(n==3) {
+        printf("==============================\n");
+        printf("You recall the fear and discomfort you felt every night while trying to sleep, and choose to strengthen your shelter.\n");
+        printf("You cover the roof with palm leaves, reinforce the walls with branches and soil, \ncraft a sleeping platform out of logs, \nand dig drainage channels to prevent rainwater from accumulating.\n");
+        printf("[Shelter LV +1]")
+        printf("==============================\n");
+        Shelter += 1;
+    }
+    
+    return 0;
+}
+
+int day20Event(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day); //Day data
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
+    printf("==============================\n\n");
+
+    printf("You wake up as usual and look out toward the sea.\n");
+    printf("In the distance, you see an unidentified vessel.\n");
+    printf("You don't know what purpose it has for sailing, but the sight of it makes you want to escape, \nso you consider sending a distress signal.\n");
+    printf("Will you send the signal?\n");
+
+    int n;
+    while(1) {
+        printf("[1: Check resources] [2: Send it] [3: Do not send it] [0: Quit]\n");
+        if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
+        if(n==1) checkR();
+        else if(n >= 2 && n <= 3) break;
+        else if(n==0) return 4; //this is 'Quit' return data. only 4.
+        else printf("wrong input!\n");
+    }
+
+    if(n==2) {
+        printf("==============================\n");
+        printf("You send a distress signal toward the unidentified vessel.\n");
+        printf("However, it turns out to be a pirate ship that raids during its voyages, and pirates destroy your shelter.\n");
+        printf("[Shelter LV -2]\n");
+        printf("==============================\n");
+        Shelter -= 2;
+        if(Shelter < 0) Shelter = 0;
+    }
+    else if(n==3) {
+        printf("==============================\n");
+        printf("You decide not to send a distress signal, thinking the vessel might be a pirate ship.\n");
+        printf("At that moment, a crate that fell from ship drifts onto the shore.\n");
+        printf("Carefully opening it, you find food and various supplies inside.")
+        printf("[food +3] [water +1] [wood +2]\n");
+        printf("==============================\n");
+        item[1].count += 3;
+        item[2].count += 1;
+        item[5].count += 2;
+    }
+    
     return 0;
 }
 
