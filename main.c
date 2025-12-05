@@ -131,7 +131,13 @@ int main() {
         quit = 1;
         break;
       }
-    } 
+    }
+    else if(player.Day == 10) {
+      if(day1Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
+    }
     else if(player.Day == 30) {
       //final event
       printf("==============================\n");

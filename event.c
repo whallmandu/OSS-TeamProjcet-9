@@ -137,6 +137,13 @@ int day1Event(players *player) {
     }
 
     if(n==2) return day1_1(player);
+    else if(n==3) return day1_2(player);
+    else if(n == 4) {
+        printf("==============================\n");
+        printf("Hoping there might be other land nearby, you start swimming.\n");
+        printf("However, you see no land and drown.\n");
+        printf("==============================\n");
+    }
     
 
     return 0;
