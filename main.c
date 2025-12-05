@@ -118,7 +118,6 @@ int main() {
   
   if (choice == 2) {
       if (!gameLoad(&player)) {
-           // 로드 실패 시 그냥 새 게임 진행 또는 종료
            printf("Starting New Game...\n");
       }
   }
