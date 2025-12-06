@@ -10,6 +10,8 @@
 ----------- Fixed Event -----------
 */
 int day1Event(players *player);
+int day10Event(players *player);
+int day20Event(players *player);
 
 /*
 ----------- Normal Events -----------

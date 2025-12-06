@@ -1,0 +1,147 @@
+Survivor’s Choice – Game Rules
+30-Day Deserted Island Survival Simulation Game
+Language: C
+
+#1. Game Overview :
+This game is a 30-day survival game set on an uninhabited island.
+The player encounters one event per day and must choose how to act.
+Each decision affects the player’s survival stats and may influence branching paths and multiple endings.
+The core goal is :
+Survive until Day 30.
+Your choices determine whether you escape, die, or uncover secret endings.
+
+
+
+
+#2. Player Stats :
+The player’s condition is represented through three core stats ->
+HP (Health): If HP reaches 0 → Game Over
+Hunger: Affects condition over time, reduced by eating
+Thirst: Must be managed daily, reduced by drinking water
+These stats appear at the start of every event:
+==============================
+Day X //(X is Realnumeber)
+[HP: ##] [Hunger: ##] [Thirst: ##]
+==============================
+
+
+
+
+#3. Daily Event Structure :
+Each day, one event is triggered.
+Events are categorized as:
+-Normal Events (common daily situations)
+-Rare Events (low-probability special events)
+-Fixed Events (appear only under certain conditions)
+Every event follows the same structure:
+1 Day & player stats displayed
+2 Event text appears (English + Korean for actual game)
+3 Player chooses from available options
+4 Stats or items change based on the result
+5 Move to next day
+
+
+
+
+#4. Choice System
+Each event provides three main choices:
+1: Check resources
+Displays current item inventory. Does not progress the event.
+2~n: Situation-specific actions
+Hunting, eating, resting, exploring, etc.
+0: Quit
+Used for exiting debugging or terminating an event early.
+Some choices are marked as risky, meaning they can result in random success or failure through rand().
+Example of risky outcomes:
+Success → gain food/water/items, or restore HP
+Failure → lose HP, lose items, or miss opportunities
+Certain choices appear only under item or stat conditions
+(e.g., rope ≥ 1, wood ≥ 10, etc.).
+
+
+
+
+#5. Example In-Game Event (Code & Interface)
+Below is a short example showing how an event works.
+int event_tree_hole(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
+    printf("==============================\n\n");
+
+    printf("You find a large tree with a hole in its trunk.\n");
+
+    int n;
+    while (1) {
+        printf("[1: Check resources] [2: Put your hand inside] [3: Walk past] [0: Quit]\n");
+        if (scanf("%d",&n)!=1){while(getchar()!='\n');continue;}
+        if(n==1) checkR();
+        else if(n==2||n==3||n==0) break;
+        else printf("wrong input!\n");
+    }
+
+    if (n==0) return 4;
+
+    if (n==2) {
+        int r = rand()%2;
+        if (r==0) { player->HP -=10; printf("[HP -10]\n"); }
+        else      { item[1].count +=1; printf("[food +1]\n"); }
+    }
+    else printf("You walk past the tree.\n");
+
+    return 0;
+}
+What the Player Sees
+==============================
+Day 7
+[HP: 62] [Hunger: 30] [Thirst: 41]
+==============================
+
+You find a large tree with a hole in its trunk.
+
+[1: Check resources] 
+[2: Put your hand inside (risky)] 
+[3: Walk past] 
+[0: Quit]
+
+==POSSIBLE RESULTS==
+Success -> "You find eggs.' -> food +1 ;
+Failure -> "A bird pecks you!" -> HP -10;
+This example represents the basic structure of all events.
+
+
+
+#6. Items and Resource Management :
+Throughout the game, the player collects:
+Food → restores Hunger
+Water → restores Thirst
+Wood → used for crafting
+Leaves → shelter or rope crafting
+Rope → triggers certain special events
+Resources are essential for navigating choices and unlocking events.
+
+
+
+#7. Endings :
+The game features multiple endings, influenced by:
+Final stats
+Player decisions
+Key items obtained
+Hidden conditions and rare events
+Possible outcomes include:
+Successful Rescue (Good Ending)
+Neutral Escape / Barely Survived
+Bad Ending (death from HP, dehydration, starvation)
+Secret Endings (item-dependent or route-dependent)
+
+
+
+
+#8. Additional Notes :
+The game is purely text-based (console interface).
+All text is written in English in the code, with Korean variants in design documents.
+Player input is always numeric.
+Any non-numeric input resets the prompt.
+Random results use rand(), so outcomes vary each playthrough.
+This document summarizes gameplay flow; detailed event data is stored separately.
