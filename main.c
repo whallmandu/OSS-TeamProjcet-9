@@ -253,12 +253,15 @@ int main() {
   }
 
   //save
-  int S;
-  printf("\n\n[1: Game save] [2: No save]\n");
-  scanf("%d", &S);
-  if (S == 1) {
-    gameSave(&player, currentEventID);
+  if(quit == 1) {
+    int S;
+    printf("\n\n[1: Game save] [2: No save]\n");
+    scanf("%d", &S);
+    if (S == 1) {
+      gameSave(&player, currentEventID);
+    }
   }
+  
 
   //screen clear
   printf("Press Enter...");

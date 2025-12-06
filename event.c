@@ -8,11 +8,6 @@
 extern int Shelter;
 extern int SOS;
 
-void gotoxy(int x, int y) {
-    COORD pos = { x, y };
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-}
-
 
 // image print
 void drawImage(int x, int y, const char* filename) {
@@ -153,7 +148,6 @@ int day1_2(players *player) {
 }
 
 int day1Event(players *player) {
-    drawImage(900, 0, "image\\Day1.bmp");
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
@@ -166,6 +160,8 @@ int day1Event(players *player) {
     printf("[food +1] [water +1]\n");
     item[1].count++;
     item[2].count++;
+
+    drawImage(900, 0, "image\\Day1.bmp");
 
     int n;
     while(1) {
@@ -191,7 +187,6 @@ int day1Event(players *player) {
 }
 
 int day10Event(players *player) {
-    drawImage(900, 0, "image\\Day10.bmp");
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
@@ -200,6 +195,8 @@ int day10Event(players *player) {
     printf("After drifting on a deserted island for ten days, you begin to seriously consider escaping, \nand you also feel the need to reinforce your shelter.\n");
     printf("But you don't have enough time to fully commit to both.\n");
     printf("Which one will you focus on?\n");
+
+    drawImage(900, 0, "image\\Day10.bmp");
 
     int n;
     while(1) {
@@ -216,7 +213,7 @@ int day10Event(players *player) {
         printf("You decide to concentrate more on escaping.\n");
         printf("Using the distress signal techniques you already knew, \nyou arrange large \"SOS\" and \"HELP\" signs on the shore using wooden sticks.\n");
         printf("You also plan to create smoke during the day \nand keep a fire burning at night to signal for resque.\n");
-        printf("[SOS LV +1]");
+        printf("[SOS LV +1]\n");
         printf("==============================\n");
         SOS += 1;
     }
@@ -233,7 +230,6 @@ int day10Event(players *player) {
 }
 
 int day20Event(players *player) {
-    drawImage(900, 0, "image\\Day20.bmp");
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
@@ -243,6 +239,8 @@ int day20Event(players *player) {
     printf("In the distance, you see an unidentified vessel.\n");
     printf("You don't know what purpose it has for sailing, but the sight of it makes you want to escape, \nso you consider sending a distress signal.\n");
     printf("Will you send the signal?\n");
+
+    drawImage(900, 0, "image\\Day20.bmp");
 
     int n;
     while(1) {
@@ -620,7 +618,7 @@ int event_herbs(players *player) {
             printf("[HP +10] [food +1]\n");
             printf("==============================\n");
             player->HP += 10;
-   
+            item[1].count += 1;
         }
     }
    
@@ -801,6 +799,7 @@ int fishingFish(players *player) {
         printf("==============================\n");
         printf("You decide to save your energy and simply relax while looking our at the ocean horizon.\n");
         printf("[HP +6]\n");
+        printf("==============================\n");
         player->HP += 6;
     }
 
@@ -1235,14 +1234,14 @@ int event_waterfall(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Climb down (risky)] [2: Walk back] [0: Quit]\n");
+        printf("[1: Check resources] [2: Climb down (risky)] [3: Walk back] [0: Quit]\n");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
-        if(n==1 || n==2 || n==0) break;
+        if(n==2 || n==0 || n==3) break;
         printf("wrong input!\n");
     }
     if(n==0) return 4;
 
-    if(n==1) {
+    if(n==2) {
         int r = rand()%2;
         if(r==0) {
             printf("==============================\n");
