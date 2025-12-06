@@ -165,6 +165,13 @@ int main() {
 
     //Next Day increments and resource consumption
     player.Day++;
+    //Special Death
+    if(player.HP <= -100) {
+      printf("==============================\n");
+      printf("You are dead.\n");
+      printf("==============================\n");
+      break;
+    }
     
     //Setup HP
     if(player.HP > MAX_HP) player.HP = MAX_HP;
@@ -246,9 +253,8 @@ int main() {
   }
 
   //save
-  system("cls");
   int S;
-  printf("[1: Game save] [2: No save]\n");
+  printf("\n\n[1: Game save] [2: No save]\n");
   scanf("%d", &S);
   if (S == 1) {
     gameSave(&player, currentEventID);
