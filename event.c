@@ -1,15 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 #include "event.h"
 
 //Shelter, Sos signal
 extern int Shelter;
 extern int SOS;
 
+void gotoxy(int x, int y) {
+    COORD pos = { x, y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
 
 
-/* check resources */
+// image print
+void drawImage(int x, int y, const char* filename) {
+    // Console Handle
+    HWND consoleWindow = GetConsoleWindow();
+    if (!consoleWindow) return; 
+
+    // Setting
+    HDC hdc = GetDC(consoleWindow);
+    HDC memDC = CreateCompatibleDC(hdc);
+
+    // Image load
+    HBITMAP hBitmap = (HBITMAP)LoadImage(NULL, filename, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+
+    if (hBitmap == NULL) {
+        printf("IMAGE ERROR!\n");
+        return;
+    }
+
+    
+
+    SelectObject(memDC, hBitmap);
+
+    // Image size
+    BITMAP bm;
+    GetObject(hBitmap, sizeof(bm), &bm);
+
+    // print
+    BitBlt(hdc, x, y, bm.bmWidth, bm.bmHeight, memDC, 0, 0, SRCCOPY);
+
+    // clear
+    DeleteObject(hBitmap);
+    DeleteDC(memDC);
+    ReleaseDC(consoleWindow, hdc);
+}
+
+//Check Resources Function
 void checkR() {
     int flag = 0;
     for(int i=1; i<itemCount; i++) {
@@ -30,7 +70,7 @@ FIXED EVENT (day1)
 int day1_1(players *player) {
     printf("\n");
     printf("You walk into the forest of the island.\n");
-    printf("The forest is dense with and unknown plants, \nand there are signs of wild animals, making exploration difficult.\n")
+    printf("The forest is dense with and unknown plants, \nand there are signs of wild animals, making exploration difficult.\n");
     printf("However, you discover a durian tree.\n");
     printf("How will you collect the fruit?\n");
 
@@ -83,7 +123,7 @@ int day1_1(players *player) {
 int day1_2(players *player) {
     printf("\n");
     printf("You start exploring the area around the coastline.\n");
-    printf("After walking for a while, you come across a shabby wooden structure.\n")
+    printf("After walking for a while, you come across a shabby wooden structure.\n");
     printf("Will you explore the structure?\n");
 
     int n;
@@ -172,7 +212,7 @@ int day10Event(players *player) {
         printf("==============================\n");
         printf("You decide to concentrate more on escaping.\n");
         printf("Using the distress signal techniques you already knew, \nyou arrange large \"SOS\" and \"HELP\" signs on the shore using wooden sticks.\n");
-        printf("You also plan to create smoke during the day \nand keep a fire burning at night to signal for resque.\n")
+        printf("You also plan to create smoke during the day \nand keep a fire burning at night to signal for resque.\n");
         printf("[SOS LV +1]")
         printf("==============================\n");
         SOS += 1;
@@ -181,7 +221,7 @@ int day10Event(players *player) {
         printf("==============================\n");
         printf("You recall the fear and discomfort you felt every night while trying to sleep, and choose to strengthen your shelter.\n");
         printf("You cover the roof with palm leaves, reinforce the walls with branches and soil, \ncraft a sleeping platform out of logs, \nand dig drainage channels to prevent rainwater from accumulating.\n");
-        printf("[Shelter LV +1]")
+        printf("[Shelter LV +1]");
         printf("==============================\n");
         Shelter += 1;
     }
@@ -223,7 +263,7 @@ int day20Event(players *player) {
         printf("==============================\n");
         printf("You decide not to send a distress signal, thinking the vessel might be a pirate ship.\n");
         printf("At that moment, a crate that fell from ship drifts onto the shore.\n");
-        printf("Carefully opening it, you find food and various supplies inside.")
+        printf("Carefully opening it, you find food and various supplies inside.");
         printf("[food +3] [water +1] [wood +2]\n");
         printf("==============================\n");
         item[1].count += 3;
