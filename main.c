@@ -87,7 +87,7 @@ int gameLoad(players *p) {
 
 
 int main() {
-  system("mode con: cols=150 lines=35");
+  system("mode con: cols=190 lines=40");
   system("title Survival Island");
   FILE *setup = fopen("setup.txt", "r");
 

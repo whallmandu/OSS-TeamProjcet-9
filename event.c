@@ -153,6 +153,7 @@ int day1_2(players *player) {
 }
 
 int day1Event(players *player) {
+    drawImage(900, 0, "image\\Day1.bmp");
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
@@ -213,7 +214,7 @@ int day10Event(players *player) {
         printf("You decide to concentrate more on escaping.\n");
         printf("Using the distress signal techniques you already knew, \nyou arrange large \"SOS\" and \"HELP\" signs on the shore using wooden sticks.\n");
         printf("You also plan to create smoke during the day \nand keep a fire burning at night to signal for resque.\n");
-        printf("[SOS LV +1]")
+        printf("[SOS LV +1]");
         printf("==============================\n");
         SOS += 1;
     }
