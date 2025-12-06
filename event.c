@@ -190,6 +190,7 @@ int day1Event(players *player) {
 }
 
 int day10Event(players *player) {
+    drawImage(900, 0, "image\\Day10.bmp");
     printf("==============================\n");
     printf("Day %d\n", player->Day); //Day data
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
