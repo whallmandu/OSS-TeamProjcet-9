@@ -331,3 +331,108 @@ You suspected the animal might still be alive, so you ignored it and walked past
 (체력 -10)
 [3] 무시한다
 당신은 동물이 살아있을 것 같아 무시하고 지나갔습니다.
+
+토네이도 / The Tornado (희귀)
+You were walking along the coastline on a dark, gloomy day when it suddenly began to rain. As you looked out at the sea, you noticed a tornado forming in the distance. It looked smaller than you expected, but it was still powerful enough to cause serious damage. What will you do?
+[2] Enter the forest [3] Stay on the beach
+[2] Enter the forest
+You decided to head into the forest. Inside, you found a large tree and a deep pit. Where will you take shelter?
+{2} Under the large tree {3} Inside the deep pit
+{2} Under the large tree
+You chose to hide under the large tree. As the tornado approached, the tree was uprooted. It fell sideways and crushed you, causing severe injuries.
+(Health -30)
+{3} Inside the deep pit (Success 50%, Failure 50%)
+Success:
+You decided to take cover inside the deep pit. Fortunately, the tornado passed by without hitting you directly, and you escaped unharmed.
+Failure:
+You took cover inside the deep pit, but as the tornado passed nearby, flying debris struck you. A small branch pierced you, causing minor injuries.
+(Health -8)
+[3] Stay on the beach
+You believed you would be fine staying on the beach. However, the tornado reached the shore, swept you up, and you died while being carried away by the wind.
+(Death)
+
+당신은 어두운 날 해안가를 걷다가 갑자기 비가 오고 바다를 보니 저 멀리서 토네이도가 다가오는 것을 발견했습니다. 토네이도의 규모는 생각보다 작아 보이지만 그래도 막대한 피해가 있을 것으로 예상됩니다. 어떻게 하시겠습니까?
+[2] 숲 안으로 들어간다 [3] 해안가에 머무른다
+[2] 숲 안으로 들어간다
+당신은 숲 안으로 들어오기로 했습니다. 숲 안에 들어와 보니 큰 나무와 파인 구덩이가 있었습니다. 둘 중 어디에 피신하시겠습니까?
+{2} 큰 나무 아래 {3} 파인 구덩이 안
+{2} 큰 나무 아래
+당신은 큰 나무 아래에 숨기로 하였습니다. 토네이도가 다가온 순간, 큰 나무가 뿌리채 뽑혔습니다. 당신은 나무가 옆으로 쓰러져 크게 다쳤습니다.
+(체력 -30)
+[3] 파인 구덩이 안 (성공 50%, 실패 50%)
+성공 시
+당신은 파인 구덩이 안으로 들어가기로 했습니다. 그 때 토네이도는 다행히 지나갔고 당신은 피해 없이 넘겼습니다.
+실패 시
+당신은 파인 구덩이 안으로 들어가기로 했습니다. 그 때 토네이도로 인해 작은 나뭇가지가 당신은 찔렀고, 당신은 약한 피해를 입었습니다.
+(체력 -8)
+[3] 해안가에 머무른다
+당신은 해안가에 머물러도 괜찮다고 생각했습니다. 그 때 토네이도가 다가왔고, 당신은 토네이도에 휩쓸려 날아가던 중 사망했습니다.
+(사망)
+
+오래된 상자 / Old Chest (희귀)
+As you were walking through the forest, you happened to find a box buried in the soil. You brushed off the dirt and carefully lifted the box, realizing it was heavier than you expected. What will you do?
+[2] Open it carefully [3] Break it open [4] Ignore it
+[2] Open it carefully (Success 30%, Failure 70%)
+Success:
+You slowly opened the box. Inside, you found various supplies.
+(Wood +5, Stone +5, Rope +3)
+Failure:
+You slowly opened the box, but it turned out to be a trap. A sharp wooden spike sprang out and stabbed you, causing serious injury.
+(Health -15)
+[3] Break it open (Success 30%, Failure 70%)
+Success:
+You broke the box open. Due to the force, some materials were damaged.
+(Wood +2, Stone +2, Rope +1)
+Failure:
+You broke the box open, but it was a trap. You were stabbed by a wooden spike hidden inside, causing severe injury.
+(Health -25)
+[4] Ignore it
+You didn’t know what might be inside, so you decided to leave it and continue walking.
+
+당신은 숲 속을 걷다가 우연히 흙 속에 묻힌 상자를 발견했습니다. 당신은 상자에 묻은 흙을 털고 조심스럽게 상자를 들어 보았는데, 상자는 생각보다 무거웠습니다. 어떻게 하시겠습니까?
+[2] 조심스럽게 연다 [3] 부순다 [4] 무시한다
+[2] 조심스럽게 연다 (성공 30%, 실패 70%)
+성공 시
+당신은 상자를 천천히 열어 보았습니다. 안에는 여러 가지 물자가 들어 있었습니다.
+(목재 +5, 돌 +5, 밧줄 +3)
+실패 시
+당신은 상자를 천천히 열어 보았습니다. 하지만 그 상자는 함정이었습니다. 당신은 상자에서 튀어나온 날카로운 나뭇가지에 찔렸고, 크게 다쳤습니다.
+(체력 -15)
+[3] 부순다 (성공 30%, 실패 70%)
+성공 시
+당신은 상자를 부숴 열었습니다. 부순 탓에 여러 가지 물자가 손상되었습니다.
+(목재 +2, 돌 +2, 밧줄 +1)
+실패 시
+당신은 상자를 부숴 열었습니다. 하지만 그 상자는 함정이었습니다. 당신은 상자에 있었던 나뭇가지에 찔렸고, 크게 다쳤습니다.
+(체력 -25)
+[4] 무시한다
+당신은 상자에 무엇이 있을 지 몰라 그냥 지나갔습니다.
+
+지진 / The Earthquake (희귀)
+You were walking through the forest when you felt a slight tremor. Thinking it was nothing, you continued walking — but then the ground suddenly shook violently and began to crack. What will you do?
+[2] Stay in the forest [3] Go to the coast
+[2] Stay in the forest
+You decided to stay inside the forest. You quickly looked around and saw the entrance to a cave and a sloped path leading up a small mountain on the island. What will you do?
+{2} Enter the cave {3} Climb the mountain
+{2} Enter the cave
+You went inside the cave. At that moment, the cave collapsed, and you were crushed by falling rocks.
+(Death)
+{3} Climb the mountain
+You struggled but decided to climb the mountain. After climbing up and waiting for a while, the earthquake stopped.
+[3] Go to the coast
+You headed toward the coast. However, the earthquake triggered a tsunami, and you were swept away by the waves, suffering severe injuries.
+(Health -25)
+
+당신은 숲 속을 걷다가 약간의 진동을 느낍니다. 당신은 별 것 아니라고 생각하고 계속 걷고 있던 그 때, 갑자기 땅이 매우 크게 진동하고 갈라지는 것을 느낍니다. 어떻게 하시겠습니까?
+[2] 숲에 머무른다 [3] 해안가로 나간다
+[2] 숲에 머무른다
+당신은 숲 속에 머무르기로 했습니다. 당신은 급하게 주위를 둘러보니 동굴 입구와 무인도 내의 작은 산으로 올라가는 비탈길이 보입니다. 어떻게 하시겠습니까?
+{2} 동굴로 들어간다 {3} 산으로 올라간다
+{2} 동굴로 들어간다
+당신은 동굴 안으로 들어왔습니다. 그 때, 동굴은 무너졌고, 당신은 떨어진 바위에 깔려 사망했습니다.
+(사망)
+{3} 산으로 올라간다
+당신은 힘들지만 산으로 올라가기로 했습니다. 산으로 힘들게 올라가 잠깐동안 기다렸더니 잠시 후 지진이 멈췄습니다.
+[3] 해안가로 나간다
+당신은 해안가로 나아가기로 했습니다. 그 때 지진으로 인해 쓰나미가 발생했고 당신은 쓰나미에 쓸려 크게 다쳤습니다.
+(체력 -25)
