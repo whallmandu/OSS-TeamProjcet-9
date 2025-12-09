@@ -100,3 +100,84 @@ You decide not to send a distress signal, thinking the vessel might be a pirate 
 [3] 보내지 않는다
 당신은 정체 불명의 선체가 혹시 해적의 배일 생각이 들어 구조 신호를 보내지 않았습니다. 그 때 선체에서 떨어진 상자가 하나 해변으로 밀려 들어왔습니다. 조심스레 상자를 열어 보니 식량과 각종 물자가 들어 있었습니다.
 (식량 +3, 목재 +5, 식수 +1)
+
+해초 뭉치 / Seeweed Clump (일반)
+You are walking along the coastline when you discover a large bundle of seaweed near the water. If dried, it can be used as rope, and it can also serve as food. What will you do?
+[2] Dry it [3] Eat it [4] Ignore it
+[2] Dry it
+You decide to dry the seaweed and use it as rope.
+(Rope +3)
+[3] Eat it (Success 60%, Failure 40%)
+On Success
+You decide to take the seaweed as food. While drying it, you also manage to gather some drinking water.
+(Food +4, Water +3)
+On Failure
+You decide to take the seaweed as food. As you unravel it, a jellyfish suddenly emerges from the seaweed and stings you before drifting away. Fortunately, it wasn’t poisonous.
+(Health -6)
+[4] Ignore it
+You decide to ignore it, unsure of what might be hiding inside.
+
+당신은 해안가를 따라 걷다가 바다 가까이에 있는 커다란 해초 뭉치를 발견했습니다. 건조시키면 밧줄로 쓸 수 있고 식량으로 사용할 수도 있습니다. 어떻게 하시겠습니까?
+[2] 말린다 [3] 먹는다 [4] 무시한다
+[2] 말린다
+당신은 해초를 말려서 밧줄로 사용하기로 했습니다.
+(밧줄 +3)
+[3] 먹는다 (성공 60%, 실패 40%)
+성공 시
+당신은 해초를 식량으로써 챙기기로 했습니다. 해초를 말리며 식수 또한 구할 수 있었습니다.
+(식량 +4, 식수 +3)
+실패 시
+당신은 해초를 식량으로써 챙기기로 했습니다. 해초를 풀며 챙기려 했지만 갑자기 해파리가 해초에서 등장하여 당신을 쏘고 지나갔습니다. 다행히 독은 없는 해파리였습니다.
+(체력 -6)
+[4] 무시한다
+당신은 혹시 무엇이 숨어 있을 지 몰라 무시하고 지나갔습니다.
+
+풀 발견 / Herb Spotted (일반)
+You are walking through the forest when you come across a strangely shaped plant. It smells pleasantly fragrant, but you’re not sure whether it’s a medicinal herb or a poisonous one. What will you do?
+[2] Eat it [3] Ignore it
+[2] Eat it (50% success, 50% failure)
+Success:
+You pick the plant and eat it. It tastes slightly bitter, but you feel your body becoming lighter and your strength returning.
+(Health +20)
+Failure:
+You pick the plant and eat it. At first nothing happens, but soon after you start to feel stomach pain.
+(Health -8)
+[3] Ignore it
+You decide to walk past it, just in case it might be poisonous.
+
+당신은 숲을 걷다가 신기하게 생긴 풀을 발견했습니다. 냄새를 맡아 보니 향기로웠지만 약초인지 독초인지 모르겠습니다. 어떻게 하시겠습니까?
+[2] 섭취한다 [3] 무시한다
+[2] 섭취한다 (성공 50%, 실패 50%)
+성공 시
+당신은 그 풀을 채취해서 먹어 보았습니다. 맛은 약간 쓰지만 몸이 가벼워지고 힘이 나는 것이 느껴집니다.
+(체력 +20)
+실패 시
+당신은 그 풀을 채취해서 먹어 보았습니다. 아무 변화가 없었지만 잠시 후 당신은 배가 아파지는 것을 느꼈습니다.
+(체력 -8)
+[3] 무시한다
+당신은 혹시 독이 있을 지 몰라 그냥 지나갔습니다.
+
+호수 안 물고기 / Fish inside the Lake (일반)
+As you walk through the forest, you come across a small lake. Inside, a few fish are swimming around. What will you do?
+[2] Catch them [3] Ignore them
+[2] Catch them (40% success, 60% failure)
+Success:
+You reach into the small lake and easily manage to catch a fish.
+(Food +3)
+Failure:
+You stretch your hand into the lake, but a rustling noise behind yo   u startles you so much that you fall into the water.
+(Health -5)
+[3] Ignore them
+You look at the fish and decide they don’t seem edible, so you leave them and move on.
+
+당신은 숲을 걷다가 작은 호수를 발견했고, 그 안에는 물고기가 몇 마리 헤엄치고 있었습니다. 어떻게 하시겠습니까?
+[2] 잡는다 [3] 무시한다
+[2] 잡는다 (성공 40%, 실패 60%)
+성공 시
+당신은 작은 호수에 손을 넣어 손쉽게 물고기를 잡아냈습니다.
+(식량 +3)
+실패 시
+당신은 작은 호수에 손을 뻗었습니다. 하지만 뒤에서 바스락거리는 소리에 크게 놀라 당신은 호수 안으로 빠졌습니다.
+(체력 -5)
+[3] 무시한다
+당신은 물고기의 생김새를 보고 먹을 수 없다고 생각하여 그냥 지나갔습니다.
