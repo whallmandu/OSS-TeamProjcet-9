@@ -493,3 +493,40 @@ You decide to fight back and use a sharp, sturdy branch to attack, but the boar 
 실패 시
 당신은 멧돼지를 향해 맞서 싸우기로 했습니다. 주변에 보이는 날카롭고 두꺼운 나뭇가지로 멧돼지를 공격했지만, 멧돼지는 끄떡 없었고 당신은 공격당해 크게 다쳤습니다.
 (체력 -35)
+
+숨겨진 동굴 / HIdden Cave (희귀)
+You were exploring deep inside the island when you pushed aside some vines and discovered a hidden cave entrance behind them. What will you do?
+[2] Enter [3] Ignore it
+[2] Enter
+You decided to go inside the cave. It was dark, but you managed to find some supplies. Will you go deeper?
+(Wood +5, Rope +2, Water +2)
+{2} Go deeper {3} Retreat
+{2} Go deeper (Success 20%, Failure 80%)
+Success:
+You chose to go deeper, and it turned out to be a good decision. You found several cans of food and exited the cave safely.
+(Food +6)
+Failure:
+You decided to go deeper, but you went too far. Your breathing became difficult, and you barely managed to escape the cave.
+(Health -20)
+{3} Retreat
+You decided to safely retreat from the cave.
+[3] Ignore it
+You judged it to be too dangerous and passed by the cave.
+
+당신은 섬 깊숙한 곳을 탐색하다 덩쿨을 넘겨보니 뒤에서 숨겨진 동굴 입구가 등장했습니다. 어떻게 하시겠습니까?
+[2] 들어간다 [3] 무시한다
+[2] 들어간다
+당신은 동굴 안으로 들어가기로 했습니다. 동굴은 어두웠지만 약간의 물자를 발견했습니다. 더 깊숙히 들어가시겠습니까?
+(목재 +5, 밧줄 +2, 식수 +2)
+{2} 더 들어간다 {3} 후퇴한다
+{2} 더 들어간다 (성공 20%, 실패 80%)
+성공 시
+당신은 더 들어가기로 했습니다. 더 들어가기를 잘했는지 당신은 통조림 몇 개를 발견하고 동굴에서 나왔습니다.
+(식량 +6)
+실패 시
+당신은 더 들어가기로 했습니다. 하지만 너무 깊숙히 들어왔는지 당신은 숨이 점점 막혀 왔고 당신은 가까스로 동굴에서 탈출했습니다. 
+(체력 -20)
+{3} 후퇴한다
+당신은 안전하게 동굴에서 탈출하기로 했습니다.
+[3] 무시한다
+당신은 위험하다고 판단해 동굴을 지나쳤습니다.
