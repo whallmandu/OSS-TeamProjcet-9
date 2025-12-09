@@ -51,3 +51,72 @@ Since being stranded, you used your survival knowledge to build a shelter and ad
 거주지 Lv 3 이하일 시
 당신은 무인도에 표류되었을 때부터 한 달 동안 기존에 알던 생존 지식을 활용해서 거주지를 확보하며 어느 정도 무인도 생활에 적응했습니다. 거주지가 만족스럽지 않아 살짝 불안하기도 합니다. 하지만 이 상황에서 더 이상 할 수 있는 것은 없기에 당신은 불안한 마음으로로 언젠가는 구조대가 올 것이라는 마음가짐으로 살기로 다짐합니다.
 (강제적 무인도 잔류 엔딩)
+
+새 발견 / Bird Spotted (일반)
+You are exploring the beach to find food under bright sunshine. The weather is extremely hot and a bit unpleasant, but you don’t mind as long as you can secure food. At that moment, you hear the cry of a bird. Very hungry, you instinctively look up and spot a seagull. What will you do?
+[2] Throw a stone [3] Make a trap
+[2] Throw a stone (Success 5%, Failure 95%)
+On success:
+You pick the most suitable stone you can find nearby and throw it at the seagull. By sheer luck, the stone hits the seagull directly, and it crashes onto the beach.
+(Food +4)
+On failure:
+You pick the most suitable stone you can find nearby and throw it at the seagull. However, the chances of hitting it were far too low. Feeling disappointed, you move on to look for other food sources.
+[3] Make a trap (Requires 1 Wood, 1 rope)
+If you have the materials:
+You create a trap to lure the seagull and wait for it to be caught. After some time, the seagull falls for the trap without any suspicion. Will you kill the seagull immediately to secure food?
+(Wood -2, Rope -1)
+{2} Kill it {3} Do not kill it
+{2} Kill it
+In your haste to obtain food, you kill the seagull and successfully secure it as food.
+(Food +4)
+{3} Do not kill it
+You decide not to kill the seagull right away, just in case. After a short while, the seagull lays eggs. You feel relieved that you didn’t kill it, and you decide to continue collecting eggs from it for the time being.
+(Food +1 every 2 days)
+If you lack the materials:
+You try to create a trap to lure the seagull, but you didn’t realize you were lacking the necessary materials. The seagull simply flies past, and you continue searching for food in disappointment.
+당신은 화창한 햇살 속에서 식량을 구하기 위해 해변가를 탐험하고 있습니다. 매우 더운 날씨에 조금 불쾌하지만 식량을 구할 수 있다면 괜찮다고 생각합니다. 그 때 당신은 새의 울음소리를 듣습니다. 매우 배고픈 당신은 반사적으로 위를 쳐다보았고 갈매기를 발견했습니다. 어떻게 하시겠습니까?
+[2] 돌을 던진다 [3] 함정을 만든다
+[2] 돌을 던진다 (성공 5%, 실패 95%)
+성공 시
+당신은 갈매기를 향해 주변에 보이는 돌 중 가장 적합한 것을 골라 던졌습니다. 당신이 던진 돌은 우연히 갈매기에게 정확히 명중하였고 갈매기는 해변가에 추락하였습니다.
+(식량 +4)
+실패 시
+당신은 갈매기를 향해 주변에 보이는 돌 중 가장 적합한 것을 골라 던졌습니다. 하지만 돌을 던져서 갈매기를 맞힐 가능성은 너무나도 적었습니다. 당신은 아쉬운 마음으로 다른 식량을 찾으러 갑니다.
+[3] 함정을 만든다 (목재 1, 밧줄 1 필요)
+재료 보유 시
+당신은 갈매기를 유인하는 함정을 만들어 잡히기를 기다렸습니다. 계속 기다리던 순간 갈매기가 아무런 의심 없이 함정에 잡혔습니다. 갈매기를 당장 처치하여 식량을 마련하시겠습니까?
+(목재 2, 밧줄 -1)
+{2} 처치한다 {3} 처치하지 않는다
+{2} 처치한다
+당신은 급한 나머지 갈매기를 처치하고 식량을 구하고자 했습니다. 당신은 갈매기를 처치하고 성공적으로 식량을 구했습니다.
+(식량 +4)
+{3} 처치하지 않는다
+당신은 혹시 몰라 갈매기를 당장 처치하지 않았습니다. 잠시 뒤 갈매기가 알을 낳았습니다. 당신은 처치하지 않길 잘했다고 생각하며 당분간은 갈매기를 통해 알을 계속 얻기로 하였습니다.
+(2일마다 식량 +1)
+재료 미보유 시
+당신은 갈매기를 유인하는 함정을 만들고자 하였는데 재료가 부족하다는 것을 미처 생각하지 못했습니다. 갈매기는 그냥 날아서 지나가며 당신은 아쉬운 채로 식량을 마저 구하러 갔습니다.
+
+조개 발견 / Clams Spotted (일반)
+You are walking along the coastline when you find several live clams on the sand. How will you collect them?
+[2] Break them with a stone [3] Soak them in seawater [4] Cook them first
+[2] Break them with a stone
+You tried to use a small stone to break the clams to get food, but in the process of breaking them, much of the meat was crushed and damaged.
+(Food +1)
+[3] Soak them in seawater
+You soaked several clams in seawater. Some of them escaped, but a few opened up and can be used as food.
+(Food +3)
+[4] Cook them first
+Knowing that clams naturally open when cooked, you heated them over a fire. As a result, several clams opened, and you successfully obtained food.
+(Food +5)
+
+당신은 해안가를 따라 걷다 모래 위에서 살아 있는 조개 몇 마리를 발견했습니다. 어떤 방법으로 채집하시겠습니까?
+[2] 돌로 부순다 [3] 바닷물에 담근다 [4] 먼저 익힌다
+[2] 돌로 부순다
+당신은 작은 돌멩이를 사용하여 조개를 부숴 식량을 구하고자 하였지만 부수는 과정에서 조개의 살이 함께 으깨져 많은 부분이 손상되었습니다.
+(식량 +1)
+[3] 바닷물에 담근다
+당신은 조개 여러 마리를 바닷물에 담가 보았습니다. 그 때 조개 몇 개는 탈출했지만 몇 마리는 열려 식량으로 사용할 수 있습니다.
+(식량 +3)
+[4] 먼저 익힌다
+당신은 조개를 익히면 자연스럽게 열릴 것으로 알고 조개를 불에 가열했습니다. 그 결과 여러 마리의 조개가 열려 성공적으로 식량을 구했습니다.
+(식량 +5)
