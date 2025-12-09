@@ -1,0 +1,53 @@
+피로 / The Fatigue (고정, 체력이 10 이하)
+Your health is below 10. You currently feel very tired and think you need to recover through sleep. Will you sleep?
+[2] Sleep [3] Do not sleep
+[2] Sleep
+You decided to recover by sleeping.
+(Health +5)
+(The next day)
+[3] Do not sleep
+You chose not to sleep because you thought you might miss something important.
+
+당신의 체력이 10 이하입니다. 당신은 현재 몸이 매우 피로함을 느껴 수면을 통해 회복이 필요하다고 생각이 듭니다. 수면하시겠습니까?
+[2] 수면한다 [3] 수면하지 않는다
+[2] 수면한다
+당신은 수면을 통해 회복을 하기로 했습니다.
+(체력 +5)
+(다음 날로)
+[3] 수면하지 않는다
+당신은 혹시 중요한 것을 놓칠 수 있다고 생각해 수면을 취하지 않기로 하였습니다.
+
+엔딩 / The End (고정)
+You have survived for a full 30 days on an uninhabited island, enduring harsh conditions and constant threats. By now, you’ve adapted somewhat to island life and have thought of a few ways to escape. However, you realize that continuing as you have been won’t change much, so you decide to make a new choice. What will you do?
+[2] Request Rescue [3] Remain on the Island
+[2] Request Rescue (Requires Distress Signal Lv 5)
+If you have Distress Signal Lv 4:
+You used the knowledge you had gained from working as a rescue worker to prepare numerous distress signals on the island. That night, you activated all the devices you had made. Perhaps as a reward for your 30 days of hard work, you soon heard the sound of helicopter blades and voices calling out for you. Rushing out of your shelter, tears filled your eyes as you greeted the rescue team. By coincidence, one of the rescuers was a colleague you had worked with before. While flying back to the city you lived in, you talked with your colleague about your time on the island.
+(Rescue Ending)
+If you have Distress Signal Lv 3 or below:
+You used your rescue-worker knowledge to set up many distress signals on the island. That night, you activated all the devices you had made. However, no sound came by the time dawn broke. Staying calm, you decided to look for another option.
+(Back to Choices)
+[3] Remain on the Island
+If you have Shelter Lv 4:
+ Since the day you were stranded, you used your survival knowledge to secure a living space and adapt to island life. Unlike your previous life filled with tiring work and pressure, you now felt at ease, free from others’ judgment. You realized you didn’t necessarily need to escape. You sat in front of your shelter, watching the sun set over the horizon, holding onto the belief that rescue would eventually come.
+(Successful Deserted Ending)
+If you have Shelter Lv 3 or below:
+Since being stranded, you used your survival knowledge to build a shelter and adapt to island life. Although your shelter wasn’t ideal and you felt uneasy, there was nothing more you could do. You resolved to stay on the island, living each day with the hope that rescue would someday arrive.
+(Forced Deserted Ending)
+
+당신은 무인도에서 혹독한 환경과 끝없는 위협 속에서 무려 30일이나 버텨냈습니다. 이제 당신은 무인도 생활에도 어느 정도 적응했고, 탈출할 방법도 어느 정도 생각해 보았습니다. 하지만 이제까지 생활했던대로만 하면 상황은 크게 달라지지 않을 듯하여 당신은 새로운 결정을 내리기로 하였습니다. 어떻게 하시겠습니까?
+[2] 구조 요청 [3] 무인도 잔류
+[2] 구조 요청 (조난 신호 Lv 4 필요)
+조난 신호 Lv 4일 시
+당신은 평소에 구조 대원으로 일하며 알던 지식을 활용하여 무인도에 조난되었다는 신호를 많이 제작해 두었습니다. 그날 밤, 당신은 제작해 둔 장치를 모두 활용하여 조난 신호를 보냈습니다. 30일 간의 노력에 대한 보답인지 밖에서 헬리콥터의 프로펠러 소리와 함께 당신을 찾는 목소리가 들립니다. 당신은 황급히 거주지에서 밖으로 나와 기쁜 마음으로 구조대원들을 맞이하며 눈물을 흘립니다. 게다가 우연으로 구조대원 중에 평소에 같이 일하던 동료도 있었습니다. 당신은 그 동료와 그동안의 생활에 대해서 대화를 나누며 당신이 살던 도시에 도착합니다.
+(구조 엔딩)
+조난 신호 Lv 3 이하일 시
+당신은 평소에 구조 대원으로 일하며 알던 지식을 활용하여 무인도에 조난되었다는 신호를 많이 제작해 두었습니다.  그날 밤, 당신은 제작해 둔 장치를 모두 활용하여 조난 신호를 보냈습니다. 하지만 다음 날이 밝을 때까지 아무 소리도 들리지 않았습니다. 당신은 침착하게 다른 방안을 찾기로 하였습니다.
+(다시 선택지로)
+[3] 무인도 잔류
+거주지 Lv 4일 시
+당신은 무인도에 표류되었을 때부터 한 달 동안 기존에 알던 생존 지식을 활용해서 거주지를 확보하며 어느 정도 무인도 생활에 적응했습니다. 당신은 힘들게 일하기만 하며 살던 과거와 달리 현재의 삶은 여유롭고 남의 눈치도 볼 필요가 없어 만족스럽다고 생각이 듭니다. 따라서 굳이 탈출을 할 필요가 없다고 생각이 듭니다. 당신은 이제 거주지 앞에 앉아 수평선에 저물어가는 태양을 바라봅니다. 언젠가는 구조대가 올 것이라는 마음가짐과 함께 말이죠.
+(성공적 무인도 잔류 엔딩)
+거주지 Lv 3 이하일 시
+당신은 무인도에 표류되었을 때부터 한 달 동안 기존에 알던 생존 지식을 활용해서 거주지를 확보하며 어느 정도 무인도 생활에 적응했습니다. 거주지가 만족스럽지 않아 살짝 불안하기도 합니다. 하지만 이 상황에서 더 이상 할 수 있는 것은 없기에 당신은 불안한 마음으로로 언젠가는 구조대가 올 것이라는 마음가짐으로 살기로 다짐합니다.
+(강제적 무인도 잔류 엔딩)
