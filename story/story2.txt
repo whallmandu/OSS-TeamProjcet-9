@@ -1,0 +1,34 @@
+무인도 표류 / Deserted (고정, 1일차)
+You have been stranded on a deserted island. Fortunately, a snack you bought before departure and a bottle of water washed up on the beach. However, at this rate, you will starve to death. For now, in order to survive, which area will you explore? 
+(Food +1, Water +1)
+[2] Inland [3] Coastline [4] Far out to sea
+[2] Inland
+You walk into the forest of the island. The forest is dense with trees and unknown plants, and there are signs of wild animals, making exploration difficult. However, you discover a durian tree. How will you collect the fruit?
+{2} Shake the tree {3} Climb the tree {4} Do not collect
+{2} Shake the tree (50% success, 50% failure)
+If successful:
+ You shake the tree and obtain durians. 
+(Food +3)
+If failed:
+ You are injured by the spikes of a durian falling from the tree. 
+(Health -15)
+{3} Climb the tree (10% success, 90% failure)
+If successful:
+ You are lucky and successfully obtain durians without injury. 
+(Food +3)
+If failed:
+ You fall while climbing the tree. 
+(Health -10)
+{4} Do not collect
+You decide not to collect the durians to avoid the risk of injury.
+[3] Coastline
+ You start exploring the area around the coastline. After walking for a while, you come across a shabby wooden structure. Will you explore the structure?
+{2} Explore {3} Do not explore
+{2} Explore
+Upon exploring the structure, you realize it was previously used as a military observation post. You tidy it up and make it your temporary shelter.
+(Shelter acquired, Lv 1)
+{3} Do not explore
+You decide not to explore the unknown structure, just in case.
+[4] Far out to sea
+Hoping there might be other land nearby, you start swimming. However, you see no land and drown.
+(Death)
