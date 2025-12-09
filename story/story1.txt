@@ -254,3 +254,76 @@ You decided to leave the leaves behind, just in case something might be hiding i
 (체력 -3)
 [3] 무시한다
 당신은 혹시 모를 상황에 대비하여 잎을 챙기지 않고 지나갔습니다.
+
+물고기 발견 / Fish Spotted (일반)
+You are walking along the coast when you spot a few fish swimming in the shallow water. They look edible to you. What will you do?
+[2] Catch them [3] Ignore them
+[2] Catch them (50% success, 50% failure)
+Success:
+You quickly use a nearby stick to spear one of the fish. You successfully catch it.
+(Food +3)
+Failure:
+You thrust the nearby stick toward the fish, but it darts away. Unluckily, you step on a seashell on the seabed.
+(Health -8)
+[3] Ignore them
+You decide to conserve your strength and take a moment to rest while gazing at the horizon beyond the sea.
+(Health +6)
+당신은 해안가를 따라 걷다가 얕은 바다에서 물고기 몇 마리가 헤엄치는 것을 발견했습니다. 당신이 보기에 식용 물고기로 보입니다. 어떻게 하시겠습니까?
+[2] 잡는다 [3] 무시한다
+[2] 잡는다 (50% 성공, 50% 실패)
+성공 시
+당신은 주변에 있던 막대기를 활용하여 빠르게 물고기를 관통했습니다. 성공적으로 물고기를 잡았습니다.
+(식량 +3)
+실패 시
+당신은 주변에 있던 막대기를 활용하여 빠르게 물고기를 향해 내리 꽂았습니다. 하지만 물고기는 빠르게 도망갔고 운이 없게도 바닥에 있던 소라 껍데기를 밟았습니다.
+(체력 -8)
+[3] 무시한다
+당신은 체력을 아끼기로 하고 바다 저 너머 지평선을 바라보며 휴식을 취했습니다.
+(체력 +6)
+
+통나무 안 / Inside the Log (일반)
+You are walking through the forest when you discover a hole inside a log. Something is glimmering within it, but you can’t see clearly inside. What will you do?
+[2] Put your hand in [3] Ignore it
+[2] Put your hand in (Success 50%, Failure 50%)
+On Success
+You carefully reached your hand into the log. When you moved a little, you heard a rustling sound that startled you, but after feeling around, it seemed to be a bird’s nest. As you explored further, you felt some eggs. Feeling a bit sorry for the bird, you decided to take the eggs.
+(Food +4)
+On Failure
+You carefully reached your hand into the log. When you moved a little, you heard a rustling sound that startled you, but after feeling around, it seemed to be a bird’s nest. Suddenly, the bird pecked your hand with its beak. Startled, you quickly pulled your hand out and fell over.
+(Health -8)
+[3] Ignore it
+Not knowing what might be inside the log, you decided to ignore it and walk past.
+당신은 숲을 거닐다가 통나무 안의 구멍을 발견했습니다. 통나무 안에 무언가가 반짝이고는 있지만 구멍 안이 잘 보이지 않습니다. 어떻게 하시겠습니까?
+[2] 손을 넣는다 [3] 무시한다
+[2] 손을 넣는다 (성공 50%, 실패 50%)
+성공 시 
+당신은 통나무 안에 손을 집어 넣었습니다. 손을 약간 움직였을 때 바스락거리는 소리가 들려 약간 놀랐지만 생김새를 파악해 보니 새 둥지인 것 같았습니다. 더 만져 보니 알이 있는 것 같아 새에게는 미안하지만 당신은 알을 챙겼습니다. (식량 +4)
+실패 시
+당신은 통나무 안에 손을 집어 넣었습니다. 손을 약간 움직였을 때 바스락거리는 소리가 들려 약간 놀랐지만 생김새를 파악해 보니 새 둥지인 것 같았습니다. 그 때 갑자기 새가 부리로 당신의 손을 쪼았습니다. 놀라며 빠르게 손을 빼었고 당신은 넘어졌습니다. (체력 -8)
+[3] 무시한다
+당신은 통나무 안에 무엇이 있을 지 몰라 무시하고 지나갔습니다.
+
+바위 그늘 / Rock Shade (일반)
+You are walking through the forest in search of food when you begin to feel very tired. Just then, you notice a cool, shaded spot beneath a large rock ahead. It looks like a good place to rest for a moment. What will you do?
+[2] Rest [3] Ignore it
+[2] Rest (80% success, 20% failure)
+Success:
+You lie down in the shade of the rock and enjoy the cool breeze as you take a comfortable rest.
+(Health +8)
+Failure:
+You lie down in the shade and feel the cool breeze. Suddenly, a large rock rolls toward you from behind. It strikes your back hard, and you become injured.
+(Health -8)
+[3] Ignore it
+You decide it’s not worth the trouble and simply walk past it.
+
+당신은 식량을 찾아 숲 속을 걷다가 매우 피로함을 느낍니다. 마침 앞에 시원해 보이는 바위 그늘이 보였습니다. 잠깐 편히 쉬다 갈 수 있을 것 같아 보이는데, 어떻게 하시겠습니까?
+[2] 휴식한다 [3] 무시한다
+[2] 휴식한다 (성공 80%, 실패 20%)
+성공 시
+당신은 바위 그늘에 누워서 시원한 바람을 맞으며 편히 휴식을 취했습니다.
+(체력 +8)
+실패 시
+당신은 바위 그늘에 누워서 시원한 바람을 맞았습니다. 그 때, 뒤에서 커다란 돌이 굴러왔습니다. 돌은 당신의 등을 강하게 쳤고 당신은 부상당했습니다.
+(체력 -8)
+[3] 무시한다
+당신은 큰 의미가 없다고 생각하여 그냥 지나갔습니다.
