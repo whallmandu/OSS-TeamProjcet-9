@@ -190,3 +190,67 @@ To avoid potential danger, you decide not to eat the fruit.
 (체력 -6)
 [3] 무시한다
 당신은 혹시 모를 위험에 대비하여 열매를 먹지 않기로 하였습니다.
+
+쓰러진 나무 / Fallen Tree (일반)
+You are exploring the forest when you come across a tall fallen tree. It could be dangerous, but it’s also an opportunity to gather resources to expand your shelter. What will you do?
+[2] Harvest it [3] Ignore it
+[2] Harvest it (70% success, 30% failure)
+Success:
+You harvest the fallen tree and obtain plenty of lumber. (Wood +7)
+Failure:
+While harvesting the fallen tree, you’re unlucky and get bitten by a squirrel. (Health -4)
+[3] Ignore it
+You decide to pass by, just in case something unexpected happens.
+
+당신은 숲 속을 탐험하다 높은 나무가 쓰러져 있는 것을 발견했습니다. 위험할 수도 있지만 거주지를 확장할 자원을 얻을 기회입니다. 어떻게 하시겠습니까?
+[2] 벌채한다 [3] 무시한다
+[2] 벌채한다 (성공 70%, 실패 30%)
+성공 시
+당신은 쓰러진 나무를 벌채하여 많은 목재를 획득했습니다. (목재 +7)
+실패 시
+당신은 쓰러진 나무를 벌채하다가 운이 없게도 다람쥐에게 물렸습니다. (체력 -4)
+[3] 무시한다
+당신은 혹시 모를 상황에 대비하여 그냥 지나갔습니다.
+
+웅덩이 / The Pool (일반)
+You were walking through the forest when you discovered a huge puddle on the ground. If the water was drinkable, you wouldn’t have to worry about water for a while. What will you do?
+[2] Drink it immediately [3] Boil it
+[2] Drink it immediately
+You decided to drink the water as it was. After a short while, you began to feel your stomach hurting more and more.
+(Health -5)
+[3] Boil it
+You lit a fire and safely boiled the water. Some of it evaporated while boiling, but you secured safe drinking water, so it’s enough.
+(Water +3)
+
+당신은 숲을 걷다 땅에 거대한 웅덩이를 발견했습니다. 마실 수 있는 물이라면 당분간의 물 걱정은 없을 것 같았습니다. 어떻게 하시겠습니까?
+[2] 바로 마신다 [3] 끓인다
+[2] 바로 마신다
+당신은 그냥 물을 마셔 보았습니다. 잠시 후 당신은 배가 점점 아파오는 것을 느꼈습니다.
+(체력 -5)
+[3] 끓인다
+당신은 불을 피운 후 안전하게 물을 끓였습니다. 물을 끓일 때 조금 증발하긴 했지만 안전한 식수를 확보했으니 충분합니다.
+(식수 +3)
+야자수 잎 / Palm Leaves (일반)
+While exploring the forest, you find a pile of fallen palm leaves on the ground. The leaves are mostly undamaged, but there could be unknown creatures hiding within them. However, taking the leaves with you would be very useful for reinforcing your shelter. What will you do?
+[2] Take them [3] Ignore them
+[2] Take them (70% success, 30% failure)
+Succe	s:
+You gathered many palm leaves to reinforce your shelter. Fortunately, there were no harmful creatures inside.
+(Leaves +8)
+Failure:
+You gathered many palm leaves to reinforce your shelter. However, a snake hidden among the leaves suddenly bit you. Luckily, as far as you know, the snake was not venomous.
+(Health -3)
+[3] Ignore them
+You decided to leave the leaves behind, just in case something might be hiding inside.
+
+당신은 숲을 탐험하다가 바닥에 나무에서 떨어진 야자수 잎이 쌓여 있는 것을 발견했습니다. 잎의 손상은 거의 없었지만 잎에 알 수 없는 생명체가 있을 수도 있습니다. 하지만 잎을 챙긴다면 당신의 거주지를 강화하는 데에 매우 유용할 것입니다. 어떻게 하시겠습니까?
+[2] 챙겨간다 [3] 무시한다
+[2] 챙겨간다 (성공 70%, 실패 30%)
+성공 시
+당신은 거주지를 강화하기 위해 많은 야자수 잎을 챙겼습니다. 운이 좋게도 당신은 해치는 생명체는 없었습니다.
+(잎 +8)
+실패 시
+당신은 거주지를 강화하기 위해 많은 야자수 잎을 챙겼습니다. 하지만 잎 안의 뱀이 당신은 갑작스럽게 물었습니다. 다행히도 방금 본 뱀은 당신이 알기론 독사가 아닙니다.
+(체력 -3)
+[3] 무시한다
+당신은 혹시 모를 상황에 대비하여 잎을 챙기지 않고 지나갔습니다.
