@@ -32,3 +32,71 @@ You decide not to explore the unknown structure, just in case.
 [4] Far out to sea
 Hoping there might be other land nearby, you start swimming. However, you see no land and drown.
 (Death)
+
+당신은 무인도에 표류되었습니다. 다행히도 출항 전에 구매한 과자 1개와 물 한 병이 해변에 있었습니다. 하지만 이대로라면 굶어 죽을 것입니다. 일단 살아남기 위해서 어느 곳을 탐사하겠습니까? 
+(식량 +1, 식수 +1)
+[2] 섬 내부 [3] 해안가 [4] 바다 멀리
+[2] 섬 내부
+ 당신은 섬의 숲 속으로 걸어 들어왔습니다. 숲에는 나무와 알 수 없는 식물이 빼곡히 있고 맹수의 흔적도 보여여 탐사가 쉽지 않지만, 당신은 두리안 나무를 발견하였습니다. 어떻게 채집하겠습니까?
+{2} 나무를 흔든다 {3} 나무에 올라간다 {4} 채집하지 않는다
+{2} 나무를 흔든다 (50% 성공, 50% 실패)
+성공 시
+당신은 나무를 흔들어 두리안을 얻었습니다. (식량 +3)
+실패 시
+당신은 나무에서 떨어진 두리안의 가시에 맞아 부상당했습니다. (체력 -15)
+{3} 나무에 올라간다 (10% 성공, 90% 실패)
+성공 시
+당신은 운 좋게 부상 없이 성공적으로 두리안을 얻었습니다. (식량 +3)
+실패 시
+당신은 나무에 올라가다 떨어졌습니다. (체력 -10)
+{4} 채집하지 않는다
+당신은 부상당할 경우를 대비해 채집하지 않았습니다.
+[3] 해안가
+당신은 해안가 주변을 탐색하기 시작했습니다. 어느 정도 걸었을 때 당신의 눈 앞에 허름한 목조 구조물이 있었습니다. 구조물을 탐색하시겠습니까?
+{2} 탐색한다 {3} 탐색하지 않는다
+{2} 탐색한다
+이 구조물을 탐색하다 보니 과거에 군사용 관측소로 쓰였던 곳으로 보입니다. 당신은 이 곳을 정리하여 임시 거주지로 삼았습니다.
+(거주지 획득, Lv 1)
+{3} 탐색하지 않는다
+당신은 만약의 경우를 대비하여 알 수 없는 구조물을 탐색하지 않았습니다.
+[4] 바다 멀리
+당신은 주변에 다른 육지가 있기를 기대하며 수영하기 시작했습니다. 하지만, 육지란 보이지 않았고 당신은 익사하였습니다.
+(사망)
+
+탈출 혹은 거주 / Escape or Shelter (고정, 10일차)
+After drifting on a deserted island for ten days, you begin to seriously consider escaping, and you also feel the need to reinforce your shelter. But you don’t have enough time to fully commit to both. Which one will you focus on?
+[2] Escaping [3] Reinforcing the shelter
+[2] Escaping
+You decide to concentrate more on escaping. Using the distress signal techniques you already knew, you arrange large “SOS” and “HELP” signs on the shore using wooden sticks. You also plan to create smoke during the day and keep a fire burning at night to signal for rescue.
+(Distress Signal Lv +1)
+[3] Reinforcing the shelter
+You recall the fear and discomfort you felt every night while trying to sleep, and choose to strengthen your shelter. You cover the roof with palm leaves, reinforce the walls with branches and soil, craft a sleeping platform out of logs, and dig drainage channels to prevent rainwater from accumulating.
+(Shelter Lv +1)
+
+무인도에 표류된 지 10일 째, 당신은 이제 탈출에 대해서 진지하게 고민하기 시작했고, 거주 공간을 강화해야겠다는 생각도 듭니다. 하지만 둘 다 하기에는 시간이 부족합니다. 둘 중 무엇에 더 집중하시겠습니까?
+[2] 탈출에 집중한다 [3] 거주 공간에 집중한다
+[2] 탈출에 집중한다
+당신은 탈출에 좀 더 집중하기로 했습니다. 평소에 알던 구조 신호 제작 방법을 통해 해안가에 ‘SOS’, ‘HELP’를 나무 막대기를 통해 크게 배치했고, 낮에는 연기를 내고 밤에는 불을 피워 불빛을 내기로 했습니다.
+(조난 신호 Lv +1)
+[3] 거주 공간에 집중한다
+당신은 매일 잠들 때마다 불편하게 잠들며 불안에 떨었던 기억을 떠올리며 거주지를 강화하기로 했습니다. 지붕을 야자잎을 통해 덮고 벽을 나뭇가지와 흙 등을 통해 강화하였으며, 통나무를 통해 수면을 취할 공간을 마련하고 배수로를 파서 빗물이 고이지 않게 했습니다. 
+(거주지 Lv +1)
+
+선체 발견 / Unknown Ship (고정, 20일차)
+You wake up as usual and look out toward the sea. In the distance, you see an unidentified vessel. You don’t know what purpose it has for sailing, but the sight of it makes you want to escape, so you consider sending a distress signal. Will you send the signal?
+[2] Send it [3] Do not send it
+[2] Send it
+You send a distress signal toward the unidentified vessel. However, it turns out to be a pirate ship that raids during its voyages, and the pirates destroy your shelter.
+(Shelter Lv -2)
+[3] Do not send it
+You decide not to send a distress signal, thinking the vessel might be a pirate ship. At that moment, a crate that fell from the ship drifts onto the shore. Carefully opening it, you find food and various supplies inside.
+(Food +3, Wood +2, Drinking water +1)
+
+당신은 평소처럼 기상한 후 바다를 향해 바라보았습니다. 그 때 멀리서 정체 불명의 선체가 하나 보였습니다. 당신은 선체가 어떤 목적을 가지고 항해하는 것인지 모르겠지만 탈출하고 싶은 마음이 들어 구조 신호를 보낼 생각을 합니다. 구조 신호를 보내겠습니까?
+[2] 보낸다 [3] 보내지 않는다
+[2] 보낸다
+당신은 정체 불명의 선체를 향해 구조 신호를 보냈습니다. 하지만 그 선체는 항해를 통해 약탈을 하는 해적의 배였으며 해적은 당신의 거주지를 망가뜨렸습니다. 
+(거주지 Lv -2)
+[3] 보내지 않는다
+당신은 정체 불명의 선체가 혹시 해적의 배일 생각이 들어 구조 신호를 보내지 않았습니다. 그 때 선체에서 떨어진 상자가 하나 해변으로 밀려 들어왔습니다. 조심스레 상자를 열어 보니 식량과 각종 물자가 들어 있었습니다.
+(식량 +3, 목재 +5, 식수 +1)
