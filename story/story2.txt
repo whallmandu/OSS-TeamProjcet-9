@@ -436,3 +436,60 @@ You headed toward the coast. However, the earthquake triggered a tsunami, and yo
 [3] 해안가로 나간다
 당신은 해안가로 나아가기로 했습니다. 그 때 지진으로 인해 쓰나미가 발생했고 당신은 쓰나미에 쓸려 크게 다쳤습니다.
 (체력 -25)
+
+멧돼지 출현 / Appearance of Wild Boar (희귀)
+You are walking through the forest when suddenly you hear heavy footsteps and rustling in the bushes. As you look around, you see a wild boar charging toward you at high speed. What will you do?
+[2] Run away [3] Take cover [4] Threaten it [5] Attack it
+[2] Run away (Success 5%, Failure 95%)
+Success:
+You start running as fast as you can to escape from the wild boar. After running for dozens of minutes, it seems you managed to shake it off. However, you pushed yourself too hard, and your legs begin to feel numb.
+(Health -4)
+Failure:
+You start running as fast as you can, but escaping a wild boar is nearly impossible. It quickly catches up to you, and you are attacked.
+(Health -25)
+[3] Take cover
+You decide to take cover. Looking around, you see a tall tree and a large bush. Where will you hide?
+{2} Up the tree {3} Inside the bush
+{2} Up the tree
+You climb up the tree. After staying there for quite a while, the wild boar eventually gives up and leaves.
+{3} Inside the bush
+You hide inside the bush, but bushes are too familiar an environment for wild boars. You are quickly discovered and attacked.
+(Health -25)
+[4] Threaten it
+You bravely try to threaten the wild boar. This only triggers its aggressive instincts further, and you are killed.
+(Death)
+[5] Attack it (Success 10%, Failure 90%)
+Success:
+You decide to fight back. Grabbing a sharp, sturdy branch nearby, you stab the wild boar with all your strength. By sheer luck, the boar collapses.
+(Food +10, Cloth +4)
+Failure:
+You decide to fight back and use a sharp, sturdy branch to attack, but the boar doesn’t even flinch. It charges at you, and you suffer severe injuries.
+(Health -35)
+
+당신은 숲을 걷던 중 갑자기 큰 발자국 소리와 풀숲 소리를 듣습니다. 주위를 둘러보니 뒤에서 멧돼지가 빠르게 당신을 향해 돌진해 오고 있습니다. 어떻게 하시겠습니까?
+[2] 도망친다 [3] 피신한다 [4] 위협한다 [5] 공격한다
+[2] 도망친다 (성공 5%, 실패 95%)
+성공 시
+당신은 최대한 빠른 속도로 멧돼지로부터 도망치기 시작했습니다. 수십 분 동안 달린 결과, 다행히 멧돼지를 돌아간 것 같습니다. 하지만, 당신은 무리한 건지 다리가 저려옵니다.
+(체력 -4)
+실패 시
+당신은 최대한 빠른 속도로 멧돼지로부터 도망치기 시작했습니다. 하지만 멧돼지로부터 도망치는 것은 불가능했습니다. 결국 따라잡혔고, 당신은 멧돼지로부터 공격당했습니다.
+(체력 -25)
+[3] 피신한다
+당신은 피신하기로 했습니다. 주위를 둘러보니 높은 나무와 큰 덤불이 있었습니다. 어디에 숨으시겠습니까?
+{2} 나무 위 {3} 덤불 안
+{2} 나무 위
+당신은 나무 위로 올라갔습니다. 한참을 나무 위에 있던 결과, 멧돼지는 포기하고 떠났습니다.
+{3} 덤불 안
+당신은 덤불 안으로 숨기로 했습니다. 하지만 덤불은 멧돼지에게 너무 익숙한 환경이었습니다. 당신은 멧돼지에게 발각되었고 공격당했습니다.
+(체력 -25)
+[4] 위협한다
+당신은 용감하게 멧돼지를 위협했습니다. 그 때 멧돼지의 공격 본능은 더욱 강화되었고 당신은 사망했습니다.
+(사망)
+[5] 공격한다 (성공 10%, 실패 90%)
+성공 시
+당신은 멧돼지를 향해 맞서 싸우기로 했습니다. 주변에 보이는 날카롭고 두꺼운 나뭇가지로 멧돼지를 가능한 한 세게 찔렀고, 운이 좋게 멧돼지는 쓰려졌습니다.
+(식량 +10, 천 +4)
+실패 시
+당신은 멧돼지를 향해 맞서 싸우기로 했습니다. 주변에 보이는 날카롭고 두꺼운 나뭇가지로 멧돼지를 공격했지만, 멧돼지는 끄떡 없었고 당신은 공격당해 크게 다쳤습니다.
+(체력 -35)
