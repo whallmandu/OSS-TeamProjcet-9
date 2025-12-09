@@ -327,3 +327,153 @@ You decide it’s not worth the trouble and simply walk past it.
 (체력 -8)
 [3] 무시한다
 당신은 큰 의미가 없다고 생각하여 그냥 지나갔습니다.
+
+임시 쉼터 / Temporary Shelter (희귀)
+You are walking through the forest when you discover an old cabin that looks like it was built long ago. Inside the cabin, you see several rotten foods and a box. However, the cabin looks unstable and dangerous. What will you do?
+[2] Enter [3] Ignore it
+[2] Enter (Success 25%, Failure 75%)
+Success:
+You decide to take the risk and enter the cabin. Inside, you open the box and find various supplies, which you take with you.
+(+8 Cloth, +5 Rope)
+Failure:
+You decide to take the risk and enter the cabin. However, the moment you take a step forward, the cabin—too old to support any weight—collapses beneath you. You fall through the broken floor.
+(-15 Health)
+[3] Ignore it
+The cabin looks too old, and nothing seems worth the danger, so you simply pass by.
+
+당신은 숲 속을 걷다가 오래 전에 지어진 듯한 오두막을 발견했습니다. 오두막 내부에는 여러 썩은 음식이 있었고 상자가 보였습니다. 하지만 오두막을 위태로워 보입니다. 어떻게 하시겠습니까?
+[2] 들어간다 [3] 무시한다
+[2] 들어간다 (성공 25%, 실패 75%)
+성공 시
+당신은 위험을 무릅쓰고 들어가기로 했습니다. 그 안에서 상자를 열어 보았고 상자 안에는 여러 물자가 있어 챙겼습니다.
+(천 +8, 밧줄 +5)
+실패 시
+당신은 위험을 무릅쓰고 들어가기로 했습니다. 그 안에서 한 발자국을 앞으로 내딛었을 때, 오두막은 너무 오래되어 당신의 무게를 감당하지 못했고 오두막의 바닥이 무너져 당신은 아래로 추락했습니다.
+(체력 -15)
+[3] 무시한다
+오두막이 너무 오래되어 보이고 쓸만한 것도 없어 보여 당신은 그냥 지나갔습니다.
+
+거대한 파도 / Tidal Wave (희귀)
+As you walked along the coastline, you noticed a fallen coconut tree. You could collect several coconuts and some usable wood from it. However, when you looked toward the sea, you saw a massive wave approaching. The coconuts and wood would be very useful, but there was a risk of being swept away by the wave. What will you do?
+[2] Collect them [3] Ignore it
+[2] Collect them (Success 20%, Failure 80%)
+Success: You decided to take the risk and rushed to gather the coconuts and wood. You barely managed to grab them and escape, and the wave stopped right in front of you.
+(Food +3, Water +3, Wood +7)
+Failure:
+You decided to take the risk and rushed to gather the coconuts and wood. However, the wave was faster than you expected. In the end, you were swept away by it.
+(Health -12)
+[3] Ignore it
+The wave looked faster than you thought, so you decided to head back into the forest and avoid it.
+당신은 해안가를 걷다가 코코넛 나무가 쓰러셔 여러 코코넛 열매와 목재를 획득할 수 있을 것 같았습니다. 하지만 바다를 바라보니 거대한 파도가 다가오고 있었습니다. 코코넛과 나무를 챙긴다면 매우 유용하지만 파도에 휩쓸릴 수 있습니다. 어떻게 하시겠습니까?
+[2] 챙긴다 [3] 무시한다
+[2] 챙긴다 (성공 20%, 실패 80%)
+성공 시
+당신은 위헙을 무릅쓰기로 하고 코코넛과 나무를 가지러 갔습니다. 당신은 가까스로 챙긴 후 도망쳤고 파도는 당신의 앞에서 딱 멈췄습니다.
+(식량 +3, 식수 +3, 목재 +7)
+실패 시
+당신은 위헙을 무릅쓰기로 하고 코코넛과 나무를 가지러 갔습니다. 하지만 파도의 속도를 생각보다 빨랐습니다. 결국 당신은 파도에 휩쓸렸습니다.
+(체력 -12)
+[3] 무시한다
+당신은 파도가 생각보다 빨라보여 그냥 숲 속으로 들어가 피했습니다.
+
+난파선 / The Shipwreck (희귀)
+You were walking along the shore when you discovered a shipwreck stranded on the beach. You don't know what might be inside, but judging by its size, there could be useful materials. What will you do?
+[2] Explore it [3] Board it and escape [4] Ignore it
+[2] Explore it (Success 30%, Failure 70%)
+Success:
+You decided to explore the shipwreck. Inside, you found far more supplies than expected and collected everything.
+(Rope +4, Wood +3, Stone +1, Food +3, Water +4)
+Failure:
+You decided to explore the shipwreck. As soon as you stepped inside, you unexpectedly encountered a jellyfish, and unfortunately, you were stung.
+(Health -15)
+[3] Board it and escape (Success 5%, Failure 95%)
+Success:
+You noticed the ship looked surprisingly intact, so you tried to use it to escape. After sailing for a short while, you were lucky enough to spot land ahead. You sent a rescue signal, and you were successfully saved. Now, aboard a plane heading back to your home city, you reflect on the life you lived during your time stranded.
+(Rare Escape Ending)
+Failure:
+You attempted to escape using the ship, believing it was still seaworthy. But perhaps you pushed it too far—naturally, the ship collapsed, and you fell into the water, meeting your end.
+(Death)
+[4] Ignore it
+You decided that it wasn’t worth the trouble, and simply walked past it.
+
+당신은 해안가를 걷다가 해변에 난파된 배를 발견했습니다. 안에 무엇이 있을지는 모르겠지만, 규모를 보면 유용한 재료가 있을 수도 있습니다. 어떻게 하시겠습니까?
+[2] 탐색한다 [3] 타서 탈출한다 [4] 무시한다
+[2] 탐색한다 (성공 30%, 실패 70%)
+성공 시
+당신은 난파선을 탐사하기로 했습니다. 난파선 안에는 생각보다 많은 물자가 있어서 전부 챙겼습니다.
+(밧줄 +4, 목재 +3, 돌 +1, 식량 +3, 식수 +4)
+실패 시
+당신은 난파선을 탐사하기로 했습니다. 난파선에 발을 내딛었을 때 안에 해파리가 있었고 당신은 운이 없게도 쏘였습니다.
+(체력 -15)
+[3] 타서 탈출한다 (성공 5%, 실패 95%)
+성공 시
+당신은 배의 상태가 좋아 보여 배를 활용하여 탈출하기로 했습니다. 배를 타고 잠시 이동했을 때, 운이 좋게도 당신의 앞에는 육지가 보였습니다. 그 곳에 구조 신호를 보낸 결과, 당신은 성공적으로 구조되었습니다. 이제 당신은 비행기를 타고 당신이 살던 도시로 돌아가며 그 동안의 생활을 되돌아봅니다.
+(희귀 탈출 엔딩)
+실패 시
+당신은 배의 상태가 좋아 보여 배를 활용하여 탈출하기로 했습니다. 하지만 너무 무리했던 걸까요? 당연하게도 배는 무너져 내렸고 당신은 그대로 물에 빠져 생을 마감했습니다.
+(사망)
+[4] 무시한다
+당신은 쓸 만한 물자가 없어 보여 그냥 지나가기로 합니다.
+
+폭포 / The Waterfall (희귀)
+You were walking along a small stream in the forest when you discovered a small waterfall. The water quality looked good, and if you collect the water from below, you could obtain a large amount of drinking water. What will you do?
+[2] Go down [3] Don’t go down [4] Ignore it
+[2] Go down (Success 10%, Failure 90%)
+Success:
+You used the rocks around you to safely climb down beneath the waterfall. You collected a large amount of water falling from the falls.
+(Water +15)
+Failure:
+You decided to climb down the waterfall. However, even a small waterfall can be dangerous. You slipped while climbing down and were seriously injured.
+(Health -20)
+[3] Don’t go down (Success 50%, Failure 50%)
+Success:
+You safely collected water from the stream above.
+(Water +2)
+Failure:
+You managed to collect water from above, but you were so focused on gathering it that you slipped and hurt yourself badly.
+(Health -12)
+[4] Ignore it
+You judged it to be too dangerous and simply walked past it.
+
+당신은 숲에 있는 작은 하천을 따라 걷다가 작은 폭포를 발견했습니다. 수질은 좋아 보였고, 아래에서 물을 받으면 대량의 식수를 얻을 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 내려간다 [3] 내려가지 않는다 [4] 무시한다
+[2] 내려간다 (성공 10%, 실패 90%)
+성공 시
+당신은 주변에 보이는 바위를 이용하여 폭포 아래로 성공적으로 내려왔습니다. 당신은 폭포에서 떨어지는 물을 대량으로 얻었습니다.
+(식수 +15)
+실패 시
+당신은 폭포를 타서 내려가기로 했습니다. 하지만 폭포가 작더라고 위험한 것은 크게 다르지 않았습니다. 당신은 폭포를 따라 내려가다가 크게 다쳤습니다.
+(체력 -20)
+[3] 내려가지 않는다 (성공 50%, 실패 50%)
+성공 시
+당신은 안전하게 위에서 하천의 물을 받았습니다.
+(식수 +2)
+실패 시
+당신은 안전하게 위에서 하천의 물을 받았지만, 물을 받는 것에만 집중하여 넘어져 크게 다쳤습니다.
+(체력 -12)
+[4] 무시한다
+당신은 위험하다고 판단하여 그냥 지나갔습니다.
+
+군수 보급품 / Military Supplies (희귀)
+As you walk along the shoreline, you discover a box that appears to be old military supplies. If it really is a military supply crate, it might contain food—or even weapons. What will you do?
+[2] Open it [3] Ignore it
+[2] Open it (10% success, 90% failure)
+Success
+You opened the military supply crate. Inside, you found various food rations, clean drinking water, and an old communication device. The food had a very long shelf life and seemed safe to use.
+(Food +10, Water +10, Distress Signal Lv+1)
+Failure
+You opened the crate, but it wasn’t a military supply box—it was a trap. A landmine hidden inside exploded, and you were seriously injured.
+(Health -35)
+[3] Ignore it
+It looked suspicious, so you decided to leave it alone and walk past it.
+당신은 해안가를 따라 걷다가 오래된 군수 보급품으로 보이는 상자를 발견했습니다. 군수 보급품이라면 식량이 있을 수도 있고, 무기가 있을 수도 있습니다. 어떻게 하시겠습니까?
+[2] 연다 [3] 무시한다
+[2] 연다 (10% 성공, 90% 실패)
+성공 시
+당신은 군수 보급품 상자를 열었습니다. 열어보니 여러 식량과 식수, 그리고 낡은 통신 장비비가 있었고 식량은 유효기간이 매우 길어 사용할 수 있을 것 같습니다.
+(식량 +10, 식수 +10, 조난 신호 Lv+1)
+실패 시
+당신은 군수 보급품 상자를 열었습니다. 하지만 그것은 군수 보급품이 아니라 함정이었습니다. 안에 있던 지뢰가 폭발하였고 당신은 크게 다쳤습니다.
+(체력 -35)
+[3] 무시한다
+당신은 수상해 보여 그냥 지나갔습니다.
