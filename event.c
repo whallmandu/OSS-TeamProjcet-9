@@ -780,16 +780,16 @@ int event_twig(players *player) {
 /* 9) ClothEvent*/
 int event_cloth(players *player) {
     int choice;
-    printf("You find a piece of cloth on the beach.\n");
+    printf("You were walking along the beach when you found a piece of cloth. Its condition looked good, and it seemed usable. What will you do?\n");
     printf("1) Pick it up  2) Walk past\n> ");
     scanf("%d", &choice);
 
     if (choice == 1) {
-        printf("You picked up the cloth.\n");
-        player->cloth += 1;
+        printf("You successfully picked up the piece of cloth without any problems.\n");
+        player->cloth += 4;
         return 1;
     } else {
-        printf("You ignore the cloth.\n");
+        printf("You decided it wasn’t necessary and simply walked past it.\n");
         return 2;
     }
 }
@@ -814,16 +814,16 @@ int event_fishingNet(players *player) {
 /* 11) StoneEvent*/
 int event_stone(players *player) {
     int choice;
-    printf("You see several stones near the water.\n");
+    printf("You were walking along the coast when you discovered a cracked rock. If you strike it a little, it might break into a useful shape that could be used in many ways. What will you do?\n");
     printf("1) Pick them up  2) Walk past\n> ");
     scanf("%d", &choice);
 
     if (choice == 1) {
-        printf("You collected the stones.\n");
-        player->stone += 1;
+        printf("You decided to break the rock. You struck the cracked fragment against the larger rock, and it broke successfully, giving you several usable stones.\n");
+        player->stone += 5;
         return 1;
     } else {
-        printf("You walk past the stones.\n");
+        printf("You felt it might be dangerous, so you decided to just pass by.\n");
         return 2;
     }
 }
