@@ -738,7 +738,7 @@ int event_palm_leaves(players *player) {
 /* 7) WeirdPlantEvent*/
 int event_weirdPlant(players *player) {
     int choice;
-    printf("You discover a strange plant.\n");
+    printf("You are walking through the forest when you come across a strangely shaped plant. It smells pleasantly fragrant, but you’re not sure whether it’s a medicinal herb or a poisonous one. What will you do?\n");
     printf("1) Eat it  2) Ignore it\n> ");
     scanf("%d", &choice);
 
@@ -746,16 +746,16 @@ int event_weirdPlant(players *player) {
         int success = rand() % 2; // 0 = fail, 1 = success
 
         if (success == 0) {
-            printf("You feel stomach pain...\n");
-            player->health -= 10;   // 패널티
+            printf("You pick the plant and eat it. At first nothing happens, but soon after you start to feel stomach pain.\n");
+            player->health -= 20;   // 패널티
             return 0;
         } else {
-            printf("Your body feels energized!\n");
-            player->health += 10;   // 보상
+            printf("You pick the plant and eat it. It tastes slightly bitter, but you feel your body becoming lighter and your strength returning.\n");
+            player->health += 8;   // 보상
             return 1;
         }
     } else {
-        printf("You ignore the mysterious plant.\n");
+        printf("You decide to walk past it, just in case it might be poisonous.\n");
         return 2;
     }
 }
