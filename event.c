@@ -214,7 +214,7 @@ int event_rock_shade(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You find a cool, shaded area under a large rock. It looks like a comfortable place to rest.\n");
+    printf("You are walking through the forest in search of food when you begin to feel very tired. Just then, you notice a cool, shaded spot beneath a large rock ahead. It looks like a good place to rest for a moment. What will you do?\n");
 
     int n;
     while (1) {
@@ -229,14 +229,14 @@ int event_rock_shade(players *player) {
 
     if (n == 2) {
         printf("==============================\n");
-        printf("You lie down under the cool shade and relax.\n");
-        printf("[HP +10]\n");
+        printf("You lie down in the shade of the rock and enjoy the cool breeze as you take a comfortable rest.\n");
+        printf("[HP +8]\n");
         printf("==============================\n");
-        player->HP += 10;
+        player->HP += 8;
     }
     else {
         printf("==============================\n");
-        printf("You continue walking without resting.\n");
+        printf("You decide it’s not worth the trouble and simply walk past it.\n");
         printf("==============================\n");
     }
     return 0;
@@ -582,10 +582,8 @@ int event_pond_fish(players *player) {
     printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
-
-    printf("You discover a small pond with several trapped fish. They look easy to catch.\n");
+    printf("As you walk through the forest, you come across a small lake. Inside, a few fish are swimming around. What will you do?\n");
     printf("What will you do?\n");
-
 
     int n;
     while (1) {
@@ -611,14 +609,14 @@ int event_pond_fish(players *player) {
 
     if (n == 2) {
         printf("==============================\n");
-        printf("You reach into the pond and catch the fish easily.\n");
-        printf("[food +1]\n");
+        printf("You reach into the small lake and easily manage to catch a fish.\n");
+        printf("[food +3]\n");
         printf("==============================\n");
-        item[1].count += 1;
+        item[1].count += 3;
     }
     else { 
         printf("==============================\n");
-        printf("You decide not to catch the fish and leave.\n");
+        printf("You look at the fish and decide they don’t seem edible, so you leave them and move on.\n");
         printf("==============================\n");
     }
     return 0;
