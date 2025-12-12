@@ -4,13 +4,13 @@
 #include "player.h"
 
 /* event count: 일반 이벤트 + 희귀 이벤트 */
-#define eventCount 23
+#define eventCount 22
 
 /*
 ----------- Fixed Event -----------
 */
 int day1Event(players *player);
-
+int event_final_day(players *player);
 /*
 ----------- Normal Events -----------
 */
@@ -38,8 +38,6 @@ int event_rockRope(players *player);
 */
 int event_wave_collect(players *player);
 int event_waterfall(players *player);
-int event_ship_signal(players *player);
-int event_cabin(players *player);
 int event_cave(players *player);
 int collapsedCabin(players *player);   
 int discoverLifeboat(players *player); 
@@ -47,6 +45,7 @@ int shipwreck(players *player);
 int somethingInSand(players *player);  
 int wildBoar(players *player);       
 int approachingStorm(players *player);
+int event_military_supplies(players *player);
 
 /*
 ----------- Manager -----------
