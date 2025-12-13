@@ -214,7 +214,7 @@ int event_rock_shade(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You find a cool, shaded area under a large rock. It looks like a comfortable place to rest.\n");
+    printf("You are walking through the forest in search of food when you begin to feel very tired. Just then, you notice a cool, shaded spot beneath a large rock ahead. It looks like a good place to rest for a moment. What will you do?\n");
 
     int n;
     while (1) {
@@ -229,14 +229,14 @@ int event_rock_shade(players *player) {
 
     if (n == 2) {
         printf("==============================\n");
-        printf("You lie down under the cool shade and relax.\n");
-        printf("[HP +10]\n");
+        printf("You lie down in the shade of the rock and enjoy the cool breeze as you take a comfortable rest.\n");
+        printf("[HP +8]\n");
         printf("==============================\n");
-        player->HP += 10;
+        player->HP += 8;
     }
     else {
         printf("==============================\n");
-        printf("You continue walking without resting.\n");
+        printf("You decide it’s not worth the trouble and simply walk past it.\n");
         printf("==============================\n");
     }
     return 0;
@@ -582,10 +582,8 @@ int event_pond_fish(players *player) {
     printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
-
-    printf("You discover a small pond with several trapped fish. They look easy to catch.\n");
+    printf("As you walk through the forest, you come across a small lake. Inside, a few fish are swimming around. What will you do?\n");
     printf("What will you do?\n");
-
 
     int n;
     while (1) {
@@ -611,14 +609,14 @@ int event_pond_fish(players *player) {
 
     if (n == 2) {
         printf("==============================\n");
-        printf("You reach into the pond and catch the fish easily.\n");
-        printf("[food +1]\n");
+        printf("You reach into the small lake and easily manage to catch a fish.\n");
+        printf("[food +3]\n");
         printf("==============================\n");
-        item[1].count += 1;
+        item[1].count += 3;
     }
     else { 
         printf("==============================\n");
-        printf("You decide not to catch the fish and leave.\n");
+        printf("You look at the fish and decide they don’t seem edible, so you leave them and move on.\n");
         printf("==============================\n");
     }
     return 0;
@@ -740,7 +738,7 @@ int event_palm_leaves(players *player) {
 /* 7) WeirdPlantEvent*/
 int event_weirdPlant(players *player) {
     int choice;
-    printf("You discover a strange plant.\n");
+    printf("You are walking through the forest when you come across a strangely shaped plant. It smells pleasantly fragrant, but you’re not sure whether it’s a medicinal herb or a poisonous one. What will you do?\n");
     printf("1) Eat it  2) Ignore it\n> ");
     scanf("%d", &choice);
 
@@ -748,16 +746,16 @@ int event_weirdPlant(players *player) {
         int success = rand() % 2; // 0 = fail, 1 = success
 
         if (success == 0) {
-            printf("You feel stomach pain...\n");
-            player->health -= 10;   // 패널티
+            printf("You pick the plant and eat it. At first nothing happens, but soon after you start to feel stomach pain.\n");
+            player->health -= 20;   // 패널티
             return 0;
         } else {
-            printf("Your body feels energized!\n");
-            player->health += 10;   // 보상
+            printf("You pick the plant and eat it. It tastes slightly bitter, but you feel your body becoming lighter and your strength returning.\n");
+            player->health += 8;   // 보상
             return 1;
         }
     } else {
-        printf("You ignore the mysterious plant.\n");
+        printf("You decide to walk past it, just in case it might be poisonous.\n");
         return 2;
     }
 }
@@ -782,16 +780,16 @@ int event_twig(players *player) {
 /* 9) ClothEvent*/
 int event_cloth(players *player) {
     int choice;
-    printf("You find a piece of cloth on the beach.\n");
+    printf("You were walking along the beach when you found a piece of cloth. Its condition looked good, and it seemed usable. What will you do?\n");
     printf("1) Pick it up  2) Walk past\n> ");
     scanf("%d", &choice);
 
     if (choice == 1) {
-        printf("You picked up the cloth.\n");
-        player->cloth += 1;
+        printf("You successfully picked up the piece of cloth without any problems.\n");
+        player->cloth += 4;
         return 1;
     } else {
-        printf("You ignore the cloth.\n");
+        printf("You decided it wasn’t necessary and simply walked past it.\n");
         return 2;
     }
 }
@@ -816,16 +814,16 @@ int event_fishingNet(players *player) {
 /* 11) StoneEvent*/
 int event_stone(players *player) {
     int choice;
-    printf("You see several stones near the water.\n");
+    printf("You were walking along the coast when you discovered a cracked rock. If you strike it a little, it might break into a useful shape that could be used in many ways. What will you do?\n");
     printf("1) Pick them up  2) Walk past\n> ");
     scanf("%d", &choice);
 
     if (choice == 1) {
-        printf("You collected the stones.\n");
-        player->stone += 1;
+        printf("You decided to break the rock. You struck the cracked fragment against the larger rock, and it broke successfully, giving you several usable stones.\n");
+        player->stone += 5;
         return 1;
     } else {
-        printf("You walk past the stones.\n");
+        printf("You felt it might be dangerous, so you decided to just pass by.\n");
         return 2;
     }
 }
