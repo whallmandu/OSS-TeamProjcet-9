@@ -175,7 +175,7 @@ int main() {
   printf("            [ 1 : New Game ]    [ 2 : Load Game ]\n");
   scanf("%d", &choice);
   
- // 버퍼 정리
+
   int tmp;
   while ((tmp = getchar()) != '\n' && tmp != EOF);
 
@@ -239,10 +239,12 @@ int main() {
     }
     else {
       if(currentEventID == -1) currentEventID = pickEventID();
-      if(runEventByID(currentEventID, &player) == 4) {
+      int k = runEventByID(currentEventID, &player)
+      if(k == 4) {
         quit = 1;
         break;
       }
+      else if(k == 9) break;
     }
 
     //Next Day increments and resource consumption
