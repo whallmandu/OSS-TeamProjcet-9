@@ -311,6 +311,7 @@ int event_final_day(players *player) {
     printf("You have survived for a full 30 days on an uninhabited island,\n");
     printf("enduring harsh conditions and constant threats.\n");
     printf("Now you must choose what to do next.\n\n");
+    drawImage(900, 0, "image\\Day30.bmp");
 
     int n;
 
@@ -339,6 +340,7 @@ int event_final_day(players *player) {
 
         // SOS >= 4
         if (SOS >= 4) {
+            drawImage(900, 0, "image\\Ending1.bmp");
             printf("==============================\n");
             printf("You activated all your distress signals.\n");
             printf("Soon, you hear helicopter blades cutting the sky.\n");
@@ -352,6 +354,7 @@ int event_final_day(players *player) {
 
         // Distress Signal <= Lv 3 
         else {
+            drawImage(900, 0, "image\\Ending1F.bmp");
             printf("==============================\n");
             printf("You activated all your distress signals and waited.\n");
             printf("But by dawn, no sound came.\n");
@@ -368,6 +371,7 @@ int event_final_day(players *player) {
 
         // Shelter >= Lv 4
         if (Shelter >= 4) {
+            drawImage(900, 0, "image\\Ending2.bmp");
             printf("==============================\n");
             printf("Your shelter is strong and comfortable.\n");
             printf("You sit before the sunset, feeling no pressure of past life.\n");
@@ -379,6 +383,7 @@ int event_final_day(players *player) {
 
         // Shelter <= Lv 3
         else {
+            drawImage(900, 0, "image\\Ending3.bmp");
             printf("==============================\n");
             printf("Your shelter is unstable, but there's nothing more you can do.\n");
             printf("You decide to remain and hope for rescue someday.\n");

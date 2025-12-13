@@ -136,7 +136,7 @@ void printPrologue() {
 
 int main() {
   system("mode con: cols=190 lines=40");
-  system("title Survival Island");
+  system("title ISOLATED");
   SetConsoleOutputCP(CP_UTF8);
   FILE *setup = fopen("setup.txt", "r");
 
