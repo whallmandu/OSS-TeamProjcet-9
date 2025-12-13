@@ -735,54 +735,54 @@ int thunderstorm(players *player) {
 }
 
 
-int fallenFruit(players *player) { 
-    printf("==============================\n");
-    printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
-    printf("==============================\n\n");
+// int fallenFruit(players *player) { 
+//     printf("==============================\n");
+//     printf("Day %d\n", player->Day);
+//     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
+//     printf("==============================\n\n");
    
-    printf("You find a fruit lying on the ground in the forest.\n");
-    printf("It looks edible, but you cannot be certain.\n");
-    printf("What will you do?\n");
+//     printf("You find a fruit lying on the ground in the forest.\n");
+//     printf("It looks edible, but you cannot be certain.\n");
+//     printf("What will you do?\n");
     
-    int n;
-    while(1) {
-        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
+//     int n;
+//     while(1) {
+//         printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
         
-        scanf("%d", &n);
-        if(n==1) checkR();
-        else if(n==2) break;
-        else if(n==3) break;
-        else if(n==0) return 4;
-        else printf("wrong input!\n");
-    }
+//         scanf("%d", &n);
+//         if(n==1) checkR();
+//         else if(n==2) break;
+//         else if(n==3) break;
+//         else if(n==0) return 4;
+//         else printf("wrong input!\n");
+//     }
 
-    if(n==2) { //Eat
-        int a = rand() % 2;
-        if(a == 0) { //success
-            printf("==============================\n");
-            printf("You eat the fruit.\n");
-            printf("It is delicious, so you gather more of them.\n");
-            printf("[food +4]\n");
-            printf("==============================\n");
-            item[1].count += 4;
-        }
-        else { //failure
-            printf("==============================\n");
-            printf("You pick up the fruit and eat it.");
-            printf("The taste is strange, and soon your stomach begins to hurt.\n");
-            printf("[HP -7]\n");
-            printf("==============================\n");
-            player->HP -= 7;
-        }
-    } else if(n==3) { //Ignore
-        printf("==============================\n");
-        printf("You decide that you shouldn't eat a fruit you know nothing about and move on.\n");
-        printf("==============================\n");
-    }
+//     if(n==2) { //Eat
+//         int a = rand() % 2;
+//         if(a == 0) { //success
+//             printf("==============================\n");
+//             printf("You eat the fruit.\n");
+//             printf("It is delicious, so you gather more of them.\n");
+//             printf("[food +4]\n");
+//             printf("==============================\n");
+//             item[1].count += 4;
+//         }
+//         else { //failure
+//             printf("==============================\n");
+//             printf("You pick up the fruit and eat it.");
+//             printf("The taste is strange, and soon your stomach begins to hurt.\n");
+//             printf("[HP -7]\n");
+//             printf("==============================\n");
+//             player->HP -= 7;
+//         }
+//     } else if(n==3) { //Ignore
+//         printf("==============================\n");
+//         printf("You decide that you shouldn't eat a fruit you know nothing about and move on.\n");
+//         printf("==============================\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 /* 3) Seaweed: dry -> rope, or eat -> food+water */
 int seaweedClump(players *player) {
@@ -1131,119 +1131,119 @@ int fishSpotted(players *player) {
     return 0;
 }
 
-int fishingFish(players *player) {
-    printf("==============================\n");
-    printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
-    printf("==============================\n\n");
+// int fishingFish(players *player) {
+//     printf("==============================\n");
+//     printf("Day %d\n", player->Day);
+//     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
+//     printf("==============================\n\n");
 
-    printf("While walking along the shore, you spot a few fish swimming in the shallow water.\n");
-    printf("If you could catch them, they would be useful as food.\n");
-    printf("What will you do?\n");
+//     printf("While walking along the shore, you spot a few fish swimming in the shallow water.\n");
+//     printf("If you could catch them, they would be useful as food.\n");
+//     printf("What will you do?\n");
 
-    int n;
-    while (1) {
-        printf("[1: Check resources] [2: Try catching them with your hands] [3: Just watch and move on] [0: Quit]\n");
-        scanf("%d", &n);
-        if (n == 1) checkR();
-        else if (n == 2) break;
-        else if (n == 3) break;
-        else if (n == 0) return 4;
-        else printf("wrong input!\n");
-    }
+//     int n;
+//     while (1) {
+//         printf("[1: Check resources] [2: Try catching them with your hands] [3: Just watch and move on] [0: Quit]\n");
+//         scanf("%d", &n);
+//         if (n == 1) checkR();
+//         else if (n == 2) break;
+//         else if (n == 3) break;
+//         else if (n == 0) return 4;
+//         else printf("wrong input!\n");
+//     }
 
-    if(n == 2) { //Catching
-        int a = rand()%3;
-        if(a == 1) { //success
-            printf("==============================\n");
-            printf("You quickly reached out and caught one of the fish.\n");
-            printf("[food +2]\n");
-            printf("==============================\n");
-            item[1].count += 2;
-        } else { //failure
-            printf("==============================\n");
-            printf("The fish moved faster than you expected.\n");
-            printf("While trying to catch one, you slipped and fell.\n");
-            printf("[HP -3]\n");
-            printf("==============================\n");
-            player->HP -= 3;
-        }
-    }
-    else if(n == 3) { //Move on
-        printf("==============================\n");
-        printf("You decide to save your energy and simply relax while looking our at the ocean horizon.\n");
-        printf("[HP +6]\n");
-        printf("==============================\n");
-        player->HP += 6;
-    }
+//     if(n == 2) { //Catching
+//         int a = rand()%3;
+//         if(a == 1) { //success
+//             printf("==============================\n");
+//             printf("You quickly reached out and caught one of the fish.\n");
+//             printf("[food +2]\n");
+//             printf("==============================\n");
+//             item[1].count += 2;
+//         } else { //failure
+//             printf("==============================\n");
+//             printf("The fish moved faster than you expected.\n");
+//             printf("While trying to catch one, you slipped and fell.\n");
+//             printf("[HP -3]\n");
+//             printf("==============================\n");
+//             player->HP -= 3;
+//         }
+//     }
+//     else if(n == 3) { //Move on
+//         printf("==============================\n");
+//         printf("You decide to save your energy and simply relax while looking our at the ocean horizon.\n");
+//         printf("[HP +6]\n");
+//         printf("==============================\n");
+//         player->HP += 6;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 /* 6) Palm leaves -> rope or go out (risky) */
-int event_palm_leaves(players *player) {
-    printf("==============================\n");
-    printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
-           player->HP, player->Hunger, player->Thirst);
-    printf("==============================\n\n");
+// int event_palm_leaves(players *player) {
+//     printf("==============================\n");
+//     printf("Day %d\n", player->Day);
+//     printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+//            player->HP, player->Hunger, player->Thirst);
+//     printf("==============================\n\n");
 
-    printf("You notice you have many palm leaves. You could spend the day turning some into rope, or go out to look for food.\n");
-    printf("What will you do?\n");
+//     printf("You notice you have many palm leaves. You could spend the day turning some into rope, or go out to look for food.\n");
+//     printf("What will you do?\n");
 
-    int n;
-    while (1) {
-        printf("[1: Check resources] [2: Go outside] [3: Turn palm leaves into rope] [0: Quit]\n");
+//     int n;
+//     while (1) {
+//         printf("[1: Check resources] [2: Go outside] [3: Turn palm leaves into rope] [0: Quit]\n");
 
-        if (scanf("%d", &n) != 1) {
-            while (getchar() != '\n');
-            continue;
-        }
+//         if (scanf("%d", &n) != 1) {
+//             while (getchar() != '\n');
+//             continue;
+//         }
 
-        if (n == 1) {
-            checkR();   
-        }
-        else if (n == 2 || n == 3 || n == 0) {
-            break;
-        }
-        else {
-            printf("wrong input!\n");
-        }
-    }
+//         if (n == 1) {
+//             checkR();   
+//         }
+//         else if (n == 2 || n == 3 || n == 0) {
+//             break;
+//         }
+//         else {
+//             printf("wrong input!\n");
+//         }
+//     }
 
-    if (n == 0) return 4;
+//     if (n == 0) return 4;
 
-    if (n == 2) {
-        int r = rand() % 2;
-        if (r == 0) {
-            printf("==============================\n");
-            printf("Failure: You found nothing while outside.\n");
-            printf("==============================\n");
-        } else {
-            printf("==============================\n");
-            printf("Success: You found some simple fruits.\n");
-            printf("[food +1]\n");
-            printf("==============================\n");
-            item[1].count += 1;
-        }
-    }
-    else if (n == 3) { // palm leaves → rope
-        if (item[4].count >= 3) {
-            item[4].count -= 3;
-            item[3].count += 1; 
-            printf("==============================\n");
-            printf("You turned palm leaves into rope.\n");
-            printf("[rope +1] [palm -3]\n");
-            printf("==============================\n");
-        } else {
-            printf("==============================\n");
-            printf("You don't have enough palm leaves (need 3). Nothing happens.\n");
-            printf("==============================\n");
-        }
-    }
+//     if (n == 2) {
+//         int r = rand() % 2;
+//         if (r == 0) {
+//             printf("==============================\n");
+//             printf("Failure: You found nothing while outside.\n");
+//             printf("==============================\n");
+//         } else {
+//             printf("==============================\n");
+//             printf("Success: You found some simple fruits.\n");
+//             printf("[food +1]\n");
+//             printf("==============================\n");
+//             item[1].count += 1;
+//         }
+//     }
+//     else if (n == 3) { // palm leaves → rope
+//         if (item[4].count >= 3) {
+//             item[4].count -= 3;
+//             item[3].count += 1; 
+//             printf("==============================\n");
+//             printf("You turned palm leaves into rope.\n");
+//             printf("[rope +1] [palm -3]\n");
+//             printf("==============================\n");
+//         } else {
+//             printf("==============================\n");
+//             printf("You don't have enough palm leaves (need 3). Nothing happens.\n");
+//             printf("==============================\n");
+//         }
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 /* 7) WeirdPlantEvent*/
 int event_strange_plant(players *player) {
@@ -1741,12 +1741,15 @@ int event_earthquake(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("The ground begins to shake violently. An earthquake is happening.\n");
+    printf("You were walking through the forest when you felt a slight tremor.\n");
+    printf("Thinking it was nothing, you continued walking — but then \nthe ground suddenly shook violently and began to crack. \n");
     printf("What will you do?\n");
+
+    drawImage(900, 0, "imagee\\quake.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Hide under stable rocks] [3: Run to open area] [0: Quit]\n");
+        printf("[1: Check resources] [2: Stay in the forest] [3: Go to the coast] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1761,26 +1764,42 @@ int event_earthquake(players *player) {
     if (n == 0) return 4;
 
     if (n == 2) {  
-        int r = rand() % 2;
+        int m;
+        while (1) {
+            printf("[1: Check resources] [2: Enter the cave] [3: Climb the mountain] [0: Quit]\n");
 
-        if (r == 0) {
+            if (scanf("%d", &m) != 1) {
+                while (getchar() != '\n');
+                continue;
+            }
+
+            if (m == 1) checkR();
+            else if (m == 2 || m == 3 || m == 0) break;
+            else printf("wrong input!\n");
+        }
+
+        if (m == 0) return 4;
+        if (m == 2) {
             printf("==============================\n");
-            printf("Failure: Falling debris hits you.\n");
-            printf("[HP -15]\n");
+            printf("You went inside the cave.\n");
+            printf("At that moment, the cave collapsed, and you were crushed by falling rocks.\n");
             printf("==============================\n");
-            player->HP -= 15;
-        } else {
+            player->HP = -999;
+        }
+        if (m == 3) {
             printf("==============================\n");
-            printf("Success: You find a stable spot and protect yourself.\n");
+            printf("You struggled but decided to climb the mountain.\n");
+            printf("After climbing up and waiting for a while, the earthquake stopped.\n");
             printf("==============================\n");
         }
     }
     else if (n == 3) { 
         printf("==============================\n");
-        printf("You run to an open area and avoid collapsing structures.\n");
-        printf("[HP +5]\n");
+        printf("You headed toward the coast.\n");
+        printf("However, the earthquake triggered a tsunami, and you were swept\naway by the waves, suffering severe injuries.\n");
+        printf("[HP -25]\n");
         printf("==============================\n");
-        player->HP += 5;
+        player->HP -= 25;
     }
 
     return 0;
@@ -1951,47 +1970,47 @@ int collapsedCabin(players *player) {
 
 
 
-int discoverLifeboat(players *player) {
-    printf("==============================\n");
-    printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
-    printf("==============================\n\n");
+// int discoverLifeboat(players *player) {
+//     printf("==============================\n");
+//     printf("Day %d\n", player->Day);
+//     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
+//     printf("==============================\n\n");
     
-    printf("You discover the remains of a lifeboat washed ashore.\n");
-    printf("There might be useful items inside, or you may find food around it.\n");
-    printf("What will you do?\n");
+//     printf("You discover the remains of a lifeboat washed ashore.\n");
+//     printf("There might be useful items inside, or you may find food around it.\n");
+//     printf("What will you do?\n");
    
-    int n;
-    while (1) {
-    printf("[1: Check resources] [2: Search inside the lifeboat] [3: Search around the lifeboat] [0: Quit]\n");
-        scanf("%d", &n);
-        if (n == 1) checkR();
-        else if (n == 2) break;
-        else if (n == 3) break;
-        else if (n == 0) return 4;
-        else printf("wrong input!\n");
-    }
+//     int n;
+//     while (1) {
+//     printf("[1: Check resources] [2: Search inside the lifeboat] [3: Search around the lifeboat] [0: Quit]\n");
+//         scanf("%d", &n);
+//         if (n == 1) checkR();
+//         else if (n == 2) break;
+//         else if (n == 3) break;
+//         else if (n == 0) return 4;
+//         else printf("wrong input!\n");
+//     }
 
-    if (n == 2) { //Search inside
-        printf("==============================\n");
-        printf("You found rope, wood, and stones inside the boat.\n");
-        printf("[rope +4] [wood +3] [stone +1]\n");
-        printf("==============================\n");
-        item[3].count += 4;
-        item[5].count += 3;
-        item[7].count += 1;
-    } 
-    if (n == 3) { //Search around
-        printf("==============================\n");
-        printf("You found bottled water and stored food nearby.\n");
-        printf("[food +3] [water +3]\n");
-        printf("==============================\n");
-        item[1].count += 3;
-        item[2].count += 3;
-    }
+//     if (n == 2) { //Search inside
+//         printf("==============================\n");
+//         printf("You found rope, wood, and stones inside the boat.\n");
+//         printf("[rope +4] [wood +3] [stone +1]\n");
+//         printf("==============================\n");
+//         item[3].count += 4;
+//         item[5].count += 3;
+//         item[7].count += 1;
+//     } 
+//     if (n == 3) { //Search around
+//         printf("==============================\n");
+//         printf("You found bottled water and stored food nearby.\n");
+//         printf("[food +3] [water +3]\n");
+//         printf("==============================\n");
+//         item[1].count += 3;
+//         item[2].count += 3;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 int shipwreck(players *player) {
@@ -2138,6 +2157,8 @@ int somethingInSand(players *player) {
     printf("You brush off the dirt and lift it—it is heavier than you expected.\n");
     printf("What will you do?\n\n");
 
+    drawImage(900, 0, "image\\oldchest.bmp");
+
     int n;
 
     // ===============================
@@ -2254,9 +2275,11 @@ int wildBoar(players *player) {
     // ===============================
     // Situation Description
     // ===============================
-    printf("You suddenly hear heavy footsteps and rustling in the bushes.\n");
-    printf("A wild boar charges toward you at high speed.\n");
+    printf("You are walking through the forest when suddenly \nyou hear heavy footsteps and rustling in the bushes.\n");
+    printf(" As you look around, you see a wild boar charging toward you at high speed.\n");
     printf("What will you do?\n\n");
+
+    drawImage(900, 0, "image\\boar.bmp");
 
     int n;
 
@@ -2370,7 +2393,7 @@ int wildBoar(players *player) {
         printf("(Death)\n");
         printf("==============================\n");
 
-        player->HP = 0;
+        player->HP = -999;
         return 0;
     }
 
@@ -2408,55 +2431,55 @@ int wildBoar(players *player) {
 }
 
 
-int approachingStorm(players *player) {
-    printf("==============================\n");
-    printf("Day %d\n", player->Day);
-    printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
-    printf("==============================\n\n");
+// int approachingStorm(players *player) {
+//     printf("==============================\n");
+//     printf("Day %d\n", player->Day);
+//     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst);
+//     printf("==============================\n\n");
     
-    printf("You notice dark clouds forming quickly above the sea.\n");
-    printf("A storm is approaching.\n");
-    printf("You need a prepare.\n");
+//     printf("You notice dark clouds forming quickly above the sea.\n");
+//     printf("A storm is approaching.\n");
+//     printf("You need a prepare.\n");
     
-    int n;
-    while(1) {
-        printf("[1: Check resources] [2: Reinforce shelter] [3: Gather emergency supplies] [0: Quit]\n");
-        scanf("%d", &n);
-        if(n==1) checkR();
-        else if(n==2) {
-            if(item[5].count > 1 && item[7].count > 2) {
-                break;
-            }
-            else printf("No woods or stones!\n");
-        }
-        else if(n==3) break;
-        else if(n==0) return 4;
-        else printf("wrong input!\n");
-    }
+//     int n;
+//     while(1) {
+//         printf("[1: Check resources] [2: Reinforce shelter] [3: Gather emergency supplies] [0: Quit]\n");
+//         scanf("%d", &n);
+//         if(n==1) checkR();
+//         else if(n==2) {
+//             if(item[5].count > 1 && item[7].count > 2) {
+//                 break;
+//             }
+//             else printf("No woods or stones!\n");
+//         }
+//         else if(n==3) break;
+//         else if(n==0) return 4;
+//         else printf("wrong input!\n");
+//     }
 
-    if(n==2) { //Reinforce
-        printf("==============================\n");
-        printf("You reinforce your shelter using woods and stones.\n");
-        printf("Thanks to your preparation, you endure the storm safely.\n");
-        printf("[stone -3] [wood -2]\n");
-        printf("==============================\n");
-        item[5].count -= 2;
-        item[7].count -= 3;
-    } 
-    if(n==3) { //Gather supplies
-        printf("==============================\n");
-        printf("You prioritize gathering food and water.\n");
-        printf("During the storm, you shelter is damaged, but you avoid starvation.\n");
-        printf("[food +8] [water +8] [Shelter LV -2]\n");
-        printf("==============================\n");
-        item[1].count += 8;
-        item[2].count += 8;
-        Shelter -= 2;
-        if(Shelter < 0) Shelter = 0;
-    }
+//     if(n==2) { //Reinforce
+//         printf("==============================\n");
+//         printf("You reinforce your shelter using woods and stones.\n");
+//         printf("Thanks to your preparation, you endure the storm safely.\n");
+//         printf("[stone -3] [wood -2]\n");
+//         printf("==============================\n");
+//         item[5].count -= 2;
+//         item[7].count -= 3;
+//     } 
+//     if(n==3) { //Gather supplies
+//         printf("==============================\n");
+//         printf("You prioritize gathering food and water.\n");
+//         printf("During the storm, you shelter is damaged, but you avoid starvation.\n");
+//         printf("[food +8] [water +8] [Shelter LV -2]\n");
+//         printf("==============================\n");
+//         item[1].count += 8;
+//         item[2].count += 8;
+//         Shelter -= 2;
+//         if(Shelter < 0) Shelter = 0;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 /* Rare: Waterfall cliff risky climb */
@@ -2587,10 +2610,9 @@ int event_cave(players *player) {
     // ===============================
     // Situation Description
     // ===============================
-    printf("While exploring deep inside the island, you push aside some vines\n");
-    printf("and discover a hidden cave entrance behind them.\n");
+    printf("You were exploring deep inside the island when you pushed aside\nsome vines and discovered a hidden cave entrance behind them.\n");
     printf("What will you do?\n\n");
-
+    drawImage(900, 0, "image\\cave1.bmp");
     int n;
 
     // ===============================
@@ -2624,6 +2646,7 @@ int event_cave(players *player) {
     // ===============================
     // [2] Enter the cave
     // ===============================
+    drawImage(900, 0, "image\\cave2.bmp");
     printf("==============================\n");
     printf("You decide to enter the cave. It's dark, but you find some supplies.\n");
     printf("[Wood +5] [Rope +2] [Water +2]\n");
@@ -2667,12 +2690,12 @@ int event_cave(players *player) {
     // [2] Go deeper (Success 20% / Failure 80%)
     // ===============================
     if (sub == 2) {
-
+ 
         int r = rand() % 100;
 
         if (r < 20) {  // Success
             printf("==============================\n");
-            printf("Success: You went deeper, and it was worth it.\n");
+            printf("You went deeper, and it was worth it.\n");
             printf("You found several cans of food and exited safely.\n");
             printf("[Food +6]\n");
             printf("==============================\n");
@@ -2681,7 +2704,7 @@ int event_cave(players *player) {
         } 
         else {  // Failure
             printf("==============================\n");
-            printf("Failure: You went too far into the cave.\n");
+            printf("You went too far into the cave.\n");
             printf("Breathing became difficult, and you barely escaped.\n");
             printf("[HP -20]\n");
             printf("==============================\n");
@@ -2793,13 +2816,13 @@ int (*eventList[])(players *) = {
  seaweedClump,
  event_herbs,
  fishSpotted,
- event_palm_leaves,
+ //event_palm_leaves,
  thunderstorm,
- fallenFruit,
+ //fallenFruit,
  fallenTree,
  thePool,
  palmLeaves ,   
- fishingFish,
+ //fishingFish,
  event_strange_plant,
  event_dry_twigs,
  event_cloth_found,
@@ -2808,28 +2831,28 @@ int (*eventList[])(players *) = {
  event_rock_rope,
  event_tornado,
  event_animal_carcass,
- event_earthquake,
 /*
 ----------- Rare / Special Events -----------
 */
+event_earthquake,
 event_wave_collect,
 event_waterfall,
 event_cave,
 collapsedCabin,
-discoverLifeboat, 
+//discoverLifeboat, 
 shipwreck,
 somethingInSand,
 wildBoar,
-approachingStorm,
+//approachingStorm,
 event_military_supplies
 
 };
 
 
-int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1};
+int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1};
 
 /* usedEvent flags */
-int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
 
 
