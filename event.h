@@ -47,12 +47,12 @@ int fallenTree(players *player);
 int thePool(players *player);  
 int palmLeaves(players *player);     
 int fishingFish(players *player);    
-int suspiciousWeeds(players *player);
-int event_twig(players *player);
-int event_cloth(players *player);
-int event_fishingNet(players *player);
-int event_stone(players *player);
-int event_rockRope(players *player);
+int event_strange_plant(players *player);
+int event_dry_twigs(players *player);
+int event_cloth_found(players *player);
+int event_old_net(players *player);
+int event_stones_found(players *player);
+int event_rock_rope(players *player);
 
 /*
 ----------- Rare / Special Events -----------
