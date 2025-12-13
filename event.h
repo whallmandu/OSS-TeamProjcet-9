@@ -21,7 +21,7 @@
 
 #include "player.h"
 
-/* event count: 일반 이벤트 + 희귀 이벤트 */
+/* event count */
 #define eventCount 22
 
 /*

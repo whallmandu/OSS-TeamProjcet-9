@@ -497,7 +497,6 @@ int rockShade(players *player) {
     else {
         printf("==============================\n");
         printf("You decide it’s not worth the trouble and simply walk past it.\n");
-        printf("You decide it’s not worth the trouble and simply walk past it.\n");
         printf("==============================\n");
     }
     return 0;
@@ -1478,7 +1477,7 @@ int event_wave_collect(players *player) {
             printf("[Food +3] [Water +3] [Wood +7]\n");
             printf("==============================\n");
 
-            item[1].count += 3;  // Food (item index는 네 프로젝트 기준)
+            item[1].count += 3;  // Food
             item[2].count += 3;  // Water
             item[5].count += 7;  // Wood
         }
@@ -1504,28 +1503,18 @@ int event_wave_collect(players *player) {
 
 
 int collapsedCabin(players *player) {
-
-    // ===============================
-    // 플레이어 정보 출력
-    // ===============================
     printf("==============================\n");
     printf("Day %d\n", player->Day);
     printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    // ===============================
-    // 상황 설명
-    // ===============================
     printf("You are walking through the forest when you discover an old cabin that looks like it was built long ago.\n");
     printf("Inside the cabin, you see several rotten foods and a box. However, the cabin looks unstable and dangerous.\n");
     printf("What will you do?\n\n");
 
     int n;
 
-    // ===============================
-    // 공통 선택지 루프
-    // ===============================
     while (1) {
         printf("[1: Check resources] [2: Enter the cabin] [3: Ignore it] [0: Quit]\n");
 
@@ -1549,15 +1538,12 @@ int collapsedCabin(players *player) {
         }
     }
 
-    // ===============================
-    // 선택 실행
-    // ===============================
 
     if (n == 2) { // Enter
         int r = rand() % 100;
 
         if (r < 25) {
-            // 성공 (25%)
+            // (25%)
             printf("==============================\n");
             printf("Success: You decide to take the risk and enter the cabin.\n");
             printf("Inside, you open the box and find various supplies.\n");
@@ -1565,10 +1551,10 @@ int collapsedCabin(players *player) {
             printf("==============================\n");
 
             item[6].count += 8;  // Cloth
-            item[3].count += 5;  // Rope (item index는 실제 프로젝트 기준으로 조정 필요)
+            item[3].count += 5;  // Rope 
         }
         else {
-            // 실패 (75%)
+            // (75%)
             printf("==============================\n");
             printf("Failure: The moment you step inside, the unstable cabin collapses under your weight.\n");
             printf("You fall through the rotten floor and get injured.\n");
