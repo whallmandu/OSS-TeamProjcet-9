@@ -71,6 +71,7 @@ int event_military_supplies(players *player);
 /*
 ----------- Manager -----------
 */
+void drawImage(int x, int y, const char* filename);
 int pickEventID();
 int runEventByID(int eventID, players *player);
 void getUsedEvents(int *buffer);

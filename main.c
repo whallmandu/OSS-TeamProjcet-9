@@ -121,10 +121,11 @@ void printPrologue() {
 
     system("cls");
     printf("===== PROLOGUE =====\n\n");
-
+    drawImage(900, 0, "image\\prologue_1.bmp");
     for (int i = 0; i < count; i++) {
-        printf("%s\n", lines[i]);
-        Sleep(1000); // 1.3 seconds delay
+      if(i==4) drawImage(900, 0, "image\\prologue_2.bmp");
+      printf("%s\n", lines[i]);
+      Sleep(1000); // 1.3 seconds delay
     }
 
     printf("\nPress Enter to begin your survival journey...");

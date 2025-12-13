@@ -87,6 +87,8 @@ int day1_1(players *player) {
     printf("However, you discover a durian tree.\n");
     printf("How will you collect the fruit?\n");
 
+    drawImage(900, 0, "image\\Day1_1.bmp");
+
     int n;
     while(1) {
         printf("[1: Check resources] [2: Shake the tree] [3: Climb the tree] [4: Do not collect] [0: Quit]\n");
@@ -138,6 +140,8 @@ int day1_2(players *player) {
     printf("You start exploring the area around the coastline.\n");
     printf("After walking for a while, you come across a shabby wooden structure.\n");
     printf("Will you explore the structure?\n");
+
+    drawImage(900, 0, "image\\Day1_2.bmp");
 
     int n;
     while(1) {
@@ -195,6 +199,7 @@ int day1Event(players *player) {
     if(n==2) return day1_1(player);
     else if(n==3) return day1_2(player);
     else if(n == 4) {
+        drawImage(900, 0, "image\\Day1_3.bmp");
         printf("==============================\n");
         printf("Hoping there might be other land nearby, you start swimming.\n");
         printf("However, you see no land and drown.\n");
