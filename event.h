@@ -14,19 +14,19 @@ int event_final_day(players *player);
 /*
 ----------- Normal Events -----------
 */
-int event_tree_hole(players *player);
-int event_rock_shade(players *player);
-int event_seaweed(players *player);
+int insideTheLog(players *player);
+int rockShade(players *player);
+int seaweedClump(players *player);
 int event_herbs(players *player);
-int event_pond_fish(players *player);
+int fishSpotted(players *player);
 int event_palm_leaves(players *player);
-int suddenDownpour(players *player);  
+int thunderstorm(players *player);  
 int fallenFruit(players *player);  
-int bigTree(players *player);         
-int findGroundWater(players *player);  
-int falmLeaves(players *player);     
+int fallenTree(players *player);         
+int thePool(players *player);  
+int palmLeaves(players *player);     
 int fishingFish(players *player);    
-int event_weirdPlant(players *player);
+int suspiciousWeeds(players *player);
 int event_twig(players *player);
 int event_cloth(players *player);
 int event_fishingNet(players *player);
