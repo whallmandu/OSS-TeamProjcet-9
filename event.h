@@ -22,7 +22,7 @@
 #include "player.h"
 
 /* event count */
-#define eventCount 22
+#define eventCount 33
 
 /*
 ----------- Fixed Event -----------
@@ -35,6 +35,8 @@ int event_final_day(players *player);
 /*
 ----------- Normal Events -----------
 */
+int birdSpotted(players *player);
+int clamsSpotted(players *player);
 int insideTheLog(players *player);
 int rockShade(players *player);
 int seaweedClump(players *player);
@@ -47,13 +49,15 @@ int fallenTree(players *player);
 int thePool(players *player);  
 int palmLeaves(players *player);     
 int fishingFish(players *player);    
-int suspiciousWeeds(players *player);
-int event_twig(players *player);
-int event_cloth(players *player);
-int event_fishingNet(players *player);
-int event_stone(players *player);
-int event_rockRope(players *player);
-
+int event_strange_plant(players *player);
+int event_dry_twigs(players *player);
+int event_cloth_found(players *player);
+int event_old_net(players *player);
+int event_stones_found(players *player);
+int event_rock_rope(players *player);
+int event_tornado(players *player);
+int event_animal_carcass(players *player);
+int event_earthquake(players *player);
 /*
 ----------- Rare / Special Events -----------
 */
