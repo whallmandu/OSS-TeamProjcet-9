@@ -181,6 +181,7 @@ int day1Event(players *player) {
     item[2].count++;
 
     drawImage(900, 0, "image\\Day1.bmp");
+   
 
     int n;
     while(1) {
@@ -2058,14 +2059,18 @@ int wildBoar(players *player) {
         printf("==============================\n");
 
         while (1) {
-            printf("{2} Up the tree   {3} Inside the bush\n");
+            printf("[1: check resource] [2: Up the tree] [3: Inside the bush] [0: quit]\n");
 
             if (scanf("%d", &sub) != 1) {
                 while (getchar() != '\n');
                 continue;
             }
 
+
+            
+            if (sub == 1) { checkR(); continue; }
             if (sub == 2 || sub == 3) break;
+            if (n == 0) return 4;
 
             printf("wrong input!\n");
         }
@@ -2371,15 +2376,16 @@ int event_cave(players *player) {
 
     while (1) {
         printf("Will you go deeper?\n");
-        printf("{2} Go deeper   {3} Retreat\n");
+        printf("[1: check resource] [2: Go deeper] [3: Retreat] [0: quit]\n");
 
         if (scanf("%d", &sub) != 1) {
             while (getchar() != '\n');
             continue;
         }
 
+        if(sub == 0){checkR(); continue; }
         if (sub == 2 || sub == 3) break;
-
+        if(sub == 4) return 4;
         printf("wrong input!\n");
     }
 
@@ -2514,45 +2520,48 @@ int event_military_supplies(players *player) {
 
 /* event list, rarity flags, used flags */
 int (*eventList[])(players *) = {
-    insideTheLog,     //normal event
-    rockShade,
-    seaweedClump,
-    event_herbs,
-    fishSpotted,
-    event_palm_leaves,         
-    thunderstorm,     // 0  
-    fallenFruit,        // 1
-    fallenTree,            // 2
-    thePool,    // 3
-    palmLeaves,         // 4
-    fishingFish,        // 5
-    event_wave_collect,    // [Special Events]
-    event_waterfall,
-    event_cave,
-    collapsedCabin,     // 6
-    discoverLifeboat,   // 7
-    shipwreck,          // 8
-    somethingInSand,    // 9
-    wildBoar,           // 10
-    approachingStorm,    // 11
-    event_strange_plant,
-    event_dry_twigs,
-    event_cloth_found,
-    event_old_net,
-    event_stones_found,
-    event_rock_rope,
-    event_animal_carcass,
-    event_tornado,
-    event_earthquake
-
+ insideTheLog,
+ rockShade,
+ seaweedClump,
+ event_herbs,
+ fishSpotted,
+ event_palm_leaves,
+ thunderstorm,
+ fallenFruit,
+ fallenTree,
+ thePool,
+ palmLeaves ,   
+ fishingFish,
+ event_strange_plant,
+ event_dry_twigs,
+ event_cloth_found,
+ event_old_net,
+ event_stones_found,
+ event_rock_rope,
+ event_tornado,
+ event_animal_carcass,
+ event_earthquake,
+/*
+----------- Rare / Special Events -----------
+*/
+event_wave_collect,
+event_waterfall,
+event_cave,
+collapsedCabin,
+discoverLifeboat, 
+shipwreck,
+somethingInSand,
+wildBoar,
+approachingStorm,
+event_military_supplies
 
 };
 
 
-int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1};
+int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1};
 
 /* usedEvent flags */
-int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
 
 
