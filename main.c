@@ -1,3 +1,21 @@
+/*
+    Survival Island - Text-based Survival Game
+    Copyright (C) 2025 서바이버초이스
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -20,15 +38,14 @@ Item item[] = {
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
 //extra setting
-int Shelter = 0; int SOS = 0; int Raft = 0;
+int Shelter = 0; int SOS = 0;
 
 //save data
 typedef struct{
   players savedPlayer;      
     Item savedItems[9];     
     int savedShelter;         
-    int savedSOS;             
-    int savedRaft;            
+    int savedSOS;                       
     int savedUsedEvents[eventCount];
     int savedEventID;
 } GameState;
@@ -50,7 +67,6 @@ void gameSave(players *p, int current) {
 
   state.savedShelter = Shelter;
   state.savedSOS = SOS;
-  state.savedRaft = Raft;
   state.savedEventID = current;
 
   getUsedEvents(state.savedUsedEvents);
@@ -80,7 +96,6 @@ int gameLoad(players *p) {
 
   Shelter = state.savedShelter;
   SOS = state.savedSOS;
-  Raft = state.savedRaft;
 
   setUsedEvents(state.savedUsedEvents);
 
@@ -117,6 +132,8 @@ void printPrologue() {
 
 
 int main() {
+  system("mode con: cols=190 lines=40");
+  system("title Survival Island");
   FILE *setup = fopen("setup.txt", "r");
 
   if(setup == NULL) {
@@ -164,7 +181,6 @@ int main() {
 
   if (choice == 2) {
       if (!gameLoad(&player)) {
-           // 로드 실패 시 그냥 새 게임 진행 또는 종료
            printf("Starting New Game...\n");
       }
   }
@@ -178,7 +194,19 @@ int main() {
         quit = 1;
         break;
       }
-    } 
+    }
+    else if(player.Day == 10) {
+      if(day10Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
+    }
+    else if(player.Day == 20) {
+      if(day20Event(&player) == 4) {
+        quit = 1;
+        break;
+      }
+    }
     else if (player.Day == 30) {
 
        int ending = event_final_day(&player);
@@ -193,8 +221,7 @@ int main() {
            break;
        }
        else {
-           // ending == 0 → 조건 부족 또는 다시 선택
-           // Day 증가 없이 다시 시도
+           // ending == 0 → re
            continue;
        }
     }
@@ -208,6 +235,13 @@ int main() {
 
     //Next Day increments and resource consumption
     player.Day++;
+    //Special Death
+    if(player.HP <= -100) {
+      printf("==============================\n");
+      printf("You are dead.\n");
+      printf("==============================\n");
+      break;
+    }
     
     //Setup HP
     if(player.HP > MAX_HP) player.HP = MAX_HP;
@@ -285,7 +319,9 @@ int main() {
     
 
     // Home HP
-    if(Shelter != 5) player.HP += Shelter + 1;
+    if(Shelter > 4) Shelter = 4;
+    if(SOS > 4) SOS = 4;
+    if(Shelter != 4) player.HP += Shelter + 1;
     else player.HP += 10; 
     
     //screen clear
@@ -307,13 +343,15 @@ int main() {
   }
 
   //save
-  system("cls");
-  int S;
-  printf("[1: Game save] [2: No save]\n");
-  scanf("%d", &S);
-  if (S == 1) {
-    gameSave(&player, currentEventID);
+  if(quit == 1) {
+    int S;
+    printf("\n\n[1: Game save] [2: No save]\n");
+    scanf("%d", &S);
+    if (S == 1) {
+      gameSave(&player, currentEventID);
+    }
   }
+  
 
   //screen clear
   printf("Press Enter...");
