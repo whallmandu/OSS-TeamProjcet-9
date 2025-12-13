@@ -103,6 +103,33 @@ int gameLoad(players *p) {
   return 1;
 }
 
+void printPrologue() {
+    const char *lines[] = {
+        "It was October, somewhere near the Caribbean.",
+        "He was preparing to set sail on a rescue mission.",
+        "The sea was pitch-black, and there was nothing in sight.",
+        "Then, a massive wave lifted the rescue boat high into the air before slamming it back down.",
+        "He lost consciousness, and the ocean quietly added him to the list of those who needed saving.",
+        "The next morning, he woke up on the shore of an uninhabited island.",
+        "There was no one around, and he had no way to tell where he was.",
+        "He didn't know how long he'd be there, or even if anyone would come.",
+        "But one thing was certain: he was no longer the rescuer-he was the one waiting to be rescued."
+    };
+
+    int count = sizeof(lines) / sizeof(lines[0]);
+
+    system("cls");
+    printf("===== PROLOGUE =====\n\n");
+
+    for (int i = 0; i < count; i++) {
+        printf("%s\n", lines[i]);
+        Sleep(1300); // 1.3 seconds delay
+    }
+
+    printf("\nPress Enter to begin your survival journey...");
+    getchar();
+}
+
 
 int main() {
   system("mode con: cols=190 lines=40");
@@ -136,6 +163,22 @@ int main() {
   printf("[1: New Game] [2: Load Game]\n");
   scanf("%d", &choice);
   
+ // 버퍼 정리
+  int tmp;
+  while ((tmp = getchar()) != '\n' && tmp != EOF);
+
+  if (choice == 1) {
+      printPrologue();
+  }
+  else if (choice == 2) {
+     if (!gameLoad(&player)) {
+         printf("Starting New Game...\n");
+         printPrologue();
+     }
+  }
+
+
+
   if (choice == 2) {
       if (!gameLoad(&player)) {
            printf("Starting New Game...\n");
@@ -164,17 +207,26 @@ int main() {
         break;
       }
     }
-    else if(player.Day == 30) {
-      //final event
-      printf("==============================\n");
-      printf("You have survived for 30 days!\n");
-      printf("Rescue team found you and brought you home.\n");
-      printf("Congratulations, survivor!\n");
-      printf("==============================\n");
-      break;
+    else if (player.Day == 30) {
+
+       int ending = event_final_day(&player);
+
+       if (ending == 9) {         // Rescue Ending
+           break;
+       }
+       else if (ending == 10) {   // Successful Deserted Ending
+           break;
+       }
+       else if (ending == 11) {   // Forced Deserted Ending
+           break;
+       }
+       else {
+           // ending == 0 → re
+           continue;
+       }
     }
     else {
-      if(currentEventID = -1) currentEventID = pickEventID();
+      if(currentEventID == -1) currentEventID = pickEventID();
       if(runEventByID(currentEventID, &player) == 4) {
         quit = 1;
         break;
@@ -219,6 +271,14 @@ int main() {
     if(player.Hunger >= hungerLevel) player.HP -= 5;
     if(player.Hunger < 0) player.Hunger = 0;
     
+    if (player.Hunger >= 50) {
+    printf("==============================\n");
+    printf("You collapsed from extreme hunger.\n");
+    printf("Your vision fades to black...\n");
+    printf("You died.\n");
+    printf("==============================\n");
+    break;
+}
 
     //Thirst
     if(item[2].count <= 0) {
@@ -232,7 +292,7 @@ int main() {
       int n;
       while(1) {
         scanf("%d", &n);
-        if(n < 0 || n > item[2].count) printf("worong input!\n");
+        if(n < 0 || n > item[2].count) printf("wrong input!\n");
         else break;
       }
       player.Thirst -= n * thirstReduction;
@@ -244,6 +304,18 @@ int main() {
     }
     if(player.Thirst >= thirstLevel) player.HP -= 5;
     if(player.Thirst < 0) player.Thirst = 0;
+
+
+    if (player.Thirst >= 50) {
+    printf("==============================\n");
+    printf("Your body could not endure the dehydration.\n");
+    printf("You collapse on the ground...\n");
+    printf("You died.\n");
+    printf("==============================\n");
+    break;
+}
+
+
     
 
     // Home HP

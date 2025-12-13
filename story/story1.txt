@@ -1,0 +1,479 @@
+피로 / The Fatigue (고정, 체력이 10 이하)
+Your health is below 10. You currently feel very tired and think you need to recover through sleep. Will you sleep?
+[2] Sleep [3] Do not sleep
+[2] Sleep
+You decided to recover by sleeping.
+(Health +5)
+(The next day)
+[3] Do not sleep
+You chose not to sleep because you thought you might miss something important.
+
+당신의 체력이 10 이하입니다. 당신은 현재 몸이 매우 피로함을 느껴 수면을 통해 회복이 필요하다고 생각이 듭니다. 수면하시겠습니까?
+[2] 수면한다 [3] 수면하지 않는다
+[2] 수면한다
+당신은 수면을 통해 회복을 하기로 했습니다.
+(체력 +5)
+(다음 날로)
+[3] 수면하지 않는다
+당신은 혹시 중요한 것을 놓칠 수 있다고 생각해 수면을 취하지 않기로 하였습니다.
+
+엔딩 / The End (고정)
+You have survived for a full 30 days on an uninhabited island, enduring harsh conditions and constant threats. By now, you’ve adapted somewhat to island life and have thought of a few ways to escape. However, you realize that continuing as you have been won’t change much, so you decide to make a new choice. What will you do?
+[2] Request Rescue [3] Remain on the Island
+[2] Request Rescue (Requires Distress Signal Lv 5)
+If you have Distress Signal Lv 4:
+You used the knowledge you had gained from working as a rescue worker to prepare numerous distress signals on the island. That night, you activated all the devices you had made. Perhaps as a reward for your 30 days of hard work, you soon heard the sound of helicopter blades and voices calling out for you. Rushing out of your shelter, tears filled your eyes as you greeted the rescue team. By coincidence, one of the rescuers was a colleague you had worked with before. While flying back to the city you lived in, you talked with your colleague about your time on the island.
+(Rescue Ending)
+If you have Distress Signal Lv 3 or below:
+You used your rescue-worker knowledge to set up many distress signals on the island. That night, you activated all the devices you had made. However, no sound came by the time dawn broke. Staying calm, you decided to look for another option.
+(Back to Choices)
+[3] Remain on the Island
+If you have Shelter Lv 4:
+ Since the day you were stranded, you used your survival knowledge to secure a living space and adapt to island life. Unlike your previous life filled with tiring work and pressure, you now felt at ease, free from others’ judgment. You realized you didn’t necessarily need to escape. You sat in front of your shelter, watching the sun set over the horizon, holding onto the belief that rescue would eventually come.
+(Successful Deserted Ending)
+If you have Shelter Lv 3 or below:
+Since being stranded, you used your survival knowledge to build a shelter and adapt to island life. Although your shelter wasn’t ideal and you felt uneasy, there was nothing more you could do. You resolved to stay on the island, living each day with the hope that rescue would someday arrive.
+(Forced Deserted Ending)
+
+당신은 무인도에서 혹독한 환경과 끝없는 위협 속에서 무려 30일이나 버텨냈습니다. 이제 당신은 무인도 생활에도 어느 정도 적응했고, 탈출할 방법도 어느 정도 생각해 보았습니다. 하지만 이제까지 생활했던대로만 하면 상황은 크게 달라지지 않을 듯하여 당신은 새로운 결정을 내리기로 하였습니다. 어떻게 하시겠습니까?
+[2] 구조 요청 [3] 무인도 잔류
+[2] 구조 요청 (조난 신호 Lv 4 필요)
+조난 신호 Lv 4일 시
+당신은 평소에 구조 대원으로 일하며 알던 지식을 활용하여 무인도에 조난되었다는 신호를 많이 제작해 두었습니다. 그날 밤, 당신은 제작해 둔 장치를 모두 활용하여 조난 신호를 보냈습니다. 30일 간의 노력에 대한 보답인지 밖에서 헬리콥터의 프로펠러 소리와 함께 당신을 찾는 목소리가 들립니다. 당신은 황급히 거주지에서 밖으로 나와 기쁜 마음으로 구조대원들을 맞이하며 눈물을 흘립니다. 게다가 우연으로 구조대원 중에 평소에 같이 일하던 동료도 있었습니다. 당신은 그 동료와 그동안의 생활에 대해서 대화를 나누며 당신이 살던 도시에 도착합니다.
+(구조 엔딩)
+조난 신호 Lv 3 이하일 시
+당신은 평소에 구조 대원으로 일하며 알던 지식을 활용하여 무인도에 조난되었다는 신호를 많이 제작해 두었습니다.  그날 밤, 당신은 제작해 둔 장치를 모두 활용하여 조난 신호를 보냈습니다. 하지만 다음 날이 밝을 때까지 아무 소리도 들리지 않았습니다. 당신은 침착하게 다른 방안을 찾기로 하였습니다.
+(다시 선택지로)
+[3] 무인도 잔류
+거주지 Lv 4일 시
+당신은 무인도에 표류되었을 때부터 한 달 동안 기존에 알던 생존 지식을 활용해서 거주지를 확보하며 어느 정도 무인도 생활에 적응했습니다. 당신은 힘들게 일하기만 하며 살던 과거와 달리 현재의 삶은 여유롭고 남의 눈치도 볼 필요가 없어 만족스럽다고 생각이 듭니다. 따라서 굳이 탈출을 할 필요가 없다고 생각이 듭니다. 당신은 이제 거주지 앞에 앉아 수평선에 저물어가는 태양을 바라봅니다. 언젠가는 구조대가 올 것이라는 마음가짐과 함께 말이죠.
+(성공적 무인도 잔류 엔딩)
+거주지 Lv 3 이하일 시
+당신은 무인도에 표류되었을 때부터 한 달 동안 기존에 알던 생존 지식을 활용해서 거주지를 확보하며 어느 정도 무인도 생활에 적응했습니다. 거주지가 만족스럽지 않아 살짝 불안하기도 합니다. 하지만 이 상황에서 더 이상 할 수 있는 것은 없기에 당신은 불안한 마음으로로 언젠가는 구조대가 올 것이라는 마음가짐으로 살기로 다짐합니다.
+(강제적 무인도 잔류 엔딩)
+
+새 발견 / Bird Spotted (일반)
+You are exploring the beach to find food under bright sunshine. The weather is extremely hot and a bit unpleasant, but you don’t mind as long as you can secure food. At that moment, you hear the cry of a bird. Very hungry, you instinctively look up and spot a seagull. What will you do?
+[2] Throw a stone [3] Make a trap
+[2] Throw a stone (Success 5%, Failure 95%)
+On success:
+You pick the most suitable stone you can find nearby and throw it at the seagull. By sheer luck, the stone hits the seagull directly, and it crashes onto the beach.
+(Food +4)
+On failure:
+You pick the most suitable stone you can find nearby and throw it at the seagull. However, the chances of hitting it were far too low. Feeling disappointed, you move on to look for other food sources.
+[3] Make a trap (Requires 1 Wood, 1 rope)
+If you have the materials:
+You create a trap to lure the seagull and wait for it to be caught. After some time, the seagull falls for the trap without any suspicion. Will you kill the seagull immediately to secure food?
+(Wood -2, Rope -1)
+{2} Kill it {3} Do not kill it
+{2} Kill it
+In your haste to obtain food, you kill the seagull and successfully secure it as food.
+(Food +4)
+{3} Do not kill it
+You decide not to kill the seagull right away, just in case. After a short while, the seagull lays eggs. You feel relieved that you didn’t kill it, and you decide to continue collecting eggs from it for the time being.
+(Food +1 every 2 days)
+If you lack the materials:
+You try to create a trap to lure the seagull, but you didn’t realize you were lacking the necessary materials. The seagull simply flies past, and you continue searching for food in disappointment.
+당신은 화창한 햇살 속에서 식량을 구하기 위해 해변가를 탐험하고 있습니다. 매우 더운 날씨에 조금 불쾌하지만 식량을 구할 수 있다면 괜찮다고 생각합니다. 그 때 당신은 새의 울음소리를 듣습니다. 매우 배고픈 당신은 반사적으로 위를 쳐다보았고 갈매기를 발견했습니다. 어떻게 하시겠습니까?
+[2] 돌을 던진다 [3] 함정을 만든다
+[2] 돌을 던진다 (성공 5%, 실패 95%)
+성공 시
+당신은 갈매기를 향해 주변에 보이는 돌 중 가장 적합한 것을 골라 던졌습니다. 당신이 던진 돌은 우연히 갈매기에게 정확히 명중하였고 갈매기는 해변가에 추락하였습니다.
+(식량 +4)
+실패 시
+당신은 갈매기를 향해 주변에 보이는 돌 중 가장 적합한 것을 골라 던졌습니다. 하지만 돌을 던져서 갈매기를 맞힐 가능성은 너무나도 적었습니다. 당신은 아쉬운 마음으로 다른 식량을 찾으러 갑니다.
+[3] 함정을 만든다 (목재 1, 밧줄 1 필요)
+재료 보유 시
+당신은 갈매기를 유인하는 함정을 만들어 잡히기를 기다렸습니다. 계속 기다리던 순간 갈매기가 아무런 의심 없이 함정에 잡혔습니다. 갈매기를 당장 처치하여 식량을 마련하시겠습니까?
+(목재 2, 밧줄 -1)
+{2} 처치한다 {3} 처치하지 않는다
+{2} 처치한다
+당신은 급한 나머지 갈매기를 처치하고 식량을 구하고자 했습니다. 당신은 갈매기를 처치하고 성공적으로 식량을 구했습니다.
+(식량 +4)
+{3} 처치하지 않는다
+당신은 혹시 몰라 갈매기를 당장 처치하지 않았습니다. 잠시 뒤 갈매기가 알을 낳았습니다. 당신은 처치하지 않길 잘했다고 생각하며 당분간은 갈매기를 통해 알을 계속 얻기로 하였습니다.
+(2일마다 식량 +1)
+재료 미보유 시
+당신은 갈매기를 유인하는 함정을 만들고자 하였는데 재료가 부족하다는 것을 미처 생각하지 못했습니다. 갈매기는 그냥 날아서 지나가며 당신은 아쉬운 채로 식량을 마저 구하러 갔습니다.
+
+조개 발견 / Clams Spotted (일반)
+You are walking along the coastline when you find several live clams on the sand. How will you collect them?
+[2] Break them with a stone [3] Soak them in seawater [4] Cook them first
+[2] Break them with a stone
+You tried to use a small stone to break the clams to get food, but in the process of breaking them, much of the meat was crushed and damaged.
+(Food +1)
+[3] Soak them in seawater
+You soaked several clams in seawater. Some of them escaped, but a few opened up and can be used as food.
+(Food +3)
+[4] Cook them first
+Knowing that clams naturally open when cooked, you heated them over a fire. As a result, several clams opened, and you successfully obtained food.
+(Food +5)
+
+당신은 해안가를 따라 걷다 모래 위에서 살아 있는 조개 몇 마리를 발견했습니다. 어떤 방법으로 채집하시겠습니까?
+[2] 돌로 부순다 [3] 바닷물에 담근다 [4] 먼저 익힌다
+[2] 돌로 부순다
+당신은 작은 돌멩이를 사용하여 조개를 부숴 식량을 구하고자 하였지만 부수는 과정에서 조개의 살이 함께 으깨져 많은 부분이 손상되었습니다.
+(식량 +1)
+[3] 바닷물에 담근다
+당신은 조개 여러 마리를 바닷물에 담가 보았습니다. 그 때 조개 몇 개는 탈출했지만 몇 마리는 열려 식량으로 사용할 수 있습니다.
+(식량 +3)
+[4] 먼저 익힌다
+당신은 조개를 익히면 자연스럽게 열릴 것으로 알고 조개를 불에 가열했습니다. 그 결과 여러 마리의 조개가 열려 성공적으로 식량을 구했습니다.
+(식량 +5)
+
+뇌우 / Thunderstorm (일반)
+You are exploring a deserted island to gather food as usual when suddenly a thunderstorm hits. You are startled by the sudden situation, but quick decisions are necessary to survive. How do you respond?
+[2] Find a place to hide [3] Ignore it
+[2] Find a place to hide
+You quickly start looking for a place to take cover. At that moment, you discover a cave. Where will you hide?
+{2} Under a tree {3} In the cave
+{2} Under a tree (35% success, 65% failure)
+Success:
+You hurriedly hide under a nearby tree. A few minutes later, the sky clears, and you feel relieved and continue searching for food.
+Failure:
+You hurriedly hide under a nearby tree. While waiting for the storm to pass, unfortunately, you are struck by lightning.
+(Health -25)
+{3} In the cave
+You hurriedly hide at the entrance of the cave you just found. Inside, there are signs that someone stored water here. A few minutes later, the sky clears, and you feel relieved and continue searching for food.
+(Water +4)
+[3] Ignore it (Success 50%, Failure 50%)
+Success:
+Believing that lightning will not strike you, you continue searching for food. At that moment, you notice fruit falling from a tree and gather it. However, you start shivering from getting soaked in the rain.
+(Food +4, Health -4)
+Failure:
+Believing that lightning will not strike you, you continue searching for food. But it was too risky. While you are careless, lightning strikes you.
+(Health -25)
+
+당신은 평소처럼 식량을 구하기 위해 무인도를 탐험하다가 갑작스럽게 뇌우를 맞이합니다. 갑작스러운 상황에 당황했지만, 생존하려면 빠른 판단이 필요합니다. 어떻게 대처하시겠습니까?
+[2] 숨을 곳을 찾는다 [3] 무시한다
+[2] 숨을 곳을 찾는다
+당신은 급하게 주변에 숨을 곳이 있는지 찾기 시작했습니다. 그 때 동굴을 발견했습니다. 어디에 숨으시겠습니까?
+{2} 나무 아래 {3} 동굴
+{2} 나무 아래 (35% 성공, 65% 실패)
+성공 시
+당신은 급한 대로 주변에 보이는 나무 아래에 숨었습니다. 몇 분 뒤 하늘은 밝아졌고 당신은 안심하고 계속 식량을 찾기로 했습니다.
+실패 시
+당신은 급한 대로 주변에 보이는 나무 아래에 숨었습니다. 비구름이 그치기를 기다리던 그 때, 운이 없게도 번개가 당신을 내리쳤습니다. 
+(체력 -25)
+{3} 동굴
+당신은 급한 대로 방금 발견한 동굴 입구에 숨었습니다. 동굴에는 누군가가 물을 담아 놓은 흔적이 있었고, 몇 분 뒤 하늘은 밝아져 당신은 안심하고 계속 식량을 찾기로 했습니다.
+(식수 +4)
+[3] 무시한다 (성공 50%, 실패 50%)
+성공 시
+당신은 번개가 당신은 적중하지 않을 것이라 믿고 계속 식량을 찾아 나섰습니다. 그 때, 어떤 나무에서 열매가 떨어지는 것을 보았고 당신은 열매를 챙겼습니다. 하지만 비를 많이 맞은 탓에 몸이 떨리기 시작했습니다.
+(식량 +4, 체력 -4)
+실패 시
+당신은 번개가 당신은 적중하지 않을 것이라 믿고 계속 식량을 찾아 나섰습니다. 하지만 너무 위험한 행동이었습니다. 당신이 방심하고 있을 때 번개가 당신을 적중했습니다.
+(체력 -25)
+
+수상한 식물 / Suspicious Weeds (일반)
+While exploring the deep forest of a deserted island, you come across a fruit hanging from a strangely shaped plant. However, you don’t know whether the fruit is poisonous. What would you do?
+[2] Eat it [3] Ignore it
+[2] Eat it (50% success, 50% failure)
+ If successful:
+Believing the fruit might have beneficial effects, you eat it. A few minutes later, you feel much more energetic than before.
+(Health +14)
+If failed:
+Believing the fruit might have beneficial effects, you eat it. A few minutes later, you start feeling a headache coming on.
+(Health -6)
+[3] Ignore it
+To avoid potential danger, you decide not to eat the fruit.
+
+당신은 무인도의 깊은 숲 속을 탐험하던 도중 특이하게 생긴 식물에 달려 있는 열매를 발견했습니다. 하지만 당신은 이 열매의 독의 유무를 모릅니다. 어떻게 하시겠습니까?
+[2] 먹는다 [3] 무시한다
+[2] 먹는다 (성공 50%, 실패 50%)
+성공 시
+당신은 열매가 효능이 있을 것이라 믿고 열매를 먹었습니다. 몇 분 뒤, 당신은 조금 전보다 훨씬 활기찬 모습을 보입니다.
+(체력 +14)
+실패 시
+당신은 열매가 효능이 있을 것이라 믿고 열매를 먹었습니다. 몇 분 뒤, 당신은 이상하게도 머리가 점점 아파옵니다.
+(체력 -6)
+[3] 무시한다
+당신은 혹시 모를 위험에 대비하여 열매를 먹지 않기로 하였습니다.
+
+쓰러진 나무 / Fallen Tree (일반)
+You are exploring the forest when you come across a tall fallen tree. It could be dangerous, but it’s also an opportunity to gather resources to expand your shelter. What will you do?
+[2] Harvest it [3] Ignore it
+[2] Harvest it (70% success, 30% failure)
+Success:
+You harvest the fallen tree and obtain plenty of lumber. (Wood +7)
+Failure:
+While harvesting the fallen tree, you’re unlucky and get bitten by a squirrel. (Health -4)
+[3] Ignore it
+You decide to pass by, just in case something unexpected happens.
+
+당신은 숲 속을 탐험하다 높은 나무가 쓰러져 있는 것을 발견했습니다. 위험할 수도 있지만 거주지를 확장할 자원을 얻을 기회입니다. 어떻게 하시겠습니까?
+[2] 벌채한다 [3] 무시한다
+[2] 벌채한다 (성공 70%, 실패 30%)
+성공 시
+당신은 쓰러진 나무를 벌채하여 많은 목재를 획득했습니다. (목재 +7)
+실패 시
+당신은 쓰러진 나무를 벌채하다가 운이 없게도 다람쥐에게 물렸습니다. (체력 -4)
+[3] 무시한다
+당신은 혹시 모를 상황에 대비하여 그냥 지나갔습니다.
+
+웅덩이 / The Pool (일반)
+You were walking through the forest when you discovered a huge puddle on the ground. If the water was drinkable, you wouldn’t have to worry about water for a while. What will you do?
+[2] Drink it immediately [3] Boil it
+[2] Drink it immediately
+You decided to drink the water as it was. After a short while, you began to feel your stomach hurting more and more.
+(Health -5)
+[3] Boil it
+You lit a fire and safely boiled the water. Some of it evaporated while boiling, but you secured safe drinking water, so it’s enough.
+(Water +3)
+
+당신은 숲을 걷다 땅에 거대한 웅덩이를 발견했습니다. 마실 수 있는 물이라면 당분간의 물 걱정은 없을 것 같았습니다. 어떻게 하시겠습니까?
+[2] 바로 마신다 [3] 끓인다
+[2] 바로 마신다
+당신은 그냥 물을 마셔 보았습니다. 잠시 후 당신은 배가 점점 아파오는 것을 느꼈습니다.
+(체력 -5)
+[3] 끓인다
+당신은 불을 피운 후 안전하게 물을 끓였습니다. 물을 끓일 때 조금 증발하긴 했지만 안전한 식수를 확보했으니 충분합니다.
+(식수 +3)
+야자수 잎 / Palm Leaves (일반)
+While exploring the forest, you find a pile of fallen palm leaves on the ground. The leaves are mostly undamaged, but there could be unknown creatures hiding within them. However, taking the leaves with you would be very useful for reinforcing your shelter. What will you do?
+[2] Take them [3] Ignore them
+[2] Take them (70% success, 30% failure)
+Succe	s:
+You gathered many palm leaves to reinforce your shelter. Fortunately, there were no harmful creatures inside.
+(Leaves +8)
+Failure:
+You gathered many palm leaves to reinforce your shelter. However, a snake hidden among the leaves suddenly bit you. Luckily, as far as you know, the snake was not venomous.
+(Health -3)
+[3] Ignore them
+You decided to leave the leaves behind, just in case something might be hiding inside.
+
+당신은 숲을 탐험하다가 바닥에 나무에서 떨어진 야자수 잎이 쌓여 있는 것을 발견했습니다. 잎의 손상은 거의 없었지만 잎에 알 수 없는 생명체가 있을 수도 있습니다. 하지만 잎을 챙긴다면 당신의 거주지를 강화하는 데에 매우 유용할 것입니다. 어떻게 하시겠습니까?
+[2] 챙겨간다 [3] 무시한다
+[2] 챙겨간다 (성공 70%, 실패 30%)
+성공 시
+당신은 거주지를 강화하기 위해 많은 야자수 잎을 챙겼습니다. 운이 좋게도 당신은 해치는 생명체는 없었습니다.
+(잎 +8)
+실패 시
+당신은 거주지를 강화하기 위해 많은 야자수 잎을 챙겼습니다. 하지만 잎 안의 뱀이 당신은 갑작스럽게 물었습니다. 다행히도 방금 본 뱀은 당신이 알기론 독사가 아닙니다.
+(체력 -3)
+[3] 무시한다
+당신은 혹시 모를 상황에 대비하여 잎을 챙기지 않고 지나갔습니다.
+
+물고기 발견 / Fish Spotted (일반)
+You are walking along the coast when you spot a few fish swimming in the shallow water. They look edible to you. What will you do?
+[2] Catch them [3] Ignore them
+[2] Catch them (50% success, 50% failure)
+Success:
+You quickly use a nearby stick to spear one of the fish. You successfully catch it.
+(Food +3)
+Failure:
+You thrust the nearby stick toward the fish, but it darts away. Unluckily, you step on a seashell on the seabed.
+(Health -8)
+[3] Ignore them
+You decide to conserve your strength and take a moment to rest while gazing at the horizon beyond the sea.
+(Health +6)
+당신은 해안가를 따라 걷다가 얕은 바다에서 물고기 몇 마리가 헤엄치는 것을 발견했습니다. 당신이 보기에 식용 물고기로 보입니다. 어떻게 하시겠습니까?
+[2] 잡는다 [3] 무시한다
+[2] 잡는다 (50% 성공, 50% 실패)
+성공 시
+당신은 주변에 있던 막대기를 활용하여 빠르게 물고기를 관통했습니다. 성공적으로 물고기를 잡았습니다.
+(식량 +3)
+실패 시
+당신은 주변에 있던 막대기를 활용하여 빠르게 물고기를 향해 내리 꽂았습니다. 하지만 물고기는 빠르게 도망갔고 운이 없게도 바닥에 있던 소라 껍데기를 밟았습니다.
+(체력 -8)
+[3] 무시한다
+당신은 체력을 아끼기로 하고 바다 저 너머 지평선을 바라보며 휴식을 취했습니다.
+(체력 +6)
+
+통나무 안 / Inside the Log (일반)
+You are walking through the forest when you discover a hole inside a log. Something is glimmering within it, but you can’t see clearly inside. What will you do?
+[2] Put your hand in [3] Ignore it
+[2] Put your hand in (Success 50%, Failure 50%)
+On Success
+You carefully reached your hand into the log. When you moved a little, you heard a rustling sound that startled you, but after feeling around, it seemed to be a bird’s nest. As you explored further, you felt some eggs. Feeling a bit sorry for the bird, you decided to take the eggs.
+(Food +4)
+On Failure
+You carefully reached your hand into the log. When you moved a little, you heard a rustling sound that startled you, but after feeling around, it seemed to be a bird’s nest. Suddenly, the bird pecked your hand with its beak. Startled, you quickly pulled your hand out and fell over.
+(Health -8)
+[3] Ignore it
+Not knowing what might be inside the log, you decided to ignore it and walk past.
+당신은 숲을 거닐다가 통나무 안의 구멍을 발견했습니다. 통나무 안에 무언가가 반짝이고는 있지만 구멍 안이 잘 보이지 않습니다. 어떻게 하시겠습니까?
+[2] 손을 넣는다 [3] 무시한다
+[2] 손을 넣는다 (성공 50%, 실패 50%)
+성공 시 
+당신은 통나무 안에 손을 집어 넣었습니다. 손을 약간 움직였을 때 바스락거리는 소리가 들려 약간 놀랐지만 생김새를 파악해 보니 새 둥지인 것 같았습니다. 더 만져 보니 알이 있는 것 같아 새에게는 미안하지만 당신은 알을 챙겼습니다. (식량 +4)
+실패 시
+당신은 통나무 안에 손을 집어 넣었습니다. 손을 약간 움직였을 때 바스락거리는 소리가 들려 약간 놀랐지만 생김새를 파악해 보니 새 둥지인 것 같았습니다. 그 때 갑자기 새가 부리로 당신의 손을 쪼았습니다. 놀라며 빠르게 손을 빼었고 당신은 넘어졌습니다. (체력 -8)
+[3] 무시한다
+당신은 통나무 안에 무엇이 있을 지 몰라 무시하고 지나갔습니다.
+
+바위 그늘 / Rock Shade (일반)
+You are walking through the forest in search of food when you begin to feel very tired. Just then, you notice a cool, shaded spot beneath a large rock ahead. It looks like a good place to rest for a moment. What will you do?
+[2] Rest [3] Ignore it
+[2] Rest (80% success, 20% failure)
+Success:
+You lie down in the shade of the rock and enjoy the cool breeze as you take a comfortable rest.
+(Health +8)
+Failure:
+You lie down in the shade and feel the cool breeze. Suddenly, a large rock rolls toward you from behind. It strikes your back hard, and you become injured.
+(Health -8)
+[3] Ignore it
+You decide it’s not worth the trouble and simply walk past it.
+
+당신은 식량을 찾아 숲 속을 걷다가 매우 피로함을 느낍니다. 마침 앞에 시원해 보이는 바위 그늘이 보였습니다. 잠깐 편히 쉬다 갈 수 있을 것 같아 보이는데, 어떻게 하시겠습니까?
+[2] 휴식한다 [3] 무시한다
+[2] 휴식한다 (성공 80%, 실패 20%)
+성공 시
+당신은 바위 그늘에 누워서 시원한 바람을 맞으며 편히 휴식을 취했습니다.
+(체력 +8)
+실패 시
+당신은 바위 그늘에 누워서 시원한 바람을 맞았습니다. 그 때, 뒤에서 커다란 돌이 굴러왔습니다. 돌은 당신의 등을 강하게 쳤고 당신은 부상당했습니다.
+(체력 -8)
+[3] 무시한다
+당신은 큰 의미가 없다고 생각하여 그냥 지나갔습니다.
+
+임시 쉼터 / Temporary Shelter (희귀)
+You are walking through the forest when you discover an old cabin that looks like it was built long ago. Inside the cabin, you see several rotten foods and a box. However, the cabin looks unstable and dangerous. What will you do?
+[2] Enter [3] Ignore it
+[2] Enter (Success 25%, Failure 75%)
+Success:
+You decide to take the risk and enter the cabin. Inside, you open the box and find various supplies, which you take with you.
+(+8 Cloth, +5 Rope)
+Failure:
+You decide to take the risk and enter the cabin. However, the moment you take a step forward, the cabin—too old to support any weight—collapses beneath you. You fall through the broken floor.
+(-15 Health)
+[3] Ignore it
+The cabin looks too old, and nothing seems worth the danger, so you simply pass by.
+
+당신은 숲 속을 걷다가 오래 전에 지어진 듯한 오두막을 발견했습니다. 오두막 내부에는 여러 썩은 음식이 있었고 상자가 보였습니다. 하지만 오두막을 위태로워 보입니다. 어떻게 하시겠습니까?
+[2] 들어간다 [3] 무시한다
+[2] 들어간다 (성공 25%, 실패 75%)
+성공 시
+당신은 위험을 무릅쓰고 들어가기로 했습니다. 그 안에서 상자를 열어 보았고 상자 안에는 여러 물자가 있어 챙겼습니다.
+(천 +8, 밧줄 +5)
+실패 시
+당신은 위험을 무릅쓰고 들어가기로 했습니다. 그 안에서 한 발자국을 앞으로 내딛었을 때, 오두막은 너무 오래되어 당신의 무게를 감당하지 못했고 오두막의 바닥이 무너져 당신은 아래로 추락했습니다.
+(체력 -15)
+[3] 무시한다
+오두막이 너무 오래되어 보이고 쓸만한 것도 없어 보여 당신은 그냥 지나갔습니다.
+
+거대한 파도 / Tidal Wave (희귀)
+As you walked along the coastline, you noticed a fallen coconut tree. You could collect several coconuts and some usable wood from it. However, when you looked toward the sea, you saw a massive wave approaching. The coconuts and wood would be very useful, but there was a risk of being swept away by the wave. What will you do?
+[2] Collect them [3] Ignore it
+[2] Collect them (Success 20%, Failure 80%)
+Success: You decided to take the risk and rushed to gather the coconuts and wood. You barely managed to grab them and escape, and the wave stopped right in front of you.
+(Food +3, Water +3, Wood +7)
+Failure:
+You decided to take the risk and rushed to gather the coconuts and wood. However, the wave was faster than you expected. In the end, you were swept away by it.
+(Health -12)
+[3] Ignore it
+The wave looked faster than you thought, so you decided to head back into the forest and avoid it.
+당신은 해안가를 걷다가 코코넛 나무가 쓰러셔 여러 코코넛 열매와 목재를 획득할 수 있을 것 같았습니다. 하지만 바다를 바라보니 거대한 파도가 다가오고 있었습니다. 코코넛과 나무를 챙긴다면 매우 유용하지만 파도에 휩쓸릴 수 있습니다. 어떻게 하시겠습니까?
+[2] 챙긴다 [3] 무시한다
+[2] 챙긴다 (성공 20%, 실패 80%)
+성공 시
+당신은 위헙을 무릅쓰기로 하고 코코넛과 나무를 가지러 갔습니다. 당신은 가까스로 챙긴 후 도망쳤고 파도는 당신의 앞에서 딱 멈췄습니다.
+(식량 +3, 식수 +3, 목재 +7)
+실패 시
+당신은 위헙을 무릅쓰기로 하고 코코넛과 나무를 가지러 갔습니다. 하지만 파도의 속도를 생각보다 빨랐습니다. 결국 당신은 파도에 휩쓸렸습니다.
+(체력 -12)
+[3] 무시한다
+당신은 파도가 생각보다 빨라보여 그냥 숲 속으로 들어가 피했습니다.
+
+난파선 / The Shipwreck (희귀)
+You were walking along the shore when you discovered a shipwreck stranded on the beach. You don't know what might be inside, but judging by its size, there could be useful materials. What will you do?
+[2] Explore it [3] Board it and escape [4] Ignore it
+[2] Explore it (Success 30%, Failure 70%)
+Success:
+You decided to explore the shipwreck. Inside, you found far more supplies than expected and collected everything.
+(Rope +4, Wood +3, Stone +1, Food +3, Water +4)
+Failure:
+You decided to explore the shipwreck. As soon as you stepped inside, you unexpectedly encountered a jellyfish, and unfortunately, you were stung.
+(Health -15)
+[3] Board it and escape (Success 5%, Failure 95%)
+Success:
+You noticed the ship looked surprisingly intact, so you tried to use it to escape. After sailing for a short while, you were lucky enough to spot land ahead. You sent a rescue signal, and you were successfully saved. Now, aboard a plane heading back to your home city, you reflect on the life you lived during your time stranded.
+(Rare Escape Ending)
+Failure:
+You attempted to escape using the ship, believing it was still seaworthy. But perhaps you pushed it too far—naturally, the ship collapsed, and you fell into the water, meeting your end.
+(Death)
+[4] Ignore it
+You decided that it wasn’t worth the trouble, and simply walked past it.
+
+당신은 해안가를 걷다가 해변에 난파된 배를 발견했습니다. 안에 무엇이 있을지는 모르겠지만, 규모를 보면 유용한 재료가 있을 수도 있습니다. 어떻게 하시겠습니까?
+[2] 탐색한다 [3] 타서 탈출한다 [4] 무시한다
+[2] 탐색한다 (성공 30%, 실패 70%)
+성공 시
+당신은 난파선을 탐사하기로 했습니다. 난파선 안에는 생각보다 많은 물자가 있어서 전부 챙겼습니다.
+(밧줄 +4, 목재 +3, 돌 +1, 식량 +3, 식수 +4)
+실패 시
+당신은 난파선을 탐사하기로 했습니다. 난파선에 발을 내딛었을 때 안에 해파리가 있었고 당신은 운이 없게도 쏘였습니다.
+(체력 -15)
+[3] 타서 탈출한다 (성공 5%, 실패 95%)
+성공 시
+당신은 배의 상태가 좋아 보여 배를 활용하여 탈출하기로 했습니다. 배를 타고 잠시 이동했을 때, 운이 좋게도 당신의 앞에는 육지가 보였습니다. 그 곳에 구조 신호를 보낸 결과, 당신은 성공적으로 구조되었습니다. 이제 당신은 비행기를 타고 당신이 살던 도시로 돌아가며 그 동안의 생활을 되돌아봅니다.
+(희귀 탈출 엔딩)
+실패 시
+당신은 배의 상태가 좋아 보여 배를 활용하여 탈출하기로 했습니다. 하지만 너무 무리했던 걸까요? 당연하게도 배는 무너져 내렸고 당신은 그대로 물에 빠져 생을 마감했습니다.
+(사망)
+[4] 무시한다
+당신은 쓸 만한 물자가 없어 보여 그냥 지나가기로 합니다.
+
+폭포 / The Waterfall (희귀)
+You were walking along a small stream in the forest when you discovered a small waterfall. The water quality looked good, and if you collect the water from below, you could obtain a large amount of drinking water. What will you do?
+[2] Go down [3] Don’t go down [4] Ignore it
+[2] Go down (Success 10%, Failure 90%)
+Success:
+You used the rocks around you to safely climb down beneath the waterfall. You collected a large amount of water falling from the falls.
+(Water +15)
+Failure:
+You decided to climb down the waterfall. However, even a small waterfall can be dangerous. You slipped while climbing down and were seriously injured.
+(Health -20)
+[3] Don’t go down (Success 50%, Failure 50%)
+Success:
+You safely collected water from the stream above.
+(Water +2)
+Failure:
+You managed to collect water from above, but you were so focused on gathering it that you slipped and hurt yourself badly.
+(Health -12)
+[4] Ignore it
+You judged it to be too dangerous and simply walked past it.
+
+당신은 숲에 있는 작은 하천을 따라 걷다가 작은 폭포를 발견했습니다. 수질은 좋아 보였고, 아래에서 물을 받으면 대량의 식수를 얻을 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 내려간다 [3] 내려가지 않는다 [4] 무시한다
+[2] 내려간다 (성공 10%, 실패 90%)
+성공 시
+당신은 주변에 보이는 바위를 이용하여 폭포 아래로 성공적으로 내려왔습니다. 당신은 폭포에서 떨어지는 물을 대량으로 얻었습니다.
+(식수 +15)
+실패 시
+당신은 폭포를 타서 내려가기로 했습니다. 하지만 폭포가 작더라고 위험한 것은 크게 다르지 않았습니다. 당신은 폭포를 따라 내려가다가 크게 다쳤습니다.
+(체력 -20)
+[3] 내려가지 않는다 (성공 50%, 실패 50%)
+성공 시
+당신은 안전하게 위에서 하천의 물을 받았습니다.
+(식수 +2)
+실패 시
+당신은 안전하게 위에서 하천의 물을 받았지만, 물을 받는 것에만 집중하여 넘어져 크게 다쳤습니다.
+(체력 -12)
+[4] 무시한다
+당신은 위험하다고 판단하여 그냥 지나갔습니다.
+
+군수 보급품 / Military Supplies (희귀)
+As you walk along the shoreline, you discover a box that appears to be old military supplies. If it really is a military supply crate, it might contain food—or even weapons. What will you do?
+[2] Open it [3] Ignore it
+[2] Open it (10% success, 90% failure)
+Success
+You opened the military supply crate. Inside, you found various food rations, clean drinking water, and an old communication device. The food had a very long shelf life and seemed safe to use.
+(Food +10, Water +10, Distress Signal Lv+1)
+Failure
+You opened the crate, but it wasn’t a military supply box—it was a trap. A landmine hidden inside exploded, and you were seriously injured.
+(Health -35)
+[3] Ignore it
+It looked suspicious, so you decided to leave it alone and walk past it.
+당신은 해안가를 따라 걷다가 오래된 군수 보급품으로 보이는 상자를 발견했습니다. 군수 보급품이라면 식량이 있을 수도 있고, 무기가 있을 수도 있습니다. 어떻게 하시겠습니까?
+[2] 연다 [3] 무시한다
+[2] 연다 (10% 성공, 90% 실패)
+성공 시
+당신은 군수 보급품 상자를 열었습니다. 열어보니 여러 식량과 식수, 그리고 낡은 통신 장비비가 있었고 식량은 유효기간이 매우 길어 사용할 수 있을 것 같습니다.
+(식량 +10, 식수 +10, 조난 신호 Lv+1)
+실패 시
+당신은 군수 보급품 상자를 열었습니다. 하지만 그것은 군수 보급품이 아니라 함정이었습니다. 안에 있던 지뢰가 폭발하였고 당신은 크게 다쳤습니다.
+(체력 -35)
+[3] 무시한다
+당신은 수상해 보여 그냥 지나갔습니다.
