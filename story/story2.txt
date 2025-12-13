@@ -1,0 +1,532 @@
+무인도 표류 / Deserted (고정, 1일차)
+You have been stranded on a deserted island. Fortunately, a snack you bought before departure and a bottle of water washed up on the beach. However, at this rate, you will starve to death. For now, in order to survive, which area will you explore? 
+(Food +1, Water +1)
+[2] Inland [3] Coastline [4] Far out to sea
+[2] Inland
+You walk into the forest of the island. The forest is dense with trees and unknown plants, and there are signs of wild animals, making exploration difficult. However, you discover a durian tree. How will you collect the fruit?
+{2} Shake the tree {3} Climb the tree {4} Do not collect
+{2} Shake the tree (50% success, 50% failure)
+If successful:
+ You shake the tree and obtain durians. 
+(Food +3)
+If failed:
+ You are injured by the spikes of a durian falling from the tree. 
+(Health -15)
+{3} Climb the tree (10% success, 90% failure)
+If successful:
+ You are lucky and successfully obtain durians without injury. 
+(Food +3)
+If failed:
+ You fall while climbing the tree. 
+(Health -10)
+{4} Do not collect
+You decide not to collect the durians to avoid the risk of injury.
+[3] Coastline
+ You start exploring the area around the coastline. After walking for a while, you come across a shabby wooden structure. Will you explore the structure?
+{2} Explore {3} Do not explore
+{2} Explore
+Upon exploring the structure, you realize it was previously used as a military observation post. You tidy it up and make it your temporary shelter.
+(Shelter acquired, Lv 1)
+{3} Do not explore
+You decide not to explore the unknown structure, just in case.
+[4] Far out to sea
+Hoping there might be other land nearby, you start swimming. However, you see no land and drown.
+(Death)
+
+당신은 무인도에 표류되었습니다. 다행히도 출항 전에 구매한 과자 1개와 물 한 병이 해변에 있었습니다. 하지만 이대로라면 굶어 죽을 것입니다. 일단 살아남기 위해서 어느 곳을 탐사하겠습니까? 
+(식량 +1, 식수 +1)
+[2] 섬 내부 [3] 해안가 [4] 바다 멀리
+[2] 섬 내부
+ 당신은 섬의 숲 속으로 걸어 들어왔습니다. 숲에는 나무와 알 수 없는 식물이 빼곡히 있고 맹수의 흔적도 보여여 탐사가 쉽지 않지만, 당신은 두리안 나무를 발견하였습니다. 어떻게 채집하겠습니까?
+{2} 나무를 흔든다 {3} 나무에 올라간다 {4} 채집하지 않는다
+{2} 나무를 흔든다 (50% 성공, 50% 실패)
+성공 시
+당신은 나무를 흔들어 두리안을 얻었습니다. (식량 +3)
+실패 시
+당신은 나무에서 떨어진 두리안의 가시에 맞아 부상당했습니다. (체력 -15)
+{3} 나무에 올라간다 (10% 성공, 90% 실패)
+성공 시
+당신은 운 좋게 부상 없이 성공적으로 두리안을 얻었습니다. (식량 +3)
+실패 시
+당신은 나무에 올라가다 떨어졌습니다. (체력 -10)
+{4} 채집하지 않는다
+당신은 부상당할 경우를 대비해 채집하지 않았습니다.
+[3] 해안가
+당신은 해안가 주변을 탐색하기 시작했습니다. 어느 정도 걸었을 때 당신의 눈 앞에 허름한 목조 구조물이 있었습니다. 구조물을 탐색하시겠습니까?
+{2} 탐색한다 {3} 탐색하지 않는다
+{2} 탐색한다
+이 구조물을 탐색하다 보니 과거에 군사용 관측소로 쓰였던 곳으로 보입니다. 당신은 이 곳을 정리하여 임시 거주지로 삼았습니다.
+(거주지 획득, Lv 1)
+{3} 탐색하지 않는다
+당신은 만약의 경우를 대비하여 알 수 없는 구조물을 탐색하지 않았습니다.
+[4] 바다 멀리
+당신은 주변에 다른 육지가 있기를 기대하며 수영하기 시작했습니다. 하지만, 육지란 보이지 않았고 당신은 익사하였습니다.
+(사망)
+
+탈출 혹은 거주 / Escape or Shelter (고정, 10일차)
+After drifting on a deserted island for ten days, you begin to seriously consider escaping, and you also feel the need to reinforce your shelter. But you don’t have enough time to fully commit to both. Which one will you focus on?
+[2] Escaping [3] Reinforcing the shelter
+[2] Escaping
+You decide to concentrate more on escaping. Using the distress signal techniques you already knew, you arrange large “SOS” and “HELP” signs on the shore using wooden sticks. You also plan to create smoke during the day and keep a fire burning at night to signal for rescue.
+(Distress Signal Lv +1)
+[3] Reinforcing the shelter
+You recall the fear and discomfort you felt every night while trying to sleep, and choose to strengthen your shelter. You cover the roof with palm leaves, reinforce the walls with branches and soil, craft a sleeping platform out of logs, and dig drainage channels to prevent rainwater from accumulating.
+(Shelter Lv +1)
+
+무인도에 표류된 지 10일 째, 당신은 이제 탈출에 대해서 진지하게 고민하기 시작했고, 거주 공간을 강화해야겠다는 생각도 듭니다. 하지만 둘 다 하기에는 시간이 부족합니다. 둘 중 무엇에 더 집중하시겠습니까?
+[2] 탈출에 집중한다 [3] 거주 공간에 집중한다
+[2] 탈출에 집중한다
+당신은 탈출에 좀 더 집중하기로 했습니다. 평소에 알던 구조 신호 제작 방법을 통해 해안가에 ‘SOS’, ‘HELP’를 나무 막대기를 통해 크게 배치했고, 낮에는 연기를 내고 밤에는 불을 피워 불빛을 내기로 했습니다.
+(조난 신호 Lv +1)
+[3] 거주 공간에 집중한다
+당신은 매일 잠들 때마다 불편하게 잠들며 불안에 떨었던 기억을 떠올리며 거주지를 강화하기로 했습니다. 지붕을 야자잎을 통해 덮고 벽을 나뭇가지와 흙 등을 통해 강화하였으며, 통나무를 통해 수면을 취할 공간을 마련하고 배수로를 파서 빗물이 고이지 않게 했습니다. 
+(거주지 Lv +1)
+
+선체 발견 / Unknown Ship (고정, 20일차)
+You wake up as usual and look out toward the sea. In the distance, you see an unidentified vessel. You don’t know what purpose it has for sailing, but the sight of it makes you want to escape, so you consider sending a distress signal. Will you send the signal?
+[2] Send it [3] Do not send it
+[2] Send it
+You send a distress signal toward the unidentified vessel. However, it turns out to be a pirate ship that raids during its voyages, and the pirates destroy your shelter.
+(Shelter Lv -2)
+[3] Do not send it
+You decide not to send a distress signal, thinking the vessel might be a pirate ship. At that moment, a crate that fell from the ship drifts onto the shore. Carefully opening it, you find food and various supplies inside.
+(Food +3, Wood +2, Drinking water +1)
+
+당신은 평소처럼 기상한 후 바다를 향해 바라보았습니다. 그 때 멀리서 정체 불명의 선체가 하나 보였습니다. 당신은 선체가 어떤 목적을 가지고 항해하는 것인지 모르겠지만 탈출하고 싶은 마음이 들어 구조 신호를 보낼 생각을 합니다. 구조 신호를 보내겠습니까?
+[2] 보낸다 [3] 보내지 않는다
+[2] 보낸다
+당신은 정체 불명의 선체를 향해 구조 신호를 보냈습니다. 하지만 그 선체는 항해를 통해 약탈을 하는 해적의 배였으며 해적은 당신의 거주지를 망가뜨렸습니다. 
+(거주지 Lv -2)
+[3] 보내지 않는다
+당신은 정체 불명의 선체가 혹시 해적의 배일 생각이 들어 구조 신호를 보내지 않았습니다. 그 때 선체에서 떨어진 상자가 하나 해변으로 밀려 들어왔습니다. 조심스레 상자를 열어 보니 식량과 각종 물자가 들어 있었습니다.
+(식량 +3, 목재 +5, 식수 +1)
+
+해초 뭉치 / Seeweed Clump (일반)
+You are walking along the coastline when you discover a large bundle of seaweed near the water. If dried, it can be used as rope, and it can also serve as food. What will you do?
+[2] Dry it [3] Eat it [4] Ignore it
+[2] Dry it
+You decide to dry the seaweed and use it as rope.
+(Rope +3)
+[3] Eat it (Success 60%, Failure 40%)
+On Success
+You decide to take the seaweed as food. While drying it, you also manage to gather some drinking water.
+(Food +4, Water +3)
+On Failure
+You decide to take the seaweed as food. As you unravel it, a jellyfish suddenly emerges from the seaweed and stings you before drifting away. Fortunately, it wasn’t poisonous.
+(Health -6)
+[4] Ignore it
+You decide to ignore it, unsure of what might be hiding inside.
+
+당신은 해안가를 따라 걷다가 바다 가까이에 있는 커다란 해초 뭉치를 발견했습니다. 건조시키면 밧줄로 쓸 수 있고 식량으로 사용할 수도 있습니다. 어떻게 하시겠습니까?
+[2] 말린다 [3] 먹는다 [4] 무시한다
+[2] 말린다
+당신은 해초를 말려서 밧줄로 사용하기로 했습니다.
+(밧줄 +3)
+[3] 먹는다 (성공 60%, 실패 40%)
+성공 시
+당신은 해초를 식량으로써 챙기기로 했습니다. 해초를 말리며 식수 또한 구할 수 있었습니다.
+(식량 +4, 식수 +3)
+실패 시
+당신은 해초를 식량으로써 챙기기로 했습니다. 해초를 풀며 챙기려 했지만 갑자기 해파리가 해초에서 등장하여 당신을 쏘고 지나갔습니다. 다행히 독은 없는 해파리였습니다.
+(체력 -6)
+[4] 무시한다
+당신은 혹시 무엇이 숨어 있을 지 몰라 무시하고 지나갔습니다.
+
+풀 발견 / Herb Spotted (일반)
+You are walking through the forest when you come across a strangely shaped plant. It smells pleasantly fragrant, but you’re not sure whether it’s a medicinal herb or a poisonous one. What will you do?
+[2] Eat it [3] Ignore it
+[2] Eat it (50% success, 50% failure)
+Success:
+You pick the plant and eat it. It tastes slightly bitter, but you feel your body becoming lighter and your strength returning.
+(Health +20)
+Failure:
+You pick the plant and eat it. At first nothing happens, but soon after you start to feel stomach pain.
+(Health -8)
+[3] Ignore it
+You decide to walk past it, just in case it might be poisonous.
+
+당신은 숲을 걷다가 신기하게 생긴 풀을 발견했습니다. 냄새를 맡아 보니 향기로웠지만 약초인지 독초인지 모르겠습니다. 어떻게 하시겠습니까?
+[2] 섭취한다 [3] 무시한다
+[2] 섭취한다 (성공 50%, 실패 50%)
+성공 시
+당신은 그 풀을 채취해서 먹어 보았습니다. 맛은 약간 쓰지만 몸이 가벼워지고 힘이 나는 것이 느껴집니다.
+(체력 +20)
+실패 시
+당신은 그 풀을 채취해서 먹어 보았습니다. 아무 변화가 없었지만 잠시 후 당신은 배가 아파지는 것을 느꼈습니다.
+(체력 -8)
+[3] 무시한다
+당신은 혹시 독이 있을 지 몰라 그냥 지나갔습니다.
+
+호수 안 물고기 / Fish inside the Lake (일반)
+As you walk through the forest, you come across a small lake. Inside, a few fish are swimming around. What will you do?
+[2] Catch them [3] Ignore them
+[2] Catch them (40% success, 60% failure)
+Success:
+You reach into the small lake and easily manage to catch a fish.
+(Food +3)
+Failure:
+You stretch your hand into the lake, but a rustling noise behind yo   u startles you so much that you fall into the water.
+(Health -5)
+[3] Ignore them
+You look at the fish and decide they don’t seem edible, so you leave them and move on.
+
+당신은 숲을 걷다가 작은 호수를 발견했고, 그 안에는 물고기가 몇 마리 헤엄치고 있었습니다. 어떻게 하시겠습니까?
+[2] 잡는다 [3] 무시한다
+[2] 잡는다 (성공 40%, 실패 60%)
+성공 시
+당신은 작은 호수에 손을 넣어 손쉽게 물고기를 잡아냈습니다.
+(식량 +3)
+실패 시
+당신은 작은 호수에 손을 뻗었습니다. 하지만 뒤에서 바스락거리는 소리에 크게 놀라 당신은 호수 안으로 빠졌습니다.
+(체력 -5)
+[3] 무시한다
+당신은 물고기의 생김새를 보고 먹을 수 없다고 생각하여 그냥 지나갔습니다.
+
+쌓인 나뭇가지 / Stacked Branches (일반)
+You are walking through the forest when you discover a pile of fallen branches. They look to be in good condition and could be used as lumber. What will you do?
+[2] Collect them [3] Ignore them
+[2] Collect them (70% success, 30% failure)
+Success:
+ You successfully gathered the fallen branches.
+(Wood +2)
+Failure:
+You hurt yourself on a thorn while picking up the branches.
+(Health -7)
+[3] Ignore them
+You decided they weren't necessary and simply walked past.
+
+당신은 숲 속을 걷다가 떨어진 나뭇가지들이 쌓여 있는 것을 발견했습니다. 나뭇가지의 상태도 좋아 보여 목재로 사용할 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 수집한다 [3] 무시한다
+[2] 수집한다 (성공 70%, 실패 30%)
+성공 시
+당신은 떨어진 나뭇가지를 성공적으로 주웠습니다.
+(목재 +2)
+실패 시
+당신은 떨어진 나뭇가지를 줍다가 가시에 찔려서 다쳤습니다.
+(체력 -7)
+[3] 무시한다
+당신은 굳이 필요 없을 것 같아 무시하고 지나갔습니다.
+
+천 조각 / Piece of Cloth (일반)
+You were walking along the beach when you found a piece of cloth. Its condition looked good, and it seemed usable. What will you do?
+[2] Pick it up [3] Ignore it
+[2] Pick it up (60% success, 40% failure)
+Success:
+You successfully picked up the piece of cloth without any problems.
+(Cloth +4)
+Failure:
+While picking up the cloth, you were bitten by a spider hiding underneath.
+(Health -8)
+[3] Ignore it
+You decided it wasn’t necessary and simply walked past it.
+
+당신은 해변가를 걷다가 천 조각을 발견했습니다. 천의 상태는 좋았고 사용할 수 있을 것으로 보입니다. 어떻게 하시겠습니까?
+[2] 줍는다 [3] 무시한다
+[2] 줍는다 (성공 60%, 실패 40%)
+성공 시
+당신은 천 조각을 문제 없이 성공적으로 주웠습니다.
+(천 +4)
+실패 시
+당신은 천 조각을 줍다가 아래에 있던 거미에게 물렸습니다.
+(체력 -8)
+[3] 무시한다
+당신은 굳이 필요 없을 것 같아 무시하고 지나갔습니다.
+
+덩쿨 / The Vines (일반)
+You were walking through the forest when you discovered some vines that looked strong enough to be used as rope. They seemed a bit tricky to collect, but if you succeeded, they could be very useful. What will you do?
+[2] Collect them [3] Ignore them
+[2] Collect them (Success 50%, Failure 50%)
+Success
+You decided to untangle and gather the vines. You managed to obtain the rope without any trouble.
+(Rope +3)
+Failure
+You decided to untangle and gather the vines. However, while doing so, you became tangled in the vines yourself, and you ended up with a few minor injuries.
+(Health -5)
+[3] Ignore them
+You thought they would be too difficult to handle, so you simply walked past them.
+
+당신은 숲 속을 걷다가 밧줄로 사용할 만한 덩쿨을 발견했습니다. 수거하기 약간 까다로워 보이지만 수거를 성공하기만 한다면 유용하게 사용할 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 수거한다 [3] 무시한다
+[2] 수거한다 (성공 50%, 실패 50%)
+성공 시
+당신은 덩쿨을 풀어 수거하기로 했습니다. 당신은 위험 없이 성공적으로 밧줄을 마련했습니다.
+(밧줄 +3)
+실패 시
+당신은 덩쿨을 풀어 수거하기로 했습니다. 하지만 덩쿨을 풀다가 당신은 덩쿨에 묶였고 푸는 과정에서 약간의 상처가 남았습니다.
+(체력 -5)
+[3] 무시한다
+당신은 풀기 어려울 것 같아 그냥 지나갔습니다.
+
+바위 / The Rock (일반)
+You were walking along the coast when you discovered a cracked rock. If you strike it a little, it might break into a useful shape that could be used in many ways. What will you do?
+[2] Break it [3] Ignore it
+[2] Break it (Success 35%, Failure 65%)
+Success:
+You decided to break the rock. You struck the cracked fragment against the larger rock, and it broke successfully, giving you several usable stones.
+(Stones +5)
+Failure:
+You decided to break the rock. You struck the cracked fragment against the larger rock, but a piece of shattered rock flew toward your arm, causing a minor injury.
+(Health -8)
+[3] Ignore it
+You felt it might be dangerous, so you decided to just pass by.
+
+당신은 해안가를 걷다가 바위가 꺠져 있는 것을 발견했습니다. 꺠진 바위를 좀만 내려치면 모양이 적합하여 여러 곳에 사용할 수 있을 것입니다. 어떻게 하시겠습니까?
+[2] 꺤다 [3] 무시한다
+[2] 꺤다 (성공 35%, 실패 65%)
+성공 시
+당신은 바위를 꺠기로 했습니다. 당신은 깨진 바위 파편을 큰 바위에 내리쳤고 바위는 성공적으로 깨져 여러 돌을 획득했습니다.
+(돌 +5)
+실패 시
+당신은 바위를 깨기로 했습니다. 당신은 깨진 바위 파편을 큰 바위에 내리쳤지만 꺠진 파편이 당신의 팔을 향해 날아와 약간의 상처를 입었습니다.
+(체력 -8)
+[3] 무시한다
+당신은 위험할 것 같아 그냥 지나가기로 했습니다.
+ 
+ 바위 밑 / Under the Rock (일반)
+As you walk along the coast, you discover a rope wedged deep inside a large rock crevice. It’s a bit deep, and there’s a chance you could hurt your hand, but judging by its condition, the rope still looks usable. What will you do?
+[2] Pull it out [3] Ignore it
+[2] Pull it out (Success 45%, Failure 55%)
+Success
+You decide to pull the rope out. You pull with all your strength and successfully remove it.
+(Rope +2)
+Failure
+You decide to pull the rope out. You pull with all your strength, but only end up injuring your hand.
+(Health -5)
+[3] Ignore it
+You feel you won’t be able to pull it out, so you simply walk past it.
+
+당신은 해안가를 따라 걷다가 큰 바위 틈 속에서 밧줄을 발견했습니다. 약간 깊어 손을 다칠 수도 있지만, 밧줄의 상태를 보면 사용할 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 꺼낸다 [3] 무시한다
+[2] 꺼낸다 (성공 45%, 실패 55%)
+성공 시
+당신은 밧줄을 꺼내기로 했습니다. 당신은 온 힘으로 밧줄을 당겼고, 성공적으로 빼냈습니다.
+(밧줄 +2)
+실패 시
+당신은 밧줄을 꺼내기로 했습니다. 당신은 온 힘으로 밧줄을 당겼지만, 손만 다쳤습니다.
+(체력 -5)
+[3] 무시한다
+당신은 꺼낼 수 없을 것 같아 그냥 지나갔습니다.
+
+동물 사체 / The Carcasses (일반)
+You were walking through the forest when you came across an animal that appeared to be dead. Its hide looked like it could be useful if you skinned it. What will you do?
+[2] Skin it [3] Ignore it
+[2] Skin it (Success 50%, Failure 50%)
+Success:
+You skinned the animal. The hide was successfully removed and can be used as cloth.
+(Cloth +6)
+Failure:
+You skinned the animal, but it turned out to still be alive. The animal attacked you and then ran away.
+(Health -10)
+[3] Ignore it
+You suspected the animal might still be alive, so you ignored it and walked past.
+
+당신은 숲 속을 걷다가 죽어있는 듯한 동물을 발견했습니다. 동물의 가죽을 벗기면 유용하게 사용할 수 있을 것 같습니다. 어떻게 하시겠습니까?
+[2] 벗긴다 [3] 무시한다
+[2] 벗긴다 (성공 50%, 실패 50%)
+성공 시
+당신은 동물의 가죽을 벗겼습니다. 가죽은 성공적으로 분리되었고 천으로 활용할 수 있을 것입니다.
+(천 +6)
+실패 시
+당신은 동물의 가죽을 벗겼습니다. 하지만 동물은 살아있었고 동물은 당신을 해치고 도망갔습니다.
+(체력 -10)
+[3] 무시한다
+당신은 동물이 살아있을 것 같아 무시하고 지나갔습니다.
+
+토네이도 / The Tornado (희귀)
+You were walking along the coastline on a dark, gloomy day when it suddenly began to rain. As you looked out at the sea, you noticed a tornado forming in the distance. It looked smaller than you expected, but it was still powerful enough to cause serious damage. What will you do?
+[2] Enter the forest [3] Stay on the beach
+[2] Enter the forest
+You decided to head into the forest. Inside, you found a large tree and a deep pit. Where will you take shelter?
+{2} Under the large tree {3} Inside the deep pit
+{2} Under the large tree
+You chose to hide under the large tree. As the tornado approached, the tree was uprooted. It fell sideways and crushed you, causing severe injuries.
+(Health -30)
+{3} Inside the deep pit (Success 50%, Failure 50%)
+Success:
+You decided to take cover inside the deep pit. Fortunately, the tornado passed by without hitting you directly, and you escaped unharmed.
+Failure:
+You took cover inside the deep pit, but as the tornado passed nearby, flying debris struck you. A small branch pierced you, causing minor injuries.
+(Health -8)
+[3] Stay on the beach
+You believed you would be fine staying on the beach. However, the tornado reached the shore, swept you up, and you died while being carried away by the wind.
+(Death)
+
+당신은 어두운 날 해안가를 걷다가 갑자기 비가 오고 바다를 보니 저 멀리서 토네이도가 다가오는 것을 발견했습니다. 토네이도의 규모는 생각보다 작아 보이지만 그래도 막대한 피해가 있을 것으로 예상됩니다. 어떻게 하시겠습니까?
+[2] 숲 안으로 들어간다 [3] 해안가에 머무른다
+[2] 숲 안으로 들어간다
+당신은 숲 안으로 들어오기로 했습니다. 숲 안에 들어와 보니 큰 나무와 파인 구덩이가 있었습니다. 둘 중 어디에 피신하시겠습니까?
+{2} 큰 나무 아래 {3} 파인 구덩이 안
+{2} 큰 나무 아래
+당신은 큰 나무 아래에 숨기로 하였습니다. 토네이도가 다가온 순간, 큰 나무가 뿌리채 뽑혔습니다. 당신은 나무가 옆으로 쓰러져 크게 다쳤습니다.
+(체력 -30)
+[3] 파인 구덩이 안 (성공 50%, 실패 50%)
+성공 시
+당신은 파인 구덩이 안으로 들어가기로 했습니다. 그 때 토네이도는 다행히 지나갔고 당신은 피해 없이 넘겼습니다.
+실패 시
+당신은 파인 구덩이 안으로 들어가기로 했습니다. 그 때 토네이도로 인해 작은 나뭇가지가 당신은 찔렀고, 당신은 약한 피해를 입었습니다.
+(체력 -8)
+[3] 해안가에 머무른다
+당신은 해안가에 머물러도 괜찮다고 생각했습니다. 그 때 토네이도가 다가왔고, 당신은 토네이도에 휩쓸려 날아가던 중 사망했습니다.
+(사망)
+
+오래된 상자 / Old Chest (희귀)
+As you were walking through the forest, you happened to find a box buried in the soil. You brushed off the dirt and carefully lifted the box, realizing it was heavier than you expected. What will you do?
+[2] Open it carefully [3] Break it open [4] Ignore it
+[2] Open it carefully (Success 30%, Failure 70%)
+Success:
+You slowly opened the box. Inside, you found various supplies.
+(Wood +5, Stone +5, Rope +3)
+Failure:
+You slowly opened the box, but it turned out to be a trap. A sharp wooden spike sprang out and stabbed you, causing serious injury.
+(Health -15)
+[3] Break it open (Success 30%, Failure 70%)
+Success:
+You broke the box open. Due to the force, some materials were damaged.
+(Wood +2, Stone +2, Rope +1)
+Failure:
+You broke the box open, but it was a trap. You were stabbed by a wooden spike hidden inside, causing severe injury.
+(Health -25)
+[4] Ignore it
+You didn’t know what might be inside, so you decided to leave it and continue walking.
+
+당신은 숲 속을 걷다가 우연히 흙 속에 묻힌 상자를 발견했습니다. 당신은 상자에 묻은 흙을 털고 조심스럽게 상자를 들어 보았는데, 상자는 생각보다 무거웠습니다. 어떻게 하시겠습니까?
+[2] 조심스럽게 연다 [3] 부순다 [4] 무시한다
+[2] 조심스럽게 연다 (성공 30%, 실패 70%)
+성공 시
+당신은 상자를 천천히 열어 보았습니다. 안에는 여러 가지 물자가 들어 있었습니다.
+(목재 +5, 돌 +5, 밧줄 +3)
+실패 시
+당신은 상자를 천천히 열어 보았습니다. 하지만 그 상자는 함정이었습니다. 당신은 상자에서 튀어나온 날카로운 나뭇가지에 찔렸고, 크게 다쳤습니다.
+(체력 -15)
+[3] 부순다 (성공 30%, 실패 70%)
+성공 시
+당신은 상자를 부숴 열었습니다. 부순 탓에 여러 가지 물자가 손상되었습니다.
+(목재 +2, 돌 +2, 밧줄 +1)
+실패 시
+당신은 상자를 부숴 열었습니다. 하지만 그 상자는 함정이었습니다. 당신은 상자에 있었던 나뭇가지에 찔렸고, 크게 다쳤습니다.
+(체력 -25)
+[4] 무시한다
+당신은 상자에 무엇이 있을 지 몰라 그냥 지나갔습니다.
+
+지진 / The Earthquake (희귀)
+You were walking through the forest when you felt a slight tremor. Thinking it was nothing, you continued walking — but then the ground suddenly shook violently and began to crack. What will you do?
+[2] Stay in the forest [3] Go to the coast
+[2] Stay in the forest
+You decided to stay inside the forest. You quickly looked around and saw the entrance to a cave and a sloped path leading up a small mountain on the island. What will you do?
+{2} Enter the cave {3} Climb the mountain
+{2} Enter the cave
+You went inside the cave. At that moment, the cave collapsed, and you were crushed by falling rocks.
+(Death)
+{3} Climb the mountain
+You struggled but decided to climb the mountain. After climbing up and waiting for a while, the earthquake stopped.
+[3] Go to the coast
+You headed toward the coast. However, the earthquake triggered a tsunami, and you were swept away by the waves, suffering severe injuries.
+(Health -25)
+
+당신은 숲 속을 걷다가 약간의 진동을 느낍니다. 당신은 별 것 아니라고 생각하고 계속 걷고 있던 그 때, 갑자기 땅이 매우 크게 진동하고 갈라지는 것을 느낍니다. 어떻게 하시겠습니까?
+[2] 숲에 머무른다 [3] 해안가로 나간다
+[2] 숲에 머무른다
+당신은 숲 속에 머무르기로 했습니다. 당신은 급하게 주위를 둘러보니 동굴 입구와 무인도 내의 작은 산으로 올라가는 비탈길이 보입니다. 어떻게 하시겠습니까?
+{2} 동굴로 들어간다 {3} 산으로 올라간다
+{2} 동굴로 들어간다
+당신은 동굴 안으로 들어왔습니다. 그 때, 동굴은 무너졌고, 당신은 떨어진 바위에 깔려 사망했습니다.
+(사망)
+{3} 산으로 올라간다
+당신은 힘들지만 산으로 올라가기로 했습니다. 산으로 힘들게 올라가 잠깐동안 기다렸더니 잠시 후 지진이 멈췄습니다.
+[3] 해안가로 나간다
+당신은 해안가로 나아가기로 했습니다. 그 때 지진으로 인해 쓰나미가 발생했고 당신은 쓰나미에 쓸려 크게 다쳤습니다.
+(체력 -25)
+
+멧돼지 출현 / Appearance of Wild Boar (희귀)
+You are walking through the forest when suddenly you hear heavy footsteps and rustling in the bushes. As you look around, you see a wild boar charging toward you at high speed. What will you do?
+[2] Run away [3] Take cover [4] Threaten it [5] Attack it
+[2] Run away (Success 5%, Failure 95%)
+Success:
+You start running as fast as you can to escape from the wild boar. After running for dozens of minutes, it seems you managed to shake it off. However, you pushed yourself too hard, and your legs begin to feel numb.
+(Health -4)
+Failure:
+You start running as fast as you can, but escaping a wild boar is nearly impossible. It quickly catches up to you, and you are attacked.
+(Health -25)
+[3] Take cover
+You decide to take cover. Looking around, you see a tall tree and a large bush. Where will you hide?
+{2} Up the tree {3} Inside the bush
+{2} Up the tree
+You climb up the tree. After staying there for quite a while, the wild boar eventually gives up and leaves.
+{3} Inside the bush
+You hide inside the bush, but bushes are too familiar an environment for wild boars. You are quickly discovered and attacked.
+(Health -25)
+[4] Threaten it
+You bravely try to threaten the wild boar. This only triggers its aggressive instincts further, and you are killed.
+(Death)
+[5] Attack it (Success 10%, Failure 90%)
+Success:
+You decide to fight back. Grabbing a sharp, sturdy branch nearby, you stab the wild boar with all your strength. By sheer luck, the boar collapses.
+(Food +10, Cloth +4)
+Failure:
+You decide to fight back and use a sharp, sturdy branch to attack, but the boar doesn’t even flinch. It charges at you, and you suffer severe injuries.
+(Health -35)
+
+당신은 숲을 걷던 중 갑자기 큰 발자국 소리와 풀숲 소리를 듣습니다. 주위를 둘러보니 뒤에서 멧돼지가 빠르게 당신을 향해 돌진해 오고 있습니다. 어떻게 하시겠습니까?
+[2] 도망친다 [3] 피신한다 [4] 위협한다 [5] 공격한다
+[2] 도망친다 (성공 5%, 실패 95%)
+성공 시
+당신은 최대한 빠른 속도로 멧돼지로부터 도망치기 시작했습니다. 수십 분 동안 달린 결과, 다행히 멧돼지를 돌아간 것 같습니다. 하지만, 당신은 무리한 건지 다리가 저려옵니다.
+(체력 -4)
+실패 시
+당신은 최대한 빠른 속도로 멧돼지로부터 도망치기 시작했습니다. 하지만 멧돼지로부터 도망치는 것은 불가능했습니다. 결국 따라잡혔고, 당신은 멧돼지로부터 공격당했습니다.
+(체력 -25)
+[3] 피신한다
+당신은 피신하기로 했습니다. 주위를 둘러보니 높은 나무와 큰 덤불이 있었습니다. 어디에 숨으시겠습니까?
+{2} 나무 위 {3} 덤불 안
+{2} 나무 위
+당신은 나무 위로 올라갔습니다. 한참을 나무 위에 있던 결과, 멧돼지는 포기하고 떠났습니다.
+{3} 덤불 안
+당신은 덤불 안으로 숨기로 했습니다. 하지만 덤불은 멧돼지에게 너무 익숙한 환경이었습니다. 당신은 멧돼지에게 발각되었고 공격당했습니다.
+(체력 -25)
+[4] 위협한다
+당신은 용감하게 멧돼지를 위협했습니다. 그 때 멧돼지의 공격 본능은 더욱 강화되었고 당신은 사망했습니다.
+(사망)
+[5] 공격한다 (성공 10%, 실패 90%)
+성공 시
+당신은 멧돼지를 향해 맞서 싸우기로 했습니다. 주변에 보이는 날카롭고 두꺼운 나뭇가지로 멧돼지를 가능한 한 세게 찔렀고, 운이 좋게 멧돼지는 쓰려졌습니다.
+(식량 +10, 천 +4)
+실패 시
+당신은 멧돼지를 향해 맞서 싸우기로 했습니다. 주변에 보이는 날카롭고 두꺼운 나뭇가지로 멧돼지를 공격했지만, 멧돼지는 끄떡 없었고 당신은 공격당해 크게 다쳤습니다.
+(체력 -35)
+
+숨겨진 동굴 / HIdden Cave (희귀)
+You were exploring deep inside the island when you pushed aside some vines and discovered a hidden cave entrance behind them. What will you do?
+[2] Enter [3] Ignore it
+[2] Enter
+You decided to go inside the cave. It was dark, but you managed to find some supplies. Will you go deeper?
+(Wood +5, Rope +2, Water +2)
+{2} Go deeper {3} Retreat
+{2} Go deeper (Success 20%, Failure 80%)
+Success:
+You chose to go deeper, and it turned out to be a good decision. You found several cans of food and exited the cave safely.
+(Food +6)
+Failure:
+You decided to go deeper, but you went too far. Your breathing became difficult, and you barely managed to escape the cave.
+(Health -20)
+{3} Retreat
+You decided to safely retreat from the cave.
+[3] Ignore it
+You judged it to be too dangerous and passed by the cave.
+
+당신은 섬 깊숙한 곳을 탐색하다 덩쿨을 넘겨보니 뒤에서 숨겨진 동굴 입구가 등장했습니다. 어떻게 하시겠습니까?
+[2] 들어간다 [3] 무시한다
+[2] 들어간다
+당신은 동굴 안으로 들어가기로 했습니다. 동굴은 어두웠지만 약간의 물자를 발견했습니다. 더 깊숙히 들어가시겠습니까?
+(목재 +5, 밧줄 +2, 식수 +2)
+{2} 더 들어간다 {3} 후퇴한다
+{2} 더 들어간다 (성공 20%, 실패 80%)
+성공 시
+당신은 더 들어가기로 했습니다. 더 들어가기를 잘했는지 당신은 통조림 몇 개를 발견하고 동굴에서 나왔습니다.
+(식량 +6)
+실패 시
+당신은 더 들어가기로 했습니다. 하지만 너무 깊숙히 들어왔는지 당신은 숨이 점점 막혀 왔고 당신은 가까스로 동굴에서 탈출했습니다. 
+(체력 -20)
+{3} 후퇴한다
+당신은 안전하게 동굴에서 탈출하기로 했습니다.
+[3] 무시한다
+당신은 위험하다고 판단해 동굴을 지나쳤습니다.
