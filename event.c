@@ -161,6 +161,88 @@ int event_final_day(players *player) {
 NORMAL EVENTS
 ============================================
 */
+int birdSpotted(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
+    printf("==============================\n\n");
+    printf("You are exploring the beach to find food under bright sunshine.\n");
+    printf("The weather is extremely hot and a bit unpleasant, but you don’t mind\n");
+    printf("as long as you can secure food. At that moment, you hear the cry of a bird.\n");
+    printf("Very hungry, you instinctively look up and spot a seagull. What will you do?\n");
+
+    int n;
+    while (1) {
+        printf("[1: Check resources] [2: Throw a stone] [3: Make a trap] [0: Quit]\n");
+        if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
+        if (n == 1) { checkR(); continue; }
+        else if (n == 0) return 4;
+        else break;
+    }
+
+    if (n == 2) {
+        int r = rand() % 20;
+        if (r < 1) {
+            printf("==============================\n");
+            printf("You pick the most suitable stone you can find nearby and throw it at the seagull.\n");
+            printf("By sheer luck, the stone hits the seagull directly, and it crashes onto the beach.\n");
+            printf("[Food +4]\n");
+            printf("==============================\n");
+            item[1].count += 4;
+        } else {
+            printf("==============================\n");
+            printf("You pick the most suitable stone you can find nearby and throw it at the seagull.\n");
+            printf("However, the chances of hitting it were far too low. Feeling disappointed,\n");
+            printf("you move on to look for other food sources.\n");
+            printf("==============================\n");
+        }
+    }
+    else if (n == 3) {
+        if (item[3].count >= 1 && item[5].count >= 1){
+            printf("==============================\n");
+            printf("You create a trap to lure the seagull and wait for it to be caught. After some time,\n");
+            printf("the seagull falls for the trap without any suspicion\n");
+            printf("Will you kill the seagull immediately to secure food?\n");
+            
+            int an;
+            while (1) {
+                printf("[1: Check resources] [2: Kill it] [3: Do not kill it] [0: Quit]\n");
+                if (scanf("%d", &an) != 1) { while (getchar()!='\n'); continue; }
+                if (an == 1) { checkR(); continue; }
+                else if (an == 0) return 4;
+                else break;
+            }
+
+            if (an == 2){
+                printf("==============================\n");
+                printf("In your haste to obtain food, you kill the seagull and successfully secure it as food.\n");
+                printf("[Food +4]\n");
+                printf("==============================\n");
+                item[1].count += 4;
+            }
+            else if (an == 3){
+                printf("==============================\n");
+                printf("You decide not to kill the seagull right away, just in case. After a short while,\n");
+                printf("the seagull lays eggs. You feel relieved that you didn’t kill it,\n");
+                printf("and you decide to continue collecting eggs from it for the time being.\n");
+                printf("[Food +8]\n");
+                printf("==============================\n");
+                item[1].count += 8;
+            }
+        }
+        else{
+            printf("==============================\n");
+            printf("You try to create a trap to lure the seagull, but you didn’t realize\n");
+            printf("you were lacking the necessary materials. The seagull simply flies past,\n");
+            printf("and you continue searching for food in disappointment.\n");
+            printf("==============================\n");
+        }
+    }
+
+    return 0;
+}
+
 
 /* 1) Tree hole (eggs / bird peck) */
 int insideTheLog(players *player) {
