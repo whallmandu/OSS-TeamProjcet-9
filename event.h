@@ -14,6 +14,8 @@ int event_final_day(players *player);
 /*
 ----------- Normal Events -----------
 */
+int birdSpotted(players *player);
+int clamsSpotted(players *player);
 int insideTheLog(players *player);
 int rockShade(players *player);
 int seaweedClump(players *player);

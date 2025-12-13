@@ -2295,6 +2295,8 @@ int event_military_supplies(players *player) {
 
 /* event list, rarity flags, used flags */
 int (*eventList[])(players *) = {
+    birdSpotted,
+    clamsSpotted,
     insideTheLog,     //normal event
     rockShade,
     seaweedClump,
@@ -2330,10 +2332,10 @@ int (*eventList[])(players *) = {
 };
 
 
-int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1};
+int isRare[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1};
 
 /* usedEvent flags */
-int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int usedEvent[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
 
 
