@@ -415,6 +415,8 @@ int birdSpotted(players *player) {
     printf("as long as you can secure food. At that moment, you hear the cry of a bird.\n");
     printf("Very hungry, you instinctively look up and spot a seagull. What will you do?\n");
 
+    drawImage(900, 0, "imagee\\bird.bmp");
+
     int n;
     while (1) {
         printf("[1: Check resources] [2: Throw a stone] [3: Make a trap] [0: Quit]\n");
@@ -494,6 +496,8 @@ int clamsSpotted(players *player) {
     printf("==============================\n\n");
     printf("You are walking along the coastline when you find several live clams on the sand.\n");
     printf("How will you collect them?\n");
+
+    drawImage(900, 0, "imagee\\calms.bmp");
 
     int n;
     while (1) {
@@ -640,6 +644,8 @@ int thunderstorm(players *player) {
     printf("You are exploring a deserted island to gather food as usual\n");
     printf("when suddenly a thunderstorm hits. You are startled by the sudden situation,\n");
     printf("but quick decisions are necessary to survive. How do you respond?\n");
+
+    drawImage(900, 0, "imagee\\thunderstorm.bmp");
     
     int n;
     while(1) {
@@ -723,7 +729,6 @@ int thunderstorm(players *player) {
 
     return 0;
 }
-
 
 
 int fallenFruit(players *player) { 
@@ -853,6 +858,8 @@ int fallenTree(players *player) {
     printf("You are exploring the forest when you come across a tall fallen tree.\n");
     printf("It could be dangerous, but it’s also an opportunity\n");
     printf("to gather resources to expand your shelter. What will you do?\n");
+
+    drawImage(900, 0, "imagee\\fallenTree.bmp");
     
     int n;
     while(1) {
@@ -1235,9 +1242,11 @@ int event_strange_plant(players *player) {
     printf("You find a strange plant. It may be medicinal or poisonous.\n");
     printf("What will you do?\n");
 
+    drawImage(900, 0, "imagee\\strangePlant.bmp");
+
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Eat it (random)] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
