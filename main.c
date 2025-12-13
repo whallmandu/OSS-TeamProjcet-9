@@ -23,6 +23,7 @@
 #include "event.h"
 
 
+
 //item setting
 Item item[] = {
   {0, "develop", 0}, //debug
@@ -134,6 +135,7 @@ void printPrologue() {
 int main() {
   system("mode con: cols=190 lines=40");
   system("title Survival Island");
+  SetConsoleOutputCP(CP_UTF8);
   FILE *setup = fopen("setup.txt", "r");
 
   if(setup == NULL) {
@@ -160,7 +162,15 @@ int main() {
 
   //load game
   int choice;
-  printf("[1: New Game] [2: Load Game]\n");
+  printf("\n\n");
+  printf("  ██╗███████╗ ██████╗ ██╗      █████╗ ████████╗███████╗██████╗ \n");
+  printf("  ██║██╔════╝██╔═══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝██╔══██╗\n");
+  printf("  ██║███████╗██║   ██║██║     ███████║   ██║   █████╗  ██║  ██║\n");
+  printf("  ██║╚════██║██║   ██║██║     ██╔══██║   ██║   ██╔══╝  ██║  ██║\n");
+  printf("  ██║███████║╚██████╔╝███████╗██║  ██║   ██║   ███████╗██████╔╝\n");
+  printf("  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝ \n");
+  printf("\n");
+  printf("            [ 1 : New Game ]    [ 2 : Load Game ]\n");
   scanf("%d", &choice);
   
  // 버퍼 정리
