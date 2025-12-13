@@ -856,28 +856,66 @@ int event_palm_leaves(players *player) {
 }
 
 /* 7) WeirdPlantEvent*/
-int event_weirdPlant(players *player) {
-    int choice;
-    printf("You are walking through the forest when you come across a strangely shaped plant. It smells pleasantly fragrant, but you’re not sure whether it’s a medicinal herb or a poisonous one. What will you do?\n");
-    printf("1) Eat it  2) Ignore it\n> ");
-    scanf("%d", &choice);
+int suspiciousWeeds(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
+    printf("==============================\n\n");
 
-    if (choice == 1) {
-        int success = rand() % 2; // 0 = fail, 1 = success
+    printf("While exploring the deep forest of a deserted island, you come\n");
+    printf("across a fruit hanging from a strangely shaped plant.\n");
+    printf("However, you don’t know whether the fruit is poisonous.\n");
+    printf("What would you do?\n"); 
 
-        if (success == 0) {
-            printf("You pick the plant and eat it. At first nothing happens, but soon after you start to feel stomach pain.\n");
-            player->health -= 20;   // 패널티
-            return 0;
-        } else {
-            printf("You pick the plant and eat it. It tastes slightly bitter, but you feel your body becoming lighter and your strength returning.\n");
-            player->health += 8;   // 보상
-            return 1;
+
+    int n;
+    while (1) {
+        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
+
+        if (scanf("%d", &n) != 1) {
+            while (getchar() != '\n');
+            continue;
         }
-    } else {
-        printf("You decide to walk past it, just in case it might be poisonous.\n");
-        return 2;
+
+        if (n == 1) {
+            checkR();
+        }
+        else if (n == 2 || n == 3 || n == 0) {
+            break;
+        }
+        else {
+            printf("wrong input!\n");
+        }
     }
+
+    if (n == 0) return 4;
+
+    if (n == 2) {
+        int k = rand() % 2;
+        if (k == 0){
+            printf("==============================\n");
+            printf("Believing the fruit might have beneficial effects, you eat it.\n");
+            printf("A few minutes later, you feel much more energetic than before.\n");
+            printf("[HP +14]\n");
+            printf("==============================\n");
+            player->HP += 14;   
+        }
+        else{
+            printf("==============================\n");
+            printf("Believing the fruit might have beneficial effects, you eat it.\n");
+            printf("A few minutes later, you start feeling a headache coming on.\n");
+            printf("[HP -6]\n");
+            printf("==============================\n");
+            player->HP -= 6;  
+        }
+    }
+    else { 
+        printf("==============================\n");
+        printf("To avoid potential danger, you decide not to eat the fruit.\n");
+        printf("==============================\n");
+    }
+    return 0;
 }
 
 /* 8) TwigEvent*/
@@ -2152,7 +2190,7 @@ int (*eventList[])(players *) = {
     somethingInSand,    // 9
     wildBoar,           // 10
     approachingStorm,    // 11
-    event_weirdPlant,
+    suspiciousWeeds,
     event_twig,
     event_cloth,
     event_fishingNet,

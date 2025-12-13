@@ -26,7 +26,7 @@ int fallenTree(players *player);
 int thePool(players *player);  
 int palmLeaves(players *player);     
 int fishingFish(players *player);    
-int event_weirdPlant(players *player);
+int suspiciousWeeds(players *player);
 int event_twig(players *player);
 int event_cloth(players *player);
 int event_fishingNet(players *player);
