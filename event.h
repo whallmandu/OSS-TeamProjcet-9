@@ -22,7 +22,7 @@
 #include "player.h"
 
 /* event count: 일반 이벤트 + 희귀 이벤트 */
-#define eventCount 22
+#define eventCount 31
 
 /*
 ----------- Fixed Event -----------
@@ -53,7 +53,9 @@ int event_cloth_found(players *player);
 int event_old_net(players *player);
 int event_stones_found(players *player);
 int event_rock_rope(players *player);
-
+int event_tornado(players *player);
+int event_animal_carcass(players *player);
+int event_earthquake(players *player);
 /*
 ----------- Rare / Special Events -----------
 */
