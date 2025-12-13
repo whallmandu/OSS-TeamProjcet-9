@@ -1363,11 +1363,15 @@ int event_cloth_found(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You found a piece of cloth blowing in the wind.\n");
+    printf("You were walking along the beach when you found a piece of cloth.\n");
+    printf("Its condition looked good, and it seemed usable.\n");
+    printf("What will you do?\n");
+
+    drawImage(900, 0, "imagee\\clothP.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Pick it up] [3: Walk past] [0: Quit]\n");
+        printf("[1: Check resources] [2: Pick it up] [3: Ignore it] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1382,15 +1386,25 @@ int event_cloth_found(players *player) {
     if (n == 0) return 4;
 
     if (n == 2) {
-        printf("==============================\n");
-        printf("You picked up the cloth.\n");
-        printf("[cloth +1]\n");
-        printf("==============================\n");
-        item[6].count += 1;
+        int k = rand() % 10;
+        if(k < 6) {
+            printf("==============================\n");
+            printf("You successfully picked up the piece of cloth without any problems.\n");
+            printf("[cloth +2]\n");
+            printf("==============================\n");
+            item[6].count += 2;
+        }
+        else {
+            printf("==============================\n");
+            printf("While picking up the cloth, you were bitten by a spider hiding underneath.\n");
+            printf("[HP -8]\n");
+            printf("==============================\n");
+            player->HP -= 8;
+        }
     }
     else if (n == 3) {
         printf("==============================\n");
-        printf("You ignore the cloth and move on.\n");
+        printf("You decided it wasn’t necessary and simply walked past it.\n");
         printf("==============================\n");
     }
 
@@ -1405,11 +1419,15 @@ int event_old_net(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You found an old fishing net torn into rope.\n");
+    printf("You were walking through the forest when you discovered\nsome vines that looked strong enough to be used as rope.\n");
+    printf("They seemed a bit tricky to collect, but if you succeeded,\nthey could be very useful.\n");
+    printf("What will you do?\n");
+    
+    drawImage(900, 0, "imagee\\vines.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Take it] [3: Walk past] [0: Quit]\n");
+        printf("[1: Check resources] [2: Collect them] [3: Ignore them] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1424,20 +1442,33 @@ int event_old_net(players *player) {
     if (n == 0) return 4;
 
     if (n == 2) {
-        printf("==============================\n");
-        printf("You recovered the rope.\n");
-        printf("[rope +1]\n");
-        printf("==============================\n");
-        item[3].count += 1;
+        int k = rand() % 10;
+        if(k < 7) {
+            printf("==============================\n");
+            printf("You decided to untangle and gather the vines.\n");
+            printf("You managed to obtain the rope without any trouble.\n");
+            printf("[rope +2]\n");
+            printf("==============================\n");
+            item[3].count += 2;
+        }
+        else {
+            printf("==============================\n");
+            printf("You decided to untangle and gather the vines.\n");
+            printf("However, while doing so, you became tangled in the vines yourself, \nand you ended up with a few minor injuries.\n");
+            printf("[HP -5]\n");
+            printf("==============================\n");
+            player->HP -= 5;
+        }
     }
     else if (n == 3) {
         printf("==============================\n");
-        printf("You decided to walk past.\n");
+        printf("You thought they would be too difficult to handle, so you simply walked past them.\n");
         printf("==============================\n");
     }
 
     return 0;
 }
+
 /* 11) StoneEvent*/
 int event_stones_found(players *player) {
     printf("==============================\n");
@@ -1446,11 +1477,15 @@ int event_stones_found(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You found several medium-sized stones near the water.\n");
+    printf("You were walking along the coast when you discovered a cracked rock.\n");
+    printf("If you strike it a little, it might break into a useful \nshape that could be used in many ways.\n");
+    printf("What will you do?\n");
+
+    drawImage(900, 0, "imagee\\crackStone.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Pick them up] [3: Walk past] [0: Quit]\n");
+        printf("[1: Check resources] [2: Break it] [3: Ignore it] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1465,15 +1500,27 @@ int event_stones_found(players *player) {
     if (n == 0) return 4;
 
     if (n == 2) {
-        printf("==============================\n");
-        printf("You collected the stones.\n");
-        printf("[stone +1]\n");
-        printf("==============================\n");
-        item[5].count += 1;
+        int k = rand() % 3;
+        if(k < 1) {
+            printf("==============================\n");
+            printf("You decided to break the rock.\n");
+            printf(" You struck the cracked fragment against the larger rock, and \nit broke successfully, giving you several usable stones.\n");
+            printf("[stone +5]\n");
+            printf("==============================\n");
+            item[7].count += 5;
+        }
+        else {
+            printf("==============================\n");
+            printf("You decided to break the rock.\n");
+            printf("You struck the cracked fragment against the larger rock, \nbut a piece of shattered rock flew toward your arm, causing a minor injury.\n");
+            printf("[HP -8]\n");
+            printf("==============================\n");
+            player->HP -= 8;
+        }
     }
     else if (n == 3) {
         printf("==============================\n");
-        printf("You walk past the stones.\n");
+        printf("You felt it might be dangerous, so you decided to just pass by.\n");
         printf("==============================\n");
     }
 
@@ -1488,11 +1535,15 @@ int event_rock_rope(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You found old rope stuck between rocks. Reaching it may injure your hand.\n");
+    printf("As you walk along the coast, you discover a rope wedged deep inside a large rock crevice.\n");
+    printf("It’s a bit deep, and there’s a chance you could hurt your hand, \nbut judging by its condition, the rope still looks usable.\n");
+    printf("What will you do?\n");
+
+    drawImage(900, 0, "image\\rockrope.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Try to pull it out] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Pull it out] [3: Ignore it] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1510,21 +1561,23 @@ int event_rock_rope(players *player) {
         int r = rand() % 2;
         if (r == 0) {
             printf("==============================\n");
-            printf("Failure: Your hand was cut by a sharp rock.\n");
+            printf("You decide to pull the rope out.\n");
+            printf("You pull with all your strength, but only end up injuring your hand.\n");
             printf("[HP -5]\n");
             printf("==============================\n");
             player->HP -= 5;
         } else {
             printf("==============================\n");
-            printf("Success: You retrieved the rope.\n");
-            printf("[rope +1]\n");
+            printf("You decide to pull the rope out.\n");
+            printf("You pull with all your strength and successfully remove it.\n");
+            printf("[rope +2]\n");
             printf("==============================\n");
-            item[3].count += 1;
+            item[3].count += 2;
         }
     }
     else if (n == 3) {
         printf("==============================\n");
-        printf("You walk away, avoiding danger.\n");
+        printf("You feel you won’t be able to pull it out, so you simply walk past it.\n");
         printf("==============================\n");
     }
 
@@ -1539,12 +1592,15 @@ int event_animal_carcass(players *player) {
            player->HP, player->Hunger, player->Thirst);
     printf("==============================\n\n");
 
-    printf("You find a dead animal on the ground. It could be edible, or it may be rotten.\n");
+    printf("You were walking through the forest when you came across an animal that appeared to be dead.\n");
+    printf("Its hide looked like it could be useful if you skinned it.\n");
     printf("What will you do?\n");
+
+    drawImage(900, 0, "image\\arac.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Inspect and eat it (risky)] [3: Leave it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Skin it] [3: Ignore it] [0: Quit]\n");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1563,22 +1619,23 @@ int event_animal_carcass(players *player) {
 
         if (r == 0) {
             printf("==============================\n");
-            printf("Failure: The meat was rotten. You feel sick.\n");
+            printf("You skinned the animal, but it turned out to still be alive.\n");
+            printf("The animal attacked you and then ran away.\n");
             printf("[HP -10]\n");
             printf("==============================\n");
             player->HP -= 10;
         } else {
             printf("==============================\n");
-            printf("Success: The meat was still good.\n");
-            printf("[Hunger -15]\n");
+            printf("You skinned the animal.\n");
+            printf("The hide was successfully removed and can be used as cloth.\n");
+            printf("[cloth +6]\n");
             printf("==============================\n");
-            player->Hunger -= 15;
-            if (player->Hunger < 0) player->Hunger = 0;
+            item[6].count += 6;
         }
     } 
     else if (n == 3) {
         printf("==============================\n");
-        printf("You decide to leave the carcass and avoid the risk.\n");
+        printf("You suspected the animal might still be alive, so you ignored it and walked past.\n");
         printf("==============================\n");
     }
 
