@@ -22,7 +22,7 @@
 #include "player.h"
 
 /* event count: 일반 이벤트 + 희귀 이벤트 */
-#define eventCount 31
+#define eventCount 33
 
 /*
 ----------- Fixed Event -----------
@@ -35,6 +35,8 @@ int event_final_day(players *player);
 /*
 ----------- Normal Events -----------
 */
+int birdSpotted(players *player);
+int clamsSpotted(players *player);
 int insideTheLog(players *player);
 int rockShade(players *player);
 int seaweedClump(players *player);
