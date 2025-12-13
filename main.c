@@ -124,11 +124,12 @@ void printPrologue() {
 
     for (int i = 0; i < count; i++) {
         printf("%s\n", lines[i]);
-        Sleep(1300); // 1.3 seconds delay
+        Sleep(1000); // 1.3 seconds delay
     }
 
     printf("\nPress Enter to begin your survival journey...");
     getchar();
+    system("cls");
 }
 
 
