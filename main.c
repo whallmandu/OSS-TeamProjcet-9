@@ -239,7 +239,7 @@ int main() {
     }
     else {
       if(currentEventID == -1) currentEventID = pickEventID();
-      int k = runEventByID(currentEventID, &player)
+      int k = runEventByID(currentEventID, &player);
       if(k == 4) {
         quit = 1;
         break;

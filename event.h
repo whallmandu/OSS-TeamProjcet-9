@@ -65,11 +65,11 @@ int event_wave_collect(players *player);
 int event_waterfall(players *player);
 int event_cave(players *player);
 int collapsedCabin(players *player);   
-int //discoverLifeboat(players *player); 
+//int discoverLifeboat(players *player); 
 int shipwreck(players *player);       
 int somethingInSand(players *player);  
 int wildBoar(players *player);       
-int //approachingStorm(players *player);
+//int approachingStorm(players *player);
 int event_military_supplies(players *player);
 
 /*

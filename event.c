@@ -29,6 +29,7 @@ extern int SOS;
 
 // image print
 void drawImage(int x, int y, const char* filename) {
+    Sleep(50);
     // Console Handle
     HWND consoleWindow = GetConsoleWindow();
     if (!consoleWindow) return; 
@@ -184,6 +185,7 @@ int day1Event(players *player) {
     item[1].count++;
     item[2].count++;
 
+    drawImage(900, 0, "image\\Day1.bmp");
     drawImage(900, 0, "image\\Day1.bmp");
    
 
@@ -415,7 +417,7 @@ int birdSpotted(players *player) {
     printf("as long as you can secure food. At that moment, you hear the cry of a bird.\n");
     printf("Very hungry, you instinctively look up and spot a seagull. What will you do?\n");
 
-    drawImage(900, 0, "imagee\\bird.bmp");
+    drawImage(900, 0, "image\\bird.bmp");
 
     int n;
     while (1) {
@@ -497,7 +499,7 @@ int clamsSpotted(players *player) {
     printf("You are walking along the coastline when you find several live clams on the sand.\n");
     printf("How will you collect them?\n");
 
-    drawImage(900, 0, "imagee\\calms.bmp");
+    drawImage(900, 0, "image\\calms.bmp");
 
     int n;
     while (1) {
@@ -545,7 +547,7 @@ int insideTheLog(players *player) {
     printf("You are walking through the forest when you discover a hole inside a log.\n");
     printf("Something is glimmering within it, but you can’t see clearly inside. What will you do?\n");
 
-    drawImage(900, 0, "imagee\\insideLog.bmp");
+    drawImage(900, 0, "image\\insideLog.bmp");
 
     int n;
     while (1) {
@@ -599,7 +601,7 @@ int rockShade(players *player) {
     printf("Just then, you notice a cool, shaded spot beneath a large rock ahead.\n");
     printf("It looks like a good place to rest for a moment. What will you do?\n");
 
-    drawImage(900, 0, "imagee\\rockShade.bmp");
+    drawImage(900, 0, "image\\rockShade.bmp");
 
     int n;
     while (1) {
@@ -649,7 +651,7 @@ int thunderstorm(players *player) {
     printf("when suddenly a thunderstorm hits. You are startled by the sudden situation,\n");
     printf("but quick decisions are necessary to survive. How do you respond?\n");
 
-    drawImage(900, 0, "imagee\\thunderstorm.bmp");
+    drawImage(900, 0, "image\\thunderstorm.bmp");
     
     int n;
     while(1) {
@@ -795,7 +797,7 @@ int seaweedClump(players *player) {
     printf("You are walking along the coastline when you discover a large bundle of seaweed\n");
     printf("near the water. If dried, it can be used as rope, and it can also serve as food. What will you do?\n");
     
-    drawImage(900, 0, "imagee\\seaweed.bmp");
+    drawImage(900, 0, "image\\seaweed.bmp");
 
     int n;
     while (1) {
@@ -865,7 +867,7 @@ int fallenTree(players *player) {
     printf("It could be dangerous, but it’s also an opportunity\n");
     printf("to gather resources to expand your shelter. What will you do?\n");
 
-    drawImage(900, 0, "imagee\\fallenTree.bmp");
+    drawImage(900, 0, "image\\fallenTree.bmp");
     
     int n;
     while(1) {
@@ -913,7 +915,7 @@ int event_herbs(players *player) {
 
     printf("You discover a pile of fragrant herbs.\nThey might be medicinal or poisonous.\nWhat will you do?\n");
 
-    drawImage(900, 0, "imagee\\herb.bmp");
+    drawImage(900, 0, "image\\herb.bmp");
 
     int n;
     while(1) {
@@ -979,7 +981,7 @@ int thePool(players *player) {
     printf("If the water was drinkable, you wouldn’t have to worry about water for a while.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\thePool.bmp");
+    drawImage(900, 0, "image\\thePool.bmp");
 
     int n;
     while (1) {
@@ -1023,7 +1025,7 @@ int palmLeaves(players *player) {
     printf("However, taking the leaves with you would be very useful for reinforcing your shelter.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\palmLeaves.bmp");
+    drawImage(900, 0, "image\\palmLeaves.bmp");
    
     int n;
     while (1) {
@@ -1076,9 +1078,9 @@ int fishSpotted(players *player) {
     printf("==============================\n\n");
 
     printf("You are walking along the coast when you spot a few fish swimming\n");
-    printf("in the shallow water. They look edible to you. What will you do?\n");
+    printf("in the shallow water.\nThey look edible to you.\nWhat will you do?\n");
 
-    drawImage(900, 0, "imagee\\fishSpot.bmp");
+    drawImage(900, 0, "image\\fishSpot.bmp");
 
     int n;
     while (1) {
@@ -1256,7 +1258,7 @@ int event_strange_plant(players *player) {
     printf("You find a strange plant. It may be medicinal or poisonous.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\strangePlant.bmp");
+    drawImage(900, 0, "image\\strangePlant.bmp");
 
     int n;
     while (1) {
@@ -1311,7 +1313,7 @@ int event_dry_twigs(players *player) {
     printf("They look to be in good condition and could be used as lumber.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\branch.bmp");
+    drawImage(900, 0, "image\\branch.bmp");
 
     int n;
     while (1) {
@@ -1367,7 +1369,7 @@ int event_cloth_found(players *player) {
     printf("Its condition looked good, and it seemed usable.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\clothP.bmp");
+    drawImage(900, 0, "image\\clothP.bmp");
 
     int n;
     while (1) {
@@ -1423,7 +1425,7 @@ int event_old_net(players *player) {
     printf("They seemed a bit tricky to collect, but if you succeeded,\nthey could be very useful.\n");
     printf("What will you do?\n");
     
-    drawImage(900, 0, "imagee\\vines.bmp");
+    drawImage(900, 0, "image\\vines.bmp");
 
     int n;
     while (1) {
@@ -1481,7 +1483,7 @@ int event_stones_found(players *player) {
     printf("If you strike it a little, it might break into a useful \nshape that could be used in many ways.\n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\crackStone.bmp");
+    drawImage(900, 0, "image\\crackStone.bmp");
 
     int n;
     while (1) {
@@ -1745,7 +1747,7 @@ int event_earthquake(players *player) {
     printf("Thinking it was nothing, you continued walking — but then \nthe ground suddenly shook violently and began to crack. \n");
     printf("What will you do?\n");
 
-    drawImage(900, 0, "imagee\\quake.bmp");
+    drawImage(900, 0, "image\\quake.bmp");
 
     int n;
     while (1) {
