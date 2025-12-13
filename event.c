@@ -243,6 +243,50 @@ int birdSpotted(players *player) {
     return 0;
 }
 
+int clamsSpotted(players *player) {
+    printf("==============================\n");
+    printf("Day %d\n", player->Day);
+    printf("[HP: %d] [Hunger: %d] [Thirst: %d]\n",
+           player->HP, player->Hunger, player->Thirst);
+    printf("==============================\n\n");
+    printf("You are walking along the coastline when you find several live clams on the sand.\n");
+    printf("How will you collect them?\n");
+
+    int n;
+    while (1) {
+        printf("[1: Check resources] [2: Break them with a stone] [3: Soak them in seawater] [4: Cook them first] [0: Quit]\n");
+        if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
+        if (n == 1) { checkR(); continue; }
+        else if (n == 0) return 4;
+        else break;
+    }
+
+    if (n == 2) {
+        printf("==============================\n");
+        printf("You tried to use a small stone to break the clams to get food,\n");
+        printf("but in the process of breaking them, much of the meat was crushed and damaged.\n");
+        printf("[Food +1]\n");
+        printf("==============================\n");
+        item[1].count += 1;
+    }
+    else if (n == 3) {
+        printf("==============================\n");
+        printf("You soaked several clams in seawater. Some of them escaped,\n");
+        printf("but a few opened up and can be used as food.\n");
+        printf("[Food +3]\n");
+        printf("==============================\n");
+        item[1].count += 3;
+    }
+    else if (n == 4){
+        printf("==============================\n");
+        printf("Knowing that clams naturally open when cooked, you heated them over a fire.\n");
+        printf("As a result, several clams opened, and you successfully obtained food.\n");
+        printf("[Food +5]\n");
+        printf("==============================\n");
+        item[1].count += 5;
+    }
+    return 0;
+}
 
 /* 1) Tree hole (eggs / bird peck) */
 int insideTheLog(players *player) {
