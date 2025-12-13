@@ -23,6 +23,7 @@
 #include "event.h"
 
 
+
 //item setting
 Item item[] = {
   {0, "develop", 0}, //debug
@@ -120,20 +121,23 @@ void printPrologue() {
 
     system("cls");
     printf("===== PROLOGUE =====\n\n");
-
+    drawImage(900, 0, "image\\prologue_1.bmp");
     for (int i = 0; i < count; i++) {
-        printf("%s\n", lines[i]);
-        Sleep(1300); // 1.3 seconds delay
+      if(i==4) drawImage(900, 0, "image\\prologue_2.bmp");
+      printf("%s\n", lines[i]);
+      Sleep(1000); // 1.3 seconds delay
     }
 
     printf("\nPress Enter to begin your survival journey...");
     getchar();
+    system("cls");
 }
 
 
 int main() {
   system("mode con: cols=190 lines=40");
-  system("title Survival Island");
+  system("title ISOLATED");
+  SetConsoleOutputCP(CP_UTF8);
   FILE *setup = fopen("setup.txt", "r");
 
   if(setup == NULL) {
@@ -160,10 +164,18 @@ int main() {
 
   //load game
   int choice;
-  printf("[1: New Game] [2: Load Game]\n");
+  printf("\n\n");
+  printf("  ██╗███████╗ ██████╗ ██╗      █████╗ ████████╗███████╗██████╗ \n");
+  printf("  ██║██╔════╝██╔═══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝██╔══██╗\n");
+  printf("  ██║███████╗██║   ██║██║     ███████║   ██║   █████╗  ██║  ██║\n");
+  printf("  ██║╚════██║██║   ██║██║     ██╔══██║   ██║   ██╔══╝  ██║  ██║\n");
+  printf("  ██║███████║╚██████╔╝███████╗██║  ██║   ██║   ███████╗██████╔╝\n");
+  printf("  ╚═╝╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═════╝ \n");
+  printf("\n");
+  printf("            [ 1 : New Game ]    [ 2 : Load Game ]\n");
   scanf("%d", &choice);
   
- // 버퍼 정리
+
   int tmp;
   while ((tmp = getchar()) != '\n' && tmp != EOF);
 
@@ -227,10 +239,12 @@ int main() {
     }
     else {
       if(currentEventID == -1) currentEventID = pickEventID();
-      if(runEventByID(currentEventID, &player) == 4) {
+      int k = runEventByID(currentEventID, &player);
+      if(k == 4) {
         quit = 1;
         break;
       }
+      else if(k == 9) break;
     }
 
     //Next Day increments and resource consumption
