@@ -189,14 +189,6 @@ int main() {
      }
   }
 
-
-
-  if (choice == 2) {
-      if (!gameLoad(&player)) {
-           printf("Starting New Game...\n");
-      }
-  }
-
   int quit = 0;
   
   //main loop
