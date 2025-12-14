@@ -499,7 +499,7 @@ int clamsSpotted(players *player) {
     printf("You are walking along the coastline when you find several live clams on the sand.\n");
     printf("How will you collect them?\n");
 
-    drawImage(900, 0, "image\\calms.bmp");
+    drawImage(900, 0, "image\\clams.bmp");
 
     int n;
     while (1) {
