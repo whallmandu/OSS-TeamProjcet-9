@@ -92,7 +92,7 @@ int day1_1(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Shake the tree] [3: Climb the tree] [4: Do not collect] [0: Quit]\n");
+        printf("[1: Check resources] [2: Shake the tree] [3: Climb the tree] [4: Do not collect] [0: quit]\n>> ");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
         else if(n >= 2 && n <= 4) break;
@@ -146,7 +146,7 @@ int day1_2(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Explore] [3: Do not explore] [0: Quit]\n");
+        printf("[1: Check resources] [2: Explore] [3: Do not explore] [0: quit]\n>> ");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
         else if(n >= 2 && n <= 3) break;
@@ -191,7 +191,7 @@ int day1Event(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Inland] [3: Coastline] [4: Far out to sea] [0: Quit]\n");
+        printf("[1: Check resources] [2: Inland] [3: Coastline] [4: Far out to sea] [0: quit]\n>> ");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
         else if(n >= 2 && n <= 4) break;
@@ -227,7 +227,7 @@ int day10Event(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Escaping] [3: Reinforcing the shelter] [0: Quit]\n");
+        printf("[1: Check resources] [2: Escaping] [3: Reinforcing the shelter] [0: quit]\n>> ");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
         else if(n >= 2 && n <= 3) break;
@@ -271,7 +271,7 @@ int day20Event(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Send it] [3: Do not send it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Send it] [3: Do not send it] [0: quit]\n>> ");
         if(scanf("%d", &n) != 1) { while(getchar()!='\n'); continue; }
         if(n==1) checkR();
         else if(n >= 2 && n <= 3) break;
@@ -319,7 +319,7 @@ int event_final_day(players *player) {
     int n;
 
     while (1) {
-        printf("[1: Check resources] [2: Request Rescue] [3: Remain on the Island] [0: Quit]\n");
+        printf("[1: Check resources] [2: Request Rescue] [3: Remain on the Island] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -421,7 +421,7 @@ int birdSpotted(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Throw a stone] [3: Make a trap] [0: Quit]\n");
+        printf("[1: Check resources] [2: Throw a stone] [3: Make a trap] [0: quit]\n>> ");
         if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
         if (n == 1) { checkR(); continue; }
         else if (n == 0) return 4;
@@ -454,7 +454,7 @@ int birdSpotted(players *player) {
             
             int an;
             while (1) {
-                printf("[1: Check resources] [2: Kill it] [3: Do not kill it] [0: Quit]\n");
+                printf("[1: Check resources] [2: Kill it] [3: Do not kill it] [0: quit]\n>> ");
                 if (scanf("%d", &an) != 1) { while (getchar()!='\n'); continue; }
                 if (an == 1) { checkR(); continue; }
                 else if (an == 0) return 4;
@@ -499,11 +499,11 @@ int clamsSpotted(players *player) {
     printf("You are walking along the coastline when you find several live clams on the sand.\n");
     printf("How will you collect them?\n");
 
-    drawImage(900, 0, "image\\calms.bmp");
+    drawImage(900, 0, "image\\clams.bmp");
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Break them with a stone] [3: Soak them in seawater] [4: Cook them first] [0: Quit]\n");
+        printf("[1: Check resources] [2: Break them with a stone] [3: Soak them in seawater] [4: Cook them first] [0: quit]\n>> ");
         if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
         if (n == 1) { checkR(); continue; }
         else if (n == 0) return 4;
@@ -551,7 +551,7 @@ int insideTheLog(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Put your hand in] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Put your hand in] [3: Ignore it] [0: quit]\n>> ");
         if (scanf("%d", &n) != 1) { while (getchar()!='\n'); continue; }
         if (n == 1) { checkR(); continue; }
         else if (n == 0) return 4;
@@ -605,7 +605,7 @@ int rockShade(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Rest] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Rest] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) { while (getchar() != '\n'); continue; }
 
@@ -655,7 +655,7 @@ int thunderstorm(players *player) {
     
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Find a place to hide] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Find a place to hide] [3: Ignore it] [0: quit]\n>> ");
         
         scanf("%d", &n);
         if(n==1) checkR();
@@ -673,7 +673,7 @@ int thunderstorm(players *player) {
         
         int al;
         while (1){
-            printf("[1: Check resources] [2: Under a tree] [3: In the cave] [0: Quit]\n");
+            printf("[1: Check resources] [2: Under a tree] [3: In the cave] [0: quit]\n>> ");
         
             scanf("%d", &al);
             if(al==1) checkR();
@@ -749,7 +749,7 @@ int thunderstorm(players *player) {
     
 //     int n;
 //     while(1) {
-//         printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
+//         printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: quit]\n>> ");
         
 //         scanf("%d", &n);
 //         if(n==1) checkR();
@@ -801,7 +801,7 @@ int seaweedClump(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Dry it] [3: Eat it] [4: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Dry it] [3: Eat it] [4: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -871,7 +871,7 @@ int fallenTree(players *player) {
     
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Harvest it] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Harvest it] [3: Ignore it] [0: quit]\n>> ");
         scanf("%d", &n);
         if(n==1) checkR();
         else if(n==2) break;
@@ -919,7 +919,7 @@ int event_herbs(players *player) {
 
     int n;
     while(1) {
-        printf("[1: Check resources] [2: Gather and tast] [3: Walk past] [0: Quit]\n");
+        printf("[1: Check resources] [2: Gather and tast] [3: Walk past] [0: quit]\n>> ");
 
         if(scanf("%d", &n) != 1) { 
             while(getchar()!='\n');
@@ -985,7 +985,7 @@ int thePool(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Drink it immediately] [3: Boil it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Drink it immediately] [3: Boil it] [0: quit]\n>> ");
         scanf("%d", &n);
         if (n == 1) checkR();
         else if (n == 2) break;
@@ -1029,7 +1029,7 @@ int palmLeaves(players *player) {
    
     int n;
     while (1) {
-    printf("[1: Check resources] [2: Take them] [3: Ignore them] [0: Quit]\n");
+    printf("[1: Check resources] [2: Take them] [3: Ignore them] [0: quit]\n>> ");
         scanf("%d", &n);
         if (n == 1) checkR();
         else if (n == 2) break;
@@ -1084,7 +1084,7 @@ int fishSpotted(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Catch them] [3: Ignore them] [0: Quit]\n");
+        printf("[1: Check resources] [2: Catch them] [3: Ignore them] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1145,7 +1145,7 @@ int fishSpotted(players *player) {
 
 //     int n;
 //     while (1) {
-//         printf("[1: Check resources] [2: Try catching them with your hands] [3: Just watch and move on] [0: Quit]\n");
+//         printf("[1: Check resources] [2: Try catching them with your hands] [3: Just watch and move on] [0: quit]\n>> ");
 //         scanf("%d", &n);
 //         if (n == 1) checkR();
 //         else if (n == 2) break;
@@ -1195,7 +1195,7 @@ int fishSpotted(players *player) {
 
 //     int n;
 //     while (1) {
-//         printf("[1: Check resources] [2: Go outside] [3: Turn palm leaves into rope] [0: Quit]\n");
+//         printf("[1: Check resources] [2: Go outside] [3: Turn palm leaves into rope] [0: quit]\n>> ");
 
 //         if (scanf("%d", &n) != 1) {
 //             while (getchar() != '\n');
@@ -1262,7 +1262,7 @@ int event_strange_plant(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Eat it] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1317,7 +1317,7 @@ int event_dry_twigs(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Collect them] [3: Ignore them] [0: Quit]\n");
+        printf("[1: Check resources] [2: Collect them] [3: Ignore them] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1373,7 +1373,7 @@ int event_cloth_found(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Pick it up] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Pick it up] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1429,7 +1429,7 @@ int event_old_net(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Collect them] [3: Ignore them] [0: Quit]\n");
+        printf("[1: Check resources] [2: Collect them] [3: Ignore them] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1487,7 +1487,7 @@ int event_stones_found(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Break it] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Break it] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1545,7 +1545,7 @@ int event_rock_rope(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Pull it out] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Pull it out] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1602,7 +1602,7 @@ int event_animal_carcass(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Skin it] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Skin it] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1661,7 +1661,7 @@ int event_tornado(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Enter the forest] [3: Stay on the beach] [0: Quit]\n");
+        printf("[1: Check resources] [2: Enter the forest] [3: Stay on the beach] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1684,7 +1684,7 @@ int event_tornado(players *player) {
         printf("==============================\n");
         int m;
         while (1) {
-            printf("[1: Check resources] [2: Under the large tree] [3: Inside the deep pit] [0: Quit]\n");
+            printf("[1: Check resources] [2: Under the large tree] [3: Inside the deep pit] [0: quit]\n>> ");
 
             if (scanf("%d", &m) != 1) {
                 while (getchar() != '\n');
@@ -1751,7 +1751,7 @@ int event_earthquake(players *player) {
 
     int n;
     while (1) {
-        printf("[1: Check resources] [2: Stay in the forest] [3: Go to the coast] [0: Quit]\n");
+        printf("[1: Check resources] [2: Stay in the forest] [3: Go to the coast] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1768,7 +1768,7 @@ int event_earthquake(players *player) {
     if (n == 2) {  
         int m;
         while (1) {
-            printf("[1: Check resources] [2: Enter the cave] [3: Climb the mountain] [0: Quit]\n");
+            printf("[1: Check resources] [2: Enter the cave] [3: Climb the mountain] [0: quit]\n>> ");
 
             if (scanf("%d", &m) != 1) {
                 while (getchar() != '\n');
@@ -1837,7 +1837,7 @@ int event_wave_collect(players *player) {
 
   
     while (1) {
-        printf("[1: Check resources] [2: Collect them] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Collect them] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -1913,7 +1913,7 @@ int collapsedCabin(players *player) {
     int n;
 
     while (1) {
-        printf("[1: Check resources] [2: Enter the cabin] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Enter the cabin] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n'); 
@@ -1984,7 +1984,7 @@ int collapsedCabin(players *player) {
    
 //     int n;
 //     while (1) {
-//     printf("[1: Check resources] [2: Search inside the lifeboat] [3: Search around the lifeboat] [0: Quit]\n");
+//     printf("[1: Check resources] [2: Search inside the lifeboat] [3: Search around the lifeboat] [0: quit]\n>> ");
 //         scanf("%d", &n);
 //         if (n == 1) checkR();
 //         else if (n == 2) break;
@@ -2041,7 +2041,7 @@ int shipwreck(players *player) {
     // roop
     // ===============================
     while (1) {
-        printf("[1: Check resources] [2: Explore it] [3: Board it and escape] [4: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Explore it] [3: Board it and escape] [4: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -2167,7 +2167,7 @@ int somethingInSand(players *player) {
  
     // ===============================
     while (1) {
-        printf("[1: Check resources] [2: Open it carefully] [3: Break it open] [4: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Open it carefully] [3: Break it open] [4: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -2289,7 +2289,7 @@ int wildBoar(players *player) {
     // Main choice loop
     // ===============================
     while (1) {
-        printf("[1: Check resources] [2: Run away] [3: Take cover] [4: Threaten it] [5: Attack it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Run away] [3: Take cover] [4: Threaten it] [5: Attack it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -2346,7 +2346,7 @@ int wildBoar(players *player) {
         printf("==============================\n");
 
         while (1) {
-            printf("[1: check resource] [2: Up the tree] [3: Inside the bush] [0: quit]\n");
+            printf("[1: check resource] [2: Up the tree] [3: Inside the bush] [0: quit]\n>> ");
 
             if (scanf("%d", &sub) != 1) {
                 while (getchar() != '\n');
@@ -2445,7 +2445,7 @@ int wildBoar(players *player) {
     
 //     int n;
 //     while(1) {
-//         printf("[1: Check resources] [2: Reinforce shelter] [3: Gather emergency supplies] [0: Quit]\n");
+//         printf("[1: Check resources] [2: Reinforce shelter] [3: Gather emergency supplies] [0: quit]\n>> ");
 //         scanf("%d", &n);
 //         if(n==1) checkR();
 //         else if(n==2) {
@@ -2508,7 +2508,7 @@ int event_waterfall(players *player) {
 
   
     while (1) {
-        printf("[1: Check resources] [2: Go down] [3: Don't go down] [4: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Go down] [3: Don't go down] [4: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while(getchar()!='\n');
@@ -2621,7 +2621,7 @@ int event_cave(players *player) {
     // First Choice Loop
     // ===============================
     while (1) {
-        printf("[1: Check resources] [2: Enter] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Enter] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
@@ -2665,7 +2665,7 @@ int event_cave(players *player) {
 
     while (1) {
         printf("Will you go deeper?\n");
-        printf("[1: check resource] [2: Go deeper] [3: Retreat] [0: quit]\n");
+        printf("[1: check resource] [2: Go deeper] [3: Retreat] [0: quit]\n>> ");
 
         if (scanf("%d", &sub) != 1) {
             while (getchar() != '\n');
@@ -2743,7 +2743,7 @@ int event_military_supplies(players *player) {
 
    
     while (1) {
-        printf("[1: Check resources] [2: Open it] [3: Ignore it] [0: Quit]\n");
+        printf("[1: Check resources] [2: Open it] [3: Ignore it] [0: quit]\n>> ");
 
         if (scanf("%d", &n) != 1) {
             while (getchar() != '\n');
