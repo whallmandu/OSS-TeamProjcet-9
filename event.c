@@ -219,7 +219,7 @@ int day10Event(players *player) {
     printf("[HP: %d] [Hunger: %d] [Thirst: %d] \n", player->HP, player->Hunger, player->Thirst); //player data
     printf("==============================\n\n");
 
-    printf("After drifting on a deserted island for ten days, you begin to seriously consider escaping, \nand you also feel the need to reinforce your shelter.\n");
+    printf("After drifting on a deserted island for ten days,\nyou begin to seriously consider escaping, \nand you also feel the need to reinforce your shelter.\n");
     printf("But you don't have enough time to fully commit to both.\n");
     printf("Which one will you focus on?\n");
 
@@ -246,9 +246,9 @@ int day10Event(players *player) {
     }
     else if(n==3) {
         printf("==============================\n");
-        printf("You recall the fear and discomfort you felt every night while trying to sleep, and choose to strengthen your shelter.\n");
-        printf("You cover the roof with palm leaves, reinforce the walls with branches and soil, \ncraft a sleeping platform out of logs, \nand dig drainage channels to prevent rainwater from accumulating.\n");
-        printf("[Shelter LV +1]");
+        printf("You recall the fear and discomfort you felt every night while trying\nto sleep, and choose to strengthen your shelter.\n");
+        printf("You cover the roof with palm leaves, reinforce the walls with branches \nand soil, craft a sleeping platform out of logs, \nand dig drainage channels to prevent rainwater from accumulating.\n");
+        printf("[Shelter LV +1]\n");
         printf("==============================\n");
         Shelter += 1;
     }
@@ -695,7 +695,7 @@ int thunderstorm(players *player) {
                 printf("==============================\n");
                 printf("You hurriedly hide under a nearby tree. While waiting for the storm to pass,\n");
                 printf("unfortunately, you are struck by lightning.\n");
-                printf("[HP -25]");
+                printf("[HP -25]\n");
                 printf("==============================\n");
                 player->HP -= 25;
             }
@@ -705,7 +705,7 @@ int thunderstorm(players *player) {
                 printf("You hurriedly hide at the entrance of the cave you just found. Inside,\n");
                 printf("there are signs that someone stored water here. A few minutes later, the sky clears,\n");
                 printf("and you feel relieved and continue searching for food.\n");
-                printf("[Water +4]");
+                printf("[Water +4]\n");
                 printf("==============================\n");
                 item[2].count += 4;
         }
@@ -725,8 +725,8 @@ int thunderstorm(players *player) {
         }
         else { //failure
             printf("==============================\n");
-            printf("Believing that lightning will not strike you, you continue searching for food.");
-            printf("But it was too risky. While you are careless, lightning strikes you.\n");
+            printf("Believing that lightning will not strike you, you continue searching for food.\n");
+            printf("But it was too risky.\nWhile you are careless, lightning strikes you.\n");
             printf("[HP -25]\n");
             printf("==============================\n");
             player->HP -= 25;
@@ -1280,13 +1280,13 @@ int event_strange_plant(players *player) {
         int r = rand() % 2;
         if (r == 0) {
             printf("==============================\n");
-            printf("Failure: Your stomach hurts.\n");
+            printf("Your stomach hurts.\n");
             printf("[HP -5]\n");
             printf("==============================\n");
             player->HP -= 5;
         } else {
             printf("==============================\n");
-            printf("Success: Your body feels energized.\n");
+            printf("Your body feels energized.\n");
             printf("[HP +5]\n");
             printf("==============================\n");
             player->HP += 5;
@@ -1867,7 +1867,7 @@ int event_wave_collect(players *player) {
         if (r < 20) {
            
             printf("==============================\n");
-            printf("Success: You rush forward and collect the coconuts and wood.\n");
+            printf("You rush forward and collect the coconuts and wood.\n");
             printf("You barely manage to escape, and the wave stops right in front of you.\n");
             printf("[Food +3] [Water +3] [Wood +7]\n");
             printf("==============================\n");
@@ -1879,7 +1879,7 @@ int event_wave_collect(players *player) {
         else {
             
             printf("==============================\n");
-            printf("Failure: You attempt to collect them, but the massive wave is faster.\n");
+            printf("You attempt to collect them, but the massive wave is faster.\n");
             printf("You are swept away by the water.\n");
             printf("[HP -12]\n");
             printf("==============================\n");
@@ -1942,7 +1942,7 @@ int collapsedCabin(players *player) {
         if (r < 25) {
             // (25%)
             printf("==============================\n");
-            printf("Success: You decide to take the risk and enter the cabin.\n");
+            printf("You decide to take the risk and enter the cabin.\n");
             printf("Inside, you open the box and find various supplies.\n");
             printf("[Cloth +8] [Rope +5]\n");
             printf("==============================\n");
@@ -1953,7 +1953,7 @@ int collapsedCabin(players *player) {
         else {
             // (75%)
             printf("==============================\n");
-            printf("Failure: The moment you step inside, the unstable cabin collapses under your weight.\n");
+            printf("The moment you step inside, the unstable cabin collapses under your weight.\n");
             printf("You fall through the rotten floor and get injured.\n");
             printf("[HP -15]\n");
             printf("==============================\n");
@@ -2197,7 +2197,7 @@ int somethingInSand(players *player) {
 
         if (r < 30) {  // success
             printf("==============================\n");
-            printf("Success: You slowly opened the box.\n");
+            printf("You slowly opened the box.\n");
             printf("Inside, you found various supplies.\n");
             printf("[Wood +5] [Stone +5] [Rope +3]\n");
             printf("==============================\n");
@@ -2208,7 +2208,7 @@ int somethingInSand(players *player) {
         }
         else {  // 실패
             printf("==============================\n");
-            printf("Failure: It was a trap! A sharp spike sprang out and injured you.\n");
+            printf("It was a trap! A sharp spike sprang out and injured you.\n");
             printf("[HP -15]\n");
             printf("==============================\n");
 
@@ -2227,7 +2227,7 @@ int somethingInSand(players *player) {
 
         if (r < 30) {  
             printf("==============================\n");
-            printf("Success: You broke the box open.\n");
+            printf("You broke the box open.\n");
             printf("Some materials were damaged.\n");
             printf("[Wood +2] [Stone +2] [Rope +1]\n");
             printf("==============================\n");
@@ -2238,7 +2238,7 @@ int somethingInSand(players *player) {
         }
         else {  // failue
             printf("==============================\n");
-            printf("Failure: The box was a trap! A hidden spike stabbed you.\n");
+            printf("The box was a trap! A hidden spike stabbed you.\n");
             printf("[HP -25]\n");
             printf("==============================\n");
 
@@ -2312,7 +2312,7 @@ int wildBoar(players *player) {
 
         if (r < 5) {   // success
             printf("==============================\n");
-            printf("Success: You run as fast as you can and barely escape the boar.\n");
+            printf("You run as fast as you can and barely escape the boar.\n");
             printf("You pushed yourself too hard, and your legs feel numb.\n");
             printf("[HP -4]\n");
             printf("==============================\n");
@@ -2321,7 +2321,7 @@ int wildBoar(players *player) {
         }
         else {        // fail
             printf("==============================\n");
-            printf("Failure: Escaping a wild boar is nearly impossible.\n");
+            printf("Escaping a wild boar is nearly impossible.\n");
             printf("It catches up to you and attacks.\n");
             printf("[HP -25]\n");
             printf("==============================\n");
@@ -2408,7 +2408,7 @@ int wildBoar(players *player) {
 
         if (r < 10) {   // success
             printf("==============================\n");
-            printf("Success: You grab a sharp branch and stab the boar.\n");
+            printf("You grab a sharp branch and stab the boar.\n");
             printf("By sheer luck, it collapses.\n");
             printf("[Food +10] [Cloth +4]\n");
             printf("==============================\n");
@@ -2418,7 +2418,7 @@ int wildBoar(players *player) {
         }
         else {          // fail
             printf("==============================\n");
-            printf("Failure: You attack with the branch, but it has no effect.\n");
+            printf("You attack with the branch, but it has no effect.\n");
             printf("The boar charges and hits you violently.\n");
             printf("[HP -35]\n");
             printf("==============================\n");
@@ -2536,7 +2536,7 @@ int event_waterfall(players *player) {
 
         if (r < 10) {   
             printf("==============================\n");
-            printf("Success: You safely climb down beneath the waterfall.\n");
+            printf("You safely climb down beneath the waterfall.\n");
             printf("You collect a large amount of water.\n");
             printf("[Water +15]\n");
             printf("==============================\n");
@@ -2545,7 +2545,7 @@ int event_waterfall(players *player) {
         }
         else {          
             printf("==============================\n");
-            printf("Failure: You slipped while climbing down.\n");
+            printf("You slipped while climbing down.\n");
             printf("Even small waterfalls can be dangerous.\n");
             printf("[HP -20]\n");
             printf("==============================\n");
@@ -2562,7 +2562,7 @@ int event_waterfall(players *player) {
 
         if (r < 50) {   
             printf("==============================\n");
-            printf("Success: You safely collect water from the stream above.\n");
+            printf("You safely collect water from the stream above.\n");
             printf("[Water +2]\n");
             printf("==============================\n");
 
@@ -2570,7 +2570,7 @@ int event_waterfall(players *player) {
         }
         else {          
             printf("==============================\n");
-            printf("Failure: While collecting water above, you slipped and hurt yourself badly.\n");
+            printf("While collecting water above, you slipped and hurt yourself badly.\n");
             printf("[HP -12]\n");
             printf("==============================\n");
 
@@ -2771,8 +2771,8 @@ int event_military_supplies(players *player) {
 
         if (r < 10) {  
             printf("==============================\n");
-            printf("Success: You opened the military supply crate.\n");
-            printf("Inside, you found long-lasting food rations, clean water, and an old communication device.\n");
+            printf("You opened the military supply crate.\n");
+            printf("Inside, you found long-lasting food rations, clean water,\nand an old communication device.\n");
             printf("[Food +10] [Water +10] [Distress Signal Lv +1]\n");
             printf("==============================\n");
 
@@ -2784,7 +2784,7 @@ int event_military_supplies(players *player) {
         }
         else {  
             printf("==============================\n");
-            printf("Failure: The box was not military supplies—it was a trap.\n");
+            printf("The box was not military supplies—it was a trap.\n");
             printf("A landmine hidden inside exploded, injuring you severely.\n");
             printf("[HP -35]\n");
             printf("==============================\n");
