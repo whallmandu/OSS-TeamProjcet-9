@@ -39,7 +39,7 @@ Item item[] = {
 const int itemCount = sizeof(item) / sizeof(item[0]);
 
 //extra setting
-int Shelter = 0; int SOS = 0;
+int Shelter = 0; int SOS = 0; int currentEventID;
 
 //save data
 typedef struct{
@@ -97,6 +97,7 @@ int gameLoad(players *p) {
 
   Shelter = state.savedShelter;
   SOS = state.savedSOS;
+  currentEventID = state.savedEventID;
 
   setUsedEvents(state.savedUsedEvents);
 
@@ -152,7 +153,7 @@ int main() {
   int hungerReduction = hungerIncrease / 2;
   int thirstReduction = thirstIncrease / 2;
 
-  int currentEventID = -1;
+  currentEventID = -1;
 
   //first setting
   players player;
@@ -183,6 +184,7 @@ int main() {
       printPrologue();
   }
   else if (choice == 2) {
+    system("cls");
      if (!gameLoad(&player)) {
          printf("Starting New Game...\n");
          printPrologue();
@@ -249,8 +251,8 @@ int main() {
       break;
     }
     
-    //Setup HP
-    if(player.HP > MAX_HP) player.HP = MAX_HP;
+    
+    
     
     //Hunger
     if(item[1].count <= 0) {
@@ -329,6 +331,7 @@ int main() {
     if(SOS > 4) SOS = 4;
     if(Shelter != 4) player.HP += Shelter + 1;
     else player.HP += 10; 
+    if(player.HP > MAX_HP) player.HP = MAX_HP;
     
     //screen clear
     currentEventID = -1;
